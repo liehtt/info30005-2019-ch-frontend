@@ -4,3 +4,16 @@ FrontEnd for INFO30005 project
 Need to install dependencies specified in package.json beforehand.
 
 Start the app by typing "npm start" without the quotes in the terminal.
+
+# Component Design Thought
+```
+UserPage 
+  |-Header
+    |-NavigationItem
+    |-DarkMode
+  |-Content
+    |-LeftContent
+      |-LeftContainer
+    |-RightContent
+      |-EventCard
+```
