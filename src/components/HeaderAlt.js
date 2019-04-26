@@ -11,19 +11,19 @@ export default class HeaderAlt extends Component {
             <div>
             <Nav fill variant="tabs">
               <Nav.Item>
-                <Nav.Link class="link" href="#">Home</Nav.Link>
+                <Nav.Link class="link" href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link class="link" href="#">Notifications</Nav.Link>
+                <Nav.Link class="link" href="/">Notifications</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link class="link" href="#">Browse Clubs</Nav.Link>
+                <Nav.Link class="link" href="/">Browse Clubs</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link class="link" href="#">Browse Events</Nav.Link>
+                <Nav.Link class="link" href="/">Browse Events</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link class="link" href="#">Settings</Nav.Link>
+                <Nav.Link class="link" href="/">Settings</Nav.Link>
               </Nav.Item>
             </Nav>
           </div>
