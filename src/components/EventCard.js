@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import {Card, Figure, Button} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import axios from 'axios';
 
 export default class EventCard extends Component {
     constructor(props) {
