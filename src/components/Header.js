@@ -1,25 +1,34 @@
 import React, {Component} from 'react'
-import NavigationItem from './NavigationItem'
-import DarkMode from './DarkMode'
+import Nav from 'react-bootstrap/Nav';
 
-
-class Header extends Component {
+export default class Header extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return(
-            <div className="header">
-                <NavigationItem name="Home" />
-                <NavigationItem name="Notifications" />
-                <NavigationItem name="Browse Clubs" />
-                <NavigationItem name="Browse Events" />
-                <NavigationItem name="Settings" />
-                <DarkMode />
-            </div>
+            <div>
+            <Nav fill variant="tabs">
+              <Nav.Item>
+                <Nav.Link class="link" href="/">Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link class="link" href="/">Notifications</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link class="link" href="/">Browse Clubs</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link class="link" href="/">Browse Events</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link class="link" href="/">Settings</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+              </Nav.Item>
+            </Nav>
+          </div>
         );
     }
 }
-
-export default Header;

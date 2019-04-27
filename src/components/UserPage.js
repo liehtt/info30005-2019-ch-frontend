@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import Header from './Header';
-import HeaderAlt from './HeaderAlt';
+import Header from './Header';
 import LeftContent from './LeftContent';
 
 class UserPage extends Component {
@@ -11,7 +11,7 @@ class UserPage extends Component {
     render() {
         return (
             <div className="user_page">
-                <HeaderAlt />
+                <Header />
                 <LeftContent />
             </div>
         );
