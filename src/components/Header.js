@@ -10,7 +10,7 @@ export default class Header extends Component {
     render() {
         return(
             <div>
-            <Navbar class="navbar" variant="dark" expand="lg">
+            <Navbar fixed="top" class="navbar" variant="dark" expand="lg">
             <Navbar.Brand class="navbar-brand" href="/">Clubhub</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">

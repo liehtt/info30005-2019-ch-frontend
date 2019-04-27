@@ -1,11 +1,22 @@
+body {
+    padding-top: 70px;
+  }
+
 .navbar {
     background-color: #402263;
-    opacity: 0.95;
+    opacity: 0.9;
     font-family: 'Lato', sans-serif;
+    position: fixed;
 }
 
 .navbar a {
     color: white !important;
+    
+}
+
+.navbar a:hover {
+    color: #aaaae2 !important;
+    transition: 0.2s;
 }
 
 .navbar-brand {
