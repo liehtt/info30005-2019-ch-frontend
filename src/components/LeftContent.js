@@ -29,14 +29,18 @@ export default class LeftContent extends Component {
         const events = this.state.eventsGoing;
 
         return (
-
-            <div className="left_content">
-                <LeftContainer title="Clubs Interested" list={clubs} />
-                <LeftContainer title="Events Joined" list={events} />
-                <EventCard title="Events Joined" list={events}></EventCard>
+            
+            <div>
+            <div class="left-content">
+                <EventCard title="Upcoming Events" list={events}/>
             </div>
-        /* can someone figure out why EventCard.js is not rendering properly lol */
-
+            <div class="left-content">
+                <EventCard title="Registered Events" list={events}/>
+            </div>
+            <div>
+                <LeftContainer title="Your Clubs" list={clubs}/>
+            </div>
+            </div>
         );
 
 
