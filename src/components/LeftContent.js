@@ -23,26 +23,22 @@ export default class LeftContent extends Component {
     }
 
     render() {
-        this.getClubsInterested(); 
+        this.getClubsInterested();
         this.getEventsGoing();
-        const clubs = this.state.clubsInterested.map(club => club.name);
-        const events = this.state.eventsGoing.map(e => e.name);
+        const clubs = this.state.clubsInterested;
+        const events = this.state.eventsGoing;
 
         return (
-            
+
             <div className="left_content">
                 <LeftContainer title="Clubs Interested" list={clubs} />
                 <LeftContainer title="Events Joined" list={events} />
+                <EventCard title="Events Joined" list={events}></EventCard>
             </div>
-        /* can someone figure out why EventCard.js is not rendering properly lol
-           <div>
-               <EventCard title="Events Joined" list={events}></EventCard>
-           </div>
+        /* can someone figure out why EventCard.js is not rendering properly lol */
+
         );
-        */
-    );
+
+
 }
 }
-
-
-
