@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import Header from './Header';
 import Header from './Header';
 import LeftContent from './LeftContent';
 
