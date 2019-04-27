@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import Nav from 'react-bootstrap/Nav';
+import React, {Component} from 'react';
+import {Navbar, Nav} from 'react-bootstrap';
+import "./header.css";
 
 export default class Header extends Component {
     constructor(props) {
@@ -9,25 +10,16 @@ export default class Header extends Component {
     render() {
         return(
             <div>
-            <Nav fill variant="tabs">
-              <Nav.Item>
-                <Nav.Link class="link" href="/">Home</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
+            <Navbar class="navbar" variant="dark" expand="lg">
+            <Navbar.Brand class="navbar-brand" href="/">Clubhub</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+            <Navbar.Collapse id="basic-navbar-nav">
                 <Nav.Link class="link" href="/">Notifications</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
                 <Nav.Link class="link" href="/">Browse Clubs</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
                 <Nav.Link class="link" href="/">Browse Events</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
                 <Nav.Link class="link" href="/">Settings</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-              </Nav.Item>
-            </Nav>
+            </Navbar.Collapse>
+            </Navbar>
           </div>
         );
     }

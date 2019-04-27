@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import LeftContainer from './LeftContainer';
+import EventCard from './EventCard'
 import axios from 'axios';
 
-class LeftContent extends Component {
+export default class LeftContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,17 +23,26 @@ class LeftContent extends Component {
     }
 
     render() {
-        this.getClubsInterested(); this.getEventsGoing();
+        this.getClubsInterested(); 
+        this.getEventsGoing();
         const clubs = this.state.clubsInterested.map(club => club.name);
         const events = this.state.eventsGoing.map(e => e.name);
 
         return (
+            
             <div className="left_content">
                 <LeftContainer title="Clubs Interested" list={clubs} />
                 <LeftContainer title="Events Joined" list={events} />
             </div>
+        /* can someone figure out why EventCard.js is not rendering properly lol
+           <div>
+               <EventCard title="Events Joined" list={events}></EventCard>
+           </div>
         );
-    }
+        */
+    );
+}
 }
 
-export default LeftContent;
+
+
