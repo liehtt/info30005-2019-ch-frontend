@@ -26,8 +26,7 @@ export default class LeftContent extends Component {
         this.getClubsInterested(); 
         this.getEventsGoing();
         const clubs = this.state.clubsInterested.map(club => club.name);
-        const events = this.state.eventsGoing;
-        const eventClub = this.state.eventsGoing.map(e => e.club);
+        const events = this.state.eventsGoing.map(e => e.name);
 
         return (
             
