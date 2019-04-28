@@ -9,6 +9,7 @@ import {
     Button
 } from 'react-bootstrap';
 
+// child component of UserContent, showing individual events 
 export default class EventList extends Component {
     constructor(props) {
         super(props);
