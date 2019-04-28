@@ -1,6 +1,6 @@
 body {
     padding-top: 70px;
-  }
+}
 
 .navbar {
     background-color: #402263;
@@ -11,7 +11,6 @@ body {
 
 .navbar a {
     color: white !important;
-    
 }
 
 .navbar a:hover {
@@ -31,7 +30,6 @@ body {
     border-style: double;
     border-color: #aaaae2;
     border-radius: 15px;
-
 }
 
 .event-container {

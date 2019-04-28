@@ -7,8 +7,14 @@ export default class LeftContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allEvents: []
+      allEvents: [],
+      user: {}
     };
+  }
+
+  getUser() {
+      axios.get("https://info30005-2019-ch.herokuapp.com/api/user/0")
+        .then(response => this.setState({ user: response.data }))
   }
 
   getClubsInterested() {
@@ -24,6 +30,7 @@ export default class LeftContent extends Component {
   }
 
   componentDidMount() {
+    this.getUser();
     this.getClubsInterested();
     this.getAllEvents();
   }
@@ -31,10 +38,10 @@ export default class LeftContent extends Component {
   render() {
     //const clubs = this.state.clubsInterested;
     const allEvents = this.state.allEvents;
-    const eventsRegistered = this.props.user.eventsRegistered;
+    const eventsRegistered = this.state.user.eventsRegistered;
     console.log(eventsRegistered);
-    const filtered = this.state.allEvents.filter(
-      event => event.id in this.props.user.eventsRegistered
+    const filtered = allEvents.filter(
+      event => event.id in this.state.user.eventsRegistered
     );
 
     console.log(filtered);
@@ -46,10 +53,12 @@ export default class LeftContent extends Component {
         <div class="left-content">
           <EventCard title="Registered Events" list={filtered} />
         </div>
-        {/* <div>
-          <LeftContainer title="Your Clubs" list={clubs} />
-        </div> */}
+
       </div>
     );
   }
 }
+
+/* <div>
+  <LeftContainer title="Your Clubs" list={clubs} />
+</div> */
