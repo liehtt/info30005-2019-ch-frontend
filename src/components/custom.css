@@ -25,7 +25,7 @@ body {
 }
 
 .left-content {
-    overflow-x: scroll;
+    overflow-x: auto;
     margin: 3em;
     border-width: 5px;
     border-style: double;
@@ -35,15 +35,31 @@ body {
 }
 
 .event-container {
-    margin: 2em;
+    margin: 1em;
 }
 
 .event-card {
-    max-width: 18rem;
+    max-width: 100%;
+    min-width: 33%;
+    width: auto;
+
+}
+
+.grid-card {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: none !important;
+
+}
+
+.test-row {
+    padding-bottom: 15px !important;
 }
 
 h3 {
     margin-top: 20px;
     margin-left: 5px;
+    margin-bottom: 10px;
     background: white;
+    text-align: center;
 }

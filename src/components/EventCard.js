@@ -5,7 +5,9 @@ import {
     Col,
     Row,
     Figure, 
-    Button
+    Button,
+    ListGroup,
+    ListGroupItem
 } from 'react-bootstrap';
 
 export default class EventCard extends Component {
@@ -21,21 +23,26 @@ export default class EventCard extends Component {
             <h3 className="container-title">
                 {this.props.title}
             </h3>
-            <Container class="container-fluid">
-            <Row>
+            <Container>
+            <Row noGutters="true">
                 {events.map((event) => {
                     return (
-                        <Col sm={4} class="col">
-                        <Card bg='light' style={{ width: '18rem' }} class="event-card">
+                        <Col sm={4}>
+                        <Container className="grid-card">
+                        <Card bg='light' style={{ width: '18rem' }} className="event-card">
                             <Card.Body>
                                 <Card.Title>{event.name}</Card.Title>
-                                <Card.Text>{event.club}</Card.Text>
-                                <Card.Text>{event.venue}</Card.Text>
-                                <Card.Text>{event.startTime} - {event.endTime}</Card.Text>
-                                <Card.Text>{event.description}</Card.Text>
-                                <Button>[Attendance Status]</Button>
+                                <ListGroup>
+                                <ListGroupItem>{event.club}</ListGroupItem>
+                                <ListGroupItem>{event.venue}</ListGroupItem>
+                                <ListGroupItem>{event.startTime} - {event.endTime}</ListGroupItem>
+                                </ListGroup>
+                            </Card.Body>
+                            <Card.Body>
+                            <Button>[Attendance Status]</Button>
                             </Card.Body>
                         </Card>
+                        </Container>
                         </Col>
                     );
                 })}
