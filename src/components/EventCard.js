@@ -19,6 +19,7 @@ export default class EventCard extends Component {
     render () {
         const events = this.props.list;
         return(
+            
             <div className="event-container">
             <h3 className="container-title">
                 {this.props.title}
