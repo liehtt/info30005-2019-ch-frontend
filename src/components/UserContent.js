@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import EventList from "./EventList";
 import axios from "axios";
 
+// child component of UserPage
 export default class UserContent extends Component {
   constructor(props) {
     super(props);
@@ -11,43 +12,38 @@ export default class UserContent extends Component {
     };
   }
 
+  // fetch first user from static array to simulate homepage of that user
   getUser() {
       axios.get("https://info30005-2019-ch.herokuapp.com/api/user/0")
         .then(response => this.setState({ user: response.data }))
   }
 
-  getClubsInterested() {
-    axios
-      .get("https://info30005-2019-ch.herokuapp.com/api/clubs")
-      .then(response => this.setState({ clubsInterested: response.data }));
-  }
 
+  // fetch events from events list to simulate upcoming events
   getAllEvents() {
     axios
       .get("https://info30005-2019-ch.herokuapp.com/api/events")
       .then(response => this.setState({ allEvents: response.data }));
   }
 
+
   componentDidMount() {
     this.getUser();
-    this.getClubsInterested();
     this.getAllEvents();
   }
 
   render() {
-    //const clubs = this.state.clubsInterested;
     const allEvents = this.state.allEvents;
-    const eventsRegistered = this.state.user.eventsRegistered;
-    console.log(eventsRegistered);
+    // extract events that user has registered
     var filtered;
-    if(allEvents !== undefined) {
-        filtered = allEvents.filter(
-          event => event.id in this.state.user.eventsRegistered
-        );
-    }
+    filtered = allEvents.filter(
+      event => event.id in this.state.user.eventsRegistered
+    );
+    // if(allEvents !== undefined) {
+    //
+    // }
 
 
-    console.log(filtered);
     return (
       <div>
         <div class="user-content">

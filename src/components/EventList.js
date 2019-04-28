@@ -1,14 +1,11 @@
 import React, {Component} from 'react'
 import EventCard from './EventCard';
 import {
-    Card,
     Container,
-    Col,
-    Row,
-    Figure,
-    Button
+    Row
 } from 'react-bootstrap';
 
+// child component of UserContent, showing individual events
 export default class EventList extends Component {
     constructor(props) {
         super(props);

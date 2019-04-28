@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
 import {
     Card,
-    Container,
     Col,
-    Row,
-    Figure,
     Button,
     ListGroup
 } from 'react-bootstrap';
 import axios from 'axios';
 
+// child component of EventList, represents individual event
 export default class EventCard extends Component {
     constructor(props) {
         super(props);

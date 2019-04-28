@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "./custom.css";
 
+// child component of UserPage
 export default class Header extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    console.log(this.props.user.name);
     return (
       <div>
         <Navbar fixed="top" class="navbar" variant="dark" expand="lg">
