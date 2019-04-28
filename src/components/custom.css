@@ -44,6 +44,18 @@ body {
 
 }
 
+.event-card {
+    max-width: 100%;
+    min-width: 33%;
+    width: auto;
+
+}
+
+.event-card:hover {
+    border: #402263 1px solid;
+    transition: 0.2s;
+}
+
 .grid-card {
     padding-bottom: 10px;
     padding-top: 10px;
