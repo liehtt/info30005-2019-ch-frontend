@@ -1,0 +1,80 @@
+body {
+    padding-top: 70px;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+    background-color: #402263;
+    opacity: 0.9;
+    font-family: 'Lato', sans-serif;
+    position: fixed;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.navbar a:hover {
+    color: #aaaae2 !important;
+    transition: 0.2s;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat Subrayada', sans-serif !important;
+    font-size: 30px !important;
+}
+
+.user-content {
+    overflow-x: auto;
+    margin: 3em;
+    border-width: 5px;
+    border-style: double;
+    border-color: #aaaae2;
+    border-radius: 15px;
+}
+
+.event-container {
+    margin: 1em;
+}
+
+.event-card {
+    max-width: 100%;
+    min-width: 33%;
+    width: auto;
+
+}
+
+.event-card {
+    max-width: 100%;
+    min-width: 33%;
+    width: auto;
+
+}
+
+.event-card:hover {
+    border: #402263 1px solid;
+    transition: 0.2s;
+}
+
+.grid-card {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: none !important;
+
+}
+
+.test-row {
+    padding-bottom: 15px !important;
+}
+
+.container-title {
+    /*margin-top: -33px;*/
+    margin-left: 5px;
+    padding-bottom: 10px;
+    background: white;
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase; 
+    font-weight: light;
+    z-index: 1000;
+}
