@@ -34,14 +34,14 @@ export default class UserContent extends Component {
 
   render() {
     const allEvents = this.state.allEvents;
-    const eventsRegistered = this.state.user.eventsRegistered;
     // extract events that user has registered
     var filtered;
-    if(allEvents !== undefined) {
-        filtered = allEvents.filter(
-          event => event.id in this.state.user.eventsRegistered
-        );
-    }
+    filtered = allEvents.filter(
+      event => event.id in this.state.user.eventsRegistered
+    );
+    // if(allEvents !== undefined) {
+    //
+    // }
 
 
     return (

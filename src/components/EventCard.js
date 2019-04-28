@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
 import {
     Card,
-    Container,
     Col,
-    Row,
-    Figure,
     Button,
     ListGroup
 } from 'react-bootstrap';
