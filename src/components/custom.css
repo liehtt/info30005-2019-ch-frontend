@@ -41,20 +41,17 @@ body {
     max-width: 100%;
     min-width: 33%;
     width: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
 }
 
-.event-card {
-    max-width: 100%;
-    min-width: 33%;
-    width: auto;
-
-}
-
+/*
 .event-card:hover {
     border: #402263 1px solid;
     transition: 0.2s;
 }
+*/
 
 .grid-card {
     padding-bottom: 10px;
@@ -77,4 +74,9 @@ body {
     text-transform: uppercase; 
     font-weight: light;
     z-index: 1000;
+}
+
+.toggle-button {
+    text-align: left;
+    padding-right: 16px;
 }
