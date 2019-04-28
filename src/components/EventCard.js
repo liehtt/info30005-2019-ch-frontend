@@ -7,6 +7,7 @@ import {
     Figure,
     Button
 } from 'react-bootstrap';
+import axios from 'axios';
 
 export default class EventCard extends Component {
     constructor(props) {
@@ -23,6 +24,24 @@ export default class EventCard extends Component {
         this.setState((state, props) => ({
             toggleClick: !state.toggleClick
         }));
+        if(this.state.toggleClick === true) {
+            this.registerEvent();
+        } else {
+            this.unregisterEvent();
+        }
+    }
+
+    registerEvent() {
+        axios.post("https://info30005-2019-ch.herokuapp.com/api/user/:id/regEvent", {
+            event: this.props.currEvent.id
+        })
+    }
+
+    unregisterEvent() {
+        axios.post("https://info30005-2019-ch.herokuapp.com/api/user/:id/unregEvent", {
+            event: this.props.currEvent.id
+        })
+
     }
 
     render () {
@@ -37,7 +56,7 @@ export default class EventCard extends Component {
                     <Card.Text>{currEvent.venue}</Card.Text>
                     <Card.Text>{currEvent.startTime} - {currEvent.endTime}</Card.Text>
                     <Card.Text>{currEvent.description}</Card.Text>
-                    <Button onClick={this.handleClick}>{this.state.toggleClick ? "Going" : "Register Event"}</Button>
+                    <Button onClick={this.handleClick}>{this.state.toggleClick ? "Going" : "Register Event" }</Button>
                 </Card.Body>
             </Card>
             </Col>
