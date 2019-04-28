@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import LeftContainer from "./LeftContainer";
 import EventCard from "./EventCard";
 import axios from "axios";
 
-export default class LeftContent extends Component {
+export default class UserContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,10 +46,10 @@ export default class LeftContent extends Component {
     console.log(filtered);
     return (
       <div>
-        <div class="left-content">
+        <div class="user-content">
           <EventCard title="Upcoming Events" list={allEvents} />
         </div>
-        <div class="left-content">
+        <div class="user-content">
           <EventCard title="Registered Events" list={filtered} />
         </div>
 
@@ -58,7 +57,3 @@ export default class LeftContent extends Component {
     );
   }
 }
-
-/* <div>
-  <LeftContainer title="Your Clubs" list={clubs} />
-</div> */

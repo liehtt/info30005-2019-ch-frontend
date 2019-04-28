@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import LeftContent from "./LeftContent";
+import UserContent from "./UserContent";
 import axios from "axios";
 
 class UserPage extends Component {
@@ -24,7 +24,7 @@ class UserPage extends Component {
     return (
       <div className="user-page">
         <Header user={this.state.currUser} />
-        <LeftContent user={this.state.currUser} />
+        <UserContent user={this.state.currUser} />
       </div>
     );
   }
