@@ -32,9 +32,12 @@ export default class LeftContent extends Component {
     //const clubs = this.state.clubsInterested;
     const allEvents = this.state.allEvents;
     const eventsRegistered = this.props.user.eventsRegistered;
+    console.log(eventsRegistered);
+    const filtered = this.state.allEvents.filter(
+      event => event.id in this.props.user.eventsRegistered
+    );
 
-    const filtered = allEvents.filter(c => allEvents.id in eventsRegistered);
-    console.log(this.props.user.name);
+    console.log(filtered);
     return (
       <div>
         <div class="left-content">

@@ -17,11 +17,10 @@ class UserPage extends Component {
       "https://info30005-2019-ch.herokuapp.com/api/user/0"
     );
     this.setState({ currUser });
-    console.log(currUser);
+    //console.log(currUser);
   }
 
   render() {
-    console.log(this.state.currUser.name);
     return (
       <div className="user_page">
         <Header user={this.state.currUser} />
