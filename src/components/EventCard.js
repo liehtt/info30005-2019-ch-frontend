@@ -5,7 +5,8 @@ import {
     Col,
     Row,
     Figure,
-    Button
+    Button,
+    ListGroup
 } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -49,14 +50,17 @@ export default class EventCard extends Component {
         return(
             <div className="event-card">
             <Col sm={4} class="col">
-            <Card bg='light' style={{ width: '18rem' }} class="event-card">
+            <Card bg='light' style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>{currEvent.name}</Card.Title>
-                    <Card.Text>{currEvent.club}</Card.Text>
-                    <Card.Text>{currEvent.venue}</Card.Text>
-                    <Card.Text>{currEvent.startTime} - {currEvent.endTime}</Card.Text>
-                    <Card.Text>{currEvent.description}</Card.Text>
-                    <Button onClick={this.handleClick}>{this.state.toggleClick ? "Going" : "Register Event" }</Button>
+                    <ListGroup>
+                    <ListGroup.Item>{currEvent.club}</ListGroup.Item>
+                    <ListGroup.Item>{currEvent.venue}</ListGroup.Item>
+                    <ListGroup.Item>{currEvent.startTime} - {currEvent.endTime}</ListGroup.Item>
+                    </ListGroup>
+                <Card.Body>
+                    <div class="toggle-button"><Button variant="info" onClick={this.handleClick}>{this.state.toggleClick ? "Going" : "Register Event" }</Button></div>
+                </Card.Body>
                 </Card.Body>
             </Card>
             </Col>
