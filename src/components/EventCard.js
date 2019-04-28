@@ -1,54 +1,65 @@
 import React, {Component} from 'react'
 import {
     Card,
-    Container, 
+    Container,
     Col,
     Row,
-    Figure, 
-    Button,
-    ListGroup,
-    ListGroupItem
+    Figure,
+    Button
 } from 'react-bootstrap';
+import axios from 'axios';
 
 export default class EventCard extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            toggleClick: false
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState((state, props) => ({
+            toggleClick: !state.toggleClick
+        }));
+        if(this.state.toggleClick === true) {
+            this.registerEvent();
+        } else {
+            this.unregisterEvent();
+        }
+    }
+
+    registerEvent() {
+        axios.post("https://info30005-2019-ch.herokuapp.com/api/user/:id/regEvent", {
+            event: this.props.currEvent.id
+        })
+    }
+
+    unregisterEvent() {
+        axios.post("https://info30005-2019-ch.herokuapp.com/api/user/:id/unregEvent", {
+            event: this.props.currEvent.id
+        })
+
     }
 
     render () {
-        const events = this.props.list;
+        const currEvent = this.props.currEvent;
         return(
-            
-            <div className="event-container">
-            <h3 className="container-title">
-                {this.props.title}
-            </h3>
-            <Container>
-            <Row noGutters="true">
-                {events.map((event) => {
-                    return (
-                        <Col sm={4}>
-                        <Container className="grid-card">
-                        <Card bg='light' style={{ width: '18rem' }} className="event-card">
-                            <Card.Body>
-                                <Card.Title>{event.name}</Card.Title>
-                                <ListGroup>
-                                <ListGroupItem>{event.club}</ListGroupItem>
-                                <ListGroupItem>{event.venue}</ListGroupItem>
-                                <ListGroupItem>{event.startTime} - {event.endTime}</ListGroupItem>
-                                </ListGroup>
-                            </Card.Body>
-                            <Card.Body>
-                            <Button>[Attendance Status]</Button>
-                            </Card.Body>
-                        </Card>
-                        </Container>
-                        </Col>
-                    );
-                })}
-            </Row>
-            </Container>
+            <div className="event-card">
+            <Col sm={4} class="col">
+            <Card bg='light' style={{ width: '18rem' }} class="event-card">
+                <Card.Body>
+                    <Card.Title>{currEvent.name}</Card.Title>
+                    <Card.Text>{currEvent.club}</Card.Text>
+                    <Card.Text>{currEvent.venue}</Card.Text>
+                    <Card.Text>{currEvent.startTime} - {currEvent.endTime}</Card.Text>
+                    <Card.Text>{currEvent.description}</Card.Text>
+                    <Button onClick={this.handleClick}>{this.state.toggleClick ? "Going" : "Register Event" }</Button>
+                </Card.Body>
+            </Card>
+            </Col>
             </div>
         );
     }

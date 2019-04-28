@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EventCard from "./EventCard";
+import EventList from "./EventList";
 import axios from "axios";
 
 export default class UserContent extends Component {
@@ -39,18 +39,22 @@ export default class UserContent extends Component {
     const allEvents = this.state.allEvents;
     const eventsRegistered = this.state.user.eventsRegistered;
     console.log(eventsRegistered);
-    const filtered = allEvents.filter(
-      event => event.id in this.state.user.eventsRegistered
-    );
+    var filtered;
+    if(allEvents !== undefined) {
+        filtered = allEvents.filter(
+          event => event.id in this.state.user.eventsRegistered
+        );
+    }
+
 
     console.log(filtered);
     return (
       <div>
         <div class="user-content">
-          <EventCard title="Upcoming Events" list={allEvents} />
+          <EventList title="Upcoming Events" list={allEvents} />
         </div>
         <div class="user-content">
-          <EventCard title="Registered Events" list={filtered} />
+          <EventList title="Registered Events" list={filtered} />
         </div>
 
       </div>
