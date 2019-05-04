@@ -30,6 +30,7 @@ export default class LoginPage extends Component {
     handleSubmit(e) {
         e.preventDefault();
         alert('Submitted:' + this.state.email + ' password:' + this.state.password);
+        this.props.func();
     }
 
     render() {
