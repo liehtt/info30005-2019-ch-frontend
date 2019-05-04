@@ -9,10 +9,15 @@ import {
 export default class EventList extends Component {
     constructor(props) {
         super(props);
+        this.state = {list: []}
+    }
+
+    async componentDidMount() {
+        const list = await this.props.func();
+        this.setState({list: list});
     }
 
     render () {
-        const events = this.props.list;
         return(
             <div className="event-container">
             <h3 className="container-title">
@@ -20,9 +25,9 @@ export default class EventList extends Component {
             </h3>
             <Container class="container-fluid">
             <Row>
-                {events.map((event) => {
+                {this.state.list.map((e) => {
                     return (
-                        <EventCard currEvent={event}/>
+                        <EventCard currEvent={e} />
                     );
                 })}
             </Row>
