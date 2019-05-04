@@ -27,7 +27,8 @@ export default class SignUpPage extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        alert('Submitted: ' + this.state.email + ' password: ' + this.state.password + ' username: ' + this.state.username + ' studentid: ' + this.state.studentid);
+    //    alert('Submitted: ' + this.state.email + ' password: ' + this.state.password + ' username: ' + this.state.username + ' studentid: ' + this.state.studentid);
+        this.props.func();
     }
 
     render() {
