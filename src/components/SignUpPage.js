@@ -20,19 +20,18 @@ export default class SignUpPage extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.registerUser = this.registerUser.bind(this);
     }
 
-    async registerUser() {
-        var newUser = await axios.post('https://info30005-testing-api.herokuapp.com/api/user/create', {
-            username: this.state.username,
-            studentid: this.state.studentid,
-            studentemail: this.state.studentemail,
-            password: this.state.password
-        });
-
-        return newUser;
-    }
+    // async registerUser() {
+    //
+    //     const newUser = {
+    //         username: this.state.username,
+    //         studentid: this.state.studentid,
+    //         studentemail: this.state.studentemail,
+    //         password: this.state.password
+    //     };
+    //     const userData = await axios.post('https://info30005-testing-api.herokuapp.com/api/user/create', newUser);
+    // }
 
     handleChange(e) {
         this.setState({[e.target.id]: e.target.value});
@@ -40,8 +39,8 @@ export default class SignUpPage extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-        var newUser = await this.registerUser();
-        alert(newUser.data.username + ' ' + newUser.data.studentid);
+    //    var userData = await this.registerUser();
+    //    alert(userData.data.username + ' ' + userData.data.studentid);
         this.props.func();
     }
 
