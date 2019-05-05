@@ -14,12 +14,24 @@ export default class SignUpPage extends Component {
         this.state = {
             username: "",
             studentid: "",
-            email: "",
+            studentemail: "",
             password: ""
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.registerUser = this.registerUser.bind(this);
+    }
+
+    async registerUser() {
+        var newUser = await axios.post('https://info30005-testing-api.herokuapp.com/api/user/create', {
+            username: this.state.username,
+            studentid: this.state.studentid,
+            studentemail: this.state.studentemail,
+            password: this.state.password
+        });
+
+        return newUser;
     }
 
     handleChange(e) {
@@ -28,12 +40,8 @@ export default class SignUpPage extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-        const newUser = await axios.post('https://info30005-testing-api.herokuapp.com/api/user/create', {
-            username: this.state.username,
-            studentid: this.state.studentid,
-            studentemail: this.state.studentemail,
-            password: this.state.password
-        });
+        var newUser = await this.registerUser();
+        alert(newUser.data.username + ' ' + newUser.data.studentid);
         this.props.func();
     }
 
