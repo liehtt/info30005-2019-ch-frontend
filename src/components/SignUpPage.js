@@ -22,16 +22,33 @@ export default class SignUpPage extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // async registerUser() {
-    //
-    //     const newUser = {
-    //         username: this.state.username,
-    //         studentid: this.state.studentid,
-    //         studentemail: this.state.studentemail,
-    //         password: this.state.password
-    //     };
-    //     const userData = await axios.post('https://info30005-testing-api.herokuapp.com/api/user/create', newUser);
-    // }
+    async registerUser() {
+
+        // const newUser = {
+        //     username: this.state.username,
+        //     studentid: this.state.studentid,
+        //     studentemail: this.state.studentemail,
+        //     password: this.state.password
+        // };
+        // await axios({
+        //     method: 'post',
+        //     url: 'https://mighty-coast-68940.herokuapp.com/api/user/create',
+        //     params: {
+        //         username: this.state.username,
+        //         studentid: this.state.studentid,
+        //         studentemail: this.state.studentemail,
+        //         password: this.state.password
+        //         'Accept': 'application/json',
+        //   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        //     }
+        // })
+        return await axios.post('https://mighty-coast-68940.herokuapp.com/api/user/create/', JSON.stringify({
+            username: this.state.username,
+                studentid: this.state.studentid,
+                studentemail: this.state.studentemail,
+                password: this.state.password
+        }));
+    }
 
     handleChange(e) {
         this.setState({[e.target.id]: e.target.value});
@@ -39,8 +56,8 @@ export default class SignUpPage extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-    //    var userData = await this.registerUser();
-    //    alert(userData.data.username + ' ' + userData.data.studentid);
+        const userData = await this.registerUser();
+        alert(userData.data);
         this.props.func();
     }
 
