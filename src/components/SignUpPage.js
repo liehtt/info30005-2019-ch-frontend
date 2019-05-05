@@ -6,6 +6,7 @@ import {
     Button,
     Form
 } from 'react-bootstrap';
+import axios from "axios";
 
 export default class SignUpPage extends Component {
     constructor(props) {
@@ -25,9 +26,14 @@ export default class SignUpPage extends Component {
         this.setState({[e.target.id]: e.target.value});
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
-    //    alert('Submitted: ' + this.state.email + ' password: ' + this.state.password + ' username: ' + this.state.username + ' studentid: ' + this.state.studentid);
+        const newUser = await axios.post('https://info30005-testing-api.herokuapp.com/api/user/create', {
+            username: this.state.username,
+            studentid: this.state.studentid,
+            studentemail: this.state.studentemail,
+            password: this.state.password
+        });
         this.props.func();
     }
 
