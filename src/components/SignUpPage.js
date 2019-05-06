@@ -6,7 +6,7 @@ import {
     Button,
     Form
 } from 'react-bootstrap';
-import axios from "axios";
+import Api from "./Api";
 
 export default class SignUpPage extends Component {
     constructor(props) {
@@ -24,30 +24,12 @@ export default class SignUpPage extends Component {
 
     async registerUser() {
 
-        // const newUser = {
-        //     username: this.state.username,
-        //     studentid: this.state.studentid,
-        //     studentemail: this.state.studentemail,
-        //     password: this.state.password
-        // };
-        // await axios({
-        //     method: 'post',
-        //     url: 'https://mighty-coast-68940.herokuapp.com/api/user/create',
-        //     params: {
-        //         username: this.state.username,
-        //         studentid: this.state.studentid,
-        //         studentemail: this.state.studentemail,
-        //         password: this.state.password
-        //         'Accept': 'application/json',
-        //   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        //     }
-        // })
-        return await axios.post('https://mighty-coast-68940.herokuapp.com/api/user/create/', JSON.stringify({
+        await Api.post('/api/user/create', {
             username: this.state.username,
-                studentid: this.state.studentid,
-                studentemail: this.state.studentemail,
-                password: this.state.password
-        }));
+            studentid: this.state.studentid,
+            studentemail: this.state.studentemail,
+            password: this.state.password
+        });
     }
 
     handleChange(e) {
@@ -56,8 +38,8 @@ export default class SignUpPage extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-        const userData = await this.registerUser();
-        alert(userData.data);
+        await this.registerUser();
+
         this.props.func();
     }
 
@@ -79,9 +61,9 @@ export default class SignUpPage extends Component {
                         <Form.Control placeholder="e.g. 402123" value={this.state.studentid} onChange={this.handleChange}/>
                         </Form.Group>
 
-                        <Form.Group controlId="email">
+                        <Form.Group controlId="studentemail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" value={this.state.email} onChange={this.handleChange} />
+                        <Form.Control type="email" placeholder="Enter email" value={this.state.studentemail} onChange={this.handleChange} />
                         </Form.Group>
 
                         <Form.Group controlId="password">
