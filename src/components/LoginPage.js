@@ -6,6 +6,7 @@ import {
     Button,
     Form
 } from 'react-bootstrap';
+import Api from './Api';
 
 export default class LoginPage extends Component {
     constructor(props) {
@@ -23,14 +24,31 @@ export default class LoginPage extends Component {
         return (this.state.email.length > 0 && this.state.password.length > 0);
     }
 
+    async authenticateUser() {
+        const authData = await Api.post('/api/user/authenticate', {
+            studentemail: this.state.email,
+            password: this.state.password
+        });
+
+        return authData;
+    }
+
     handleChange(e) {
         this.setState({[e.target.id]: e.target.value});
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
-        alert('Submitted:' + this.state.email + ' password:' + this.state.password);
-        this.props.func();
+        const authData = await this.authenticateUser();
+        if(authData.data.message == 'no-studentemail') {
+            alert("there's no email like this");
+        } else if (authData.data.message == 'password-notmatched') {
+            alert("Email detected but password is wrong");
+        } else if(authData.status == 200) {
+            alert("Good to go");
+        }
+
+        //this.props.func();
     }
 
     render() {

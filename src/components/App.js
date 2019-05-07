@@ -8,8 +8,8 @@ export default class App extends Component {
         super(props);
         this.state = {
             showUserPage: false,
-            showLoginPage: false,
-            showSignUpPage: true
+            showLoginPage: true,
+            showSignUpPage: false
         }
 
         this.triggerLoginPage = this.triggerLoginPage.bind(this);
