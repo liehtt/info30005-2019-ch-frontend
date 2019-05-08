@@ -4,9 +4,6 @@ import "./custom.css";
 
 // child component of UserPage
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -17,6 +14,9 @@ export default class Header extends Component {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
+            <Nav.Link class="link" href="/api">
+                Dashboard
+            </Nav.Link>
             <Nav.Link class="link" href="/">
               Notifications
             </Nav.Link>

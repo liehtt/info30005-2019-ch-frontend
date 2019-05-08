@@ -8,8 +8,9 @@ export default class App extends Component {
         super(props);
         this.state = {
             showUserPage: false,
-            showLoginPage: true,
-            showSignUpPage: false
+            showLoginPage: false,
+            showSignUpPage: true,
+            userData: {}
         }
 
         this.triggerLoginPage = this.triggerLoginPage.bind(this);
@@ -25,17 +26,18 @@ export default class App extends Component {
         });
     }
 
-    triggerUserPage() {
+    triggerUserPage(userData) {
         this.setState({
             showLoginPage: false,
             showUserPage: true,
-            showSignUpPage: false
+            showSignUpPage: false,
+            userData: userData
         })
     }
 
     render() {
         if(this.state.showUserPage) {
-            return (<UserPage />);
+            return (<UserPage user={this.state.userData}/>);
         } else if(this.state.showLoginPage) {
             return (<LoginPage func={this.triggerUserPage} />);
         } else if(this.state.showSignUpPage) {
