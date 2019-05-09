@@ -19,7 +19,7 @@ export default class UserPage extends Component {
   render() {
     return (
       <div className="user-page">
-        <Header func={this.getProfile}/>
+        <Header func={this.getProfile} func2={this.props.func}/>
       </div>
     );
   }

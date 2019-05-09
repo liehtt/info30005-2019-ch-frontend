@@ -5,6 +5,9 @@ import {
     Button,
     Form
 } from 'react-bootstrap';
+import {
+    NavLink
+} from 'react-router-dom';
 import Api from "./Api";
 
 export default class SignUpPage extends Component {
@@ -38,7 +41,6 @@ export default class SignUpPage extends Component {
     async handleSubmit(e) {
         e.preventDefault();
         await this.registerUser();
-
         this.props.func();
     }
 
@@ -70,8 +72,8 @@ export default class SignUpPage extends Component {
                         <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
                         </Form.Group>
 
-                        <Button variant="primary" type="submit">
-                            Submit
+                        <Button variant="outline-dark" type="submit">
+                            Submit Form
                         </Button>
                         </Form>
                     </Card.Body>

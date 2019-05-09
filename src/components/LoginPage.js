@@ -3,21 +3,29 @@ import {
     Container,
     Card,
     Button,
-    Form
+    Form,
+    Row,
+    Col
 } from 'react-bootstrap';
+import {
+    NavLink,
+    Redirect
+} from 'react-router-dom';
 import Api from './Api';
-import { NavLink } from 'react-router-dom';
 
 export default class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            redirect: false
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.tryAuthenticate = this.tryAuthenticate.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+
     }
 
     validateForm() {
@@ -37,9 +45,9 @@ export default class LoginPage extends Component {
         this.setState({[e.target.id]: e.target.value});
     }
 
-    async handleSubmit(e) {
-        e.preventDefault();
+    async tryAuthenticate() {
         const auth = await this.authenticateUser();
+
         if(!auth.data.success) {
             alert("authentication-failed");
         } else {
@@ -48,7 +56,15 @@ export default class LoginPage extends Component {
         }
     }
 
+    handleClick() {
+        this.setState({redirect: true});
+    }
+
     render() {
+        console.log(this.state.redirect);
+        if(this.state.redirect) {
+            return <Redirect to='/register/user'/>
+        } else{
         return (
             <div className="login-page">
             <Container style={{ width:'25rem'}}>
@@ -66,14 +82,23 @@ export default class LoginPage extends Component {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
                     </Form.Group>
-                    <Button variant="info" type="submit" disabled={!this.validateForm()}>
+                    <Row>
+                    <Col>
+                    <Button variant="info" onClick={this.tryAuthenticate} disabled={!this.validateForm()}>
                         Submit
                     </Button>
+                    </Col>
+                    <Col md={{ offset: 3 }}>
+                    <Button variant="outline-info" onClick={this.handleClick}>
+                        RegisterUser
+                    </Button>
+                    </Col>
+                    </Row>
                     </Form>
                 </Card.Body>
                 </Card>
             </Container>
             </div>
-        );
+        );}
     }
 }
