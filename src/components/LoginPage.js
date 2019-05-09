@@ -38,14 +38,14 @@ export default class LoginPage extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-        const authData = await this.authenticateUser();
-        if(authData.data.message === 'no-studentemail') {
-            alert("there's no email like this");
-        } else if (authData.data.message === 'password-notmatched') {
-            alert("Email detected but password is wrong");
-        } else if(Object.keys(authData.data).length !== 0) {
+        const auth = await this.authenticateUser();
+        //console.log(auth.data);
+        //console.log(auth.authMessage.data);
+        if(!auth.data.success) {
+            alert("authentication-failed");
+        } else {
             alert("Good to go");
-            this.props.func(authData.data);
+            this.props.func();
         }
     }
 
