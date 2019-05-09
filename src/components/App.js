@@ -2,46 +2,24 @@ import React, {Component} from 'react';
 import UserPage from './UserPage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 export default class App extends Component {
+
     constructor(props) {
         super(props);
-        this.state = {
-            showUserPage: false,
-            showLoginPage: true,
-            showSignUpPage: false,
-            userData: {}
-        }
-
-        this.triggerLoginPage = this.triggerLoginPage.bind(this);
-        this.triggerUserPage = this.triggerUserPage.bind(this);
-
     }
-
-    triggerLoginPage() {
-        this.setState({
-            showLoginPage: true,
-            showUserPage: false,
-            showSignUpPage: false
-        });
-    }
-
-    triggerUserPage() {
-        this.setState({
-            showLoginPage: false,
-            showUserPage: true,
-            showSignUpPage: false,
-        })
-    }
-
     render() {
-        if(this.state.showUserPage) {
-            console.log(this.state.userData);
-            return (<UserPage user={this.state.userData}/>);
-        } else if(this.state.showLoginPage) {
-            return (<LoginPage func={this.triggerUserPage} />);
-        } else if(this.state.showSignUpPage) {
-            return (<SignUpPage func={this.triggerLoginPage}/>);
-        }
+        return (
+            <BrowserRouter>
+                <div>
+                    <Switch>
+                        <Route path='/' component={LoginPage} exact />
+                        <Route path='/register-user' component={SignUpPage} />
+                        <Route path='/user/profile/' component={UserPage} />
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        );
     }
 }

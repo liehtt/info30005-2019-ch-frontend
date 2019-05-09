@@ -6,6 +6,7 @@ import {
     Form
 } from 'react-bootstrap';
 import Api from './Api';
+import { NavLink } from 'react-router-dom';
 
 export default class LoginPage extends Component {
     constructor(props) {
@@ -39,8 +40,6 @@ export default class LoginPage extends Component {
     async handleSubmit(e) {
         e.preventDefault();
         const auth = await this.authenticateUser();
-        //console.log(auth.data);
-        //console.log(auth.authMessage.data);
         if(!auth.data.success) {
             alert("authentication-failed");
         } else {
