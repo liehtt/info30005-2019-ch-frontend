@@ -7,12 +7,7 @@ import { string } from "prop-types";
 
 // the parent component of userpage
 export default class UserPage extends Component {
-  state = {
-    // user: {
-    //   _id: ""
-    // },
-    clubs: []
-  };
+ 
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +24,7 @@ export default class UserPage extends Component {
   async componentDidMount() {
     const { data: user } = await Api.get("/api/user/profile");
     this.setState({ user });
-    const { data: clubs } = await axios.get(
-      "https://info30005-2019-ch.herokuapp.com/api/user/" +
+    const { data: clubs } = await Api.get("/api/user/" +
         this.state.user._id +
         "/clubsub"
     );

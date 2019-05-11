@@ -43,18 +43,13 @@ export default class BrowseClubPage extends Component {
       this.setState({ userClubs: userClubs.clubsSubscribed, allClubs });
 
       const userClubsSubscribed = user.clubsSubscribed;
-      console.log(userClubsSubscribed);
       const displayClubs = allClubs.filter(function(c) {
           return userClubsSubscribed.indexOf(c._id) === -1;
       })
-      console.log("calc display:", displayClubs);
       this.setState({ displayClubs });
     }
 
     render() {
-      console.log("user", this.state.userClubs);
-      console.log("all", this.state.allClubs);
-      console.log("filter", this.state.displayClubs);
       return (
         <div className="club-page">
           <Header func={this.getProfile} func2={this.props.func} />
