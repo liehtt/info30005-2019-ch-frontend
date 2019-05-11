@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import UserPage from './UserPage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
+import BrowseClubPage from './BrowseClubPage';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
@@ -52,6 +53,11 @@ export default class App extends Component {
                             !this.state.loggedIn ?
                             (<Redirect to='/'/>) :
                             (<UserPage {...props} func={this.unauthenticate}/>)
+                        )}/>
+                        <Route exact path='/clubs' render={(props) => (
+                            !this.state.loggedIn ?
+                            (<Redirect to='/'/>) :
+                            (<BrowseClubPage {...props} func={this.unauthenticate}/>)
                         )}/>
                     </Switch>
                 </div>

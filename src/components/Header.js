@@ -1,79 +1,55 @@
 import React, { Component } from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import "./custom.css";
-import Api from "./Api";
+import Api from './Api'
 
 // child component of UserPage
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { user: {} };
-    this.handleClick = this.handleClick.bind(this);
-  }
 
-  async componentDidMount() {
-    const user = await this.props.func();
-    this.setState({ user: user.data });
-  }
+    constructor(props) {
+        super(props);
+        this.state = {user: {}}
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-  async logOut() {
-    const log = await Api.get("/api/user/logout");
-    return log;
-  }
+    async componentDidMount() {
+        const user = await this.props.func();
+        this.setState({user: user.data});
+    }
 
-  async handleClick() {
-    const log = await this.logOut();
-    console.log(log.data);
-    this.props.func2();
-  }
+    async logOut() {
+        const log = await Api.get('/api/user/logout');
+        return log;
+    }
 
-  render() {
-    return (
-      <div>
-        <Navbar fixed="top" className="navbar" variant="dark" expand="lg">
-          <Navbar.Brand className="navbar-brand" href="/">
-            Clubhub
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <NavLink to="/" activeClassName="link">
-              DashBoard
-            </NavLink>
-            <NavLink to="/" activeClassName="link">
-              Notifications
-            </NavLink>
-            <NavLink to="/" activeClassName="link">
-              BrowseClubs
-            </NavLink>
-            <NavLink to="/" activeClassName="link">
-              BrowseEvents
-            </NavLink>
-            <NavLink to="/" activeClassName="link">
-              {this.state.user.username}
-            </NavLink>
-            <Button variant="outline-primary" onClick={this.handleClick}>
-              Log Out
-            </Button>
-          </Navbar.Collapse>
-        </Navbar>
-      </div>
-    );
-  }
+    async handleClick() {
+        const log = await this.logOut();
+        console.log(log.data);
+        this.props.func2();
+    }
+
+
+     render() {
+        return (
+          <div>
+            <Navbar fixed="top" className="navbar" variant="dark" expand="lg">
+              <Navbar.Brand className="navbar-brand" href="/">
+                Clubhub
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <NavLink to='/' activeClassName='link'>DashBoard</NavLink>
+                <NavLink to='/' activeClassName='link'>Notifications</NavLink>
+                <NavLink to='/clubs' activeClassName='link'>BrowseClubs</NavLink>
+                <NavLink to='/' activeClassName='link'>BrowseEvents</NavLink>
+                <NavLink to='/' activeClassName='link'>{this.state.user.username}</NavLink>
+                <Button variant='outline-primary' onClick={this.handleClick}>Log Out</Button>
+
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
+        )
+      }
 }
-//
-// <Nav.Link className="link" href="/api">
-//     Dashboard
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     Notifications
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     Browse Clubs
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     Browse Events
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     {this.state.user.username}
-// </Nav.Link>
+

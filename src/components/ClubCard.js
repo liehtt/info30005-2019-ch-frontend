@@ -1,21 +1,38 @@
 import React, { Component } from "react";
-import { Card, Col, Button, ListGroup } from "react-bootstrap";
+import {
+    Card, Col, Button, ListGroup
+} from "react-bootstrap";
 
-class ClubCard extends Component {
-  state = {};
+export default class ClubCard extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = { toggleClick: false };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({ toggleClick: true });
+    const clubId = this.props.thisClub._id;
+    this.props.addClub(clubId);
+  }
+
+  async componentDidMount() {}
 
   render() {
     const club = this.props.thisClub;
+    const user = this.props.user;
     return (
-      <div className="event-card">
-        <Col sm={4} class="col">
+      <div className="club-card">
+        <Col sm={4} className="col">
           <Card bg="light" style={{ width: "18rem" }}>
             <Card.Body>
-              <Card.Title>{club.name}</Card.Title>
+              <Card.Title>{club.clubname}</Card.Title>
               <Card.Body>
-                <div class="toggle-button">
+                <div className="toggle-button">
                   <Button variant="info" onClick={this.handleClick}>
-                    {this.state.toggleClick ? "Going" : "Register Event"}
+                    {this.state.toggleClick ? "Joined!" : "Join Club"}
                   </Button>
                 </div>
               </Card.Body>
@@ -27,4 +44,3 @@ class ClubCard extends Component {
   }
 }
 
-export default ClubCard;
