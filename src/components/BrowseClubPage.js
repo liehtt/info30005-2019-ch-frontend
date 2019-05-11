@@ -46,6 +46,7 @@ export default class BrowseClubPage extends Component {
       const displayClubs = allClubs.filter(function(c) {
           return userClubsSubscribed.indexOf(c._id) === -1;
       })
+      this.setState({ displayClubs });
     }
 
     render() {
