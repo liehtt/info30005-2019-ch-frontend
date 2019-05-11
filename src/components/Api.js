@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://mighty-coast-68940.herokuapp.com",
-    withCredentials: true
+  baseURL: "https://info30005-2019-ch.herokuapp.com",
+  withCredentials: true
 });
-//https://mighty-coast-68940.herokuapp.com
+//https://info30005-2019-ch.herokuapp.com
