@@ -29,8 +29,7 @@ export default class UserPage extends Component {
   async componentDidMount() {
     const { data: user } = await Api.get("/api/user/profile");
     this.setState({ user });
-    const { data: clubs } = await axios.get(
-      "https://info30005-2019-ch.herokuapp.com/api/user/" +
+    const { data: clubs } = await Api.get("/api/user/" +
         this.state.user._id +
         "/clubsub"
     );

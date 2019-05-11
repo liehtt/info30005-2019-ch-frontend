@@ -19,12 +19,16 @@ export default class LoginPage extends Component {
         this.state = {
             email: "",
             password: "",
-            redirect: false
+            redirect: false,
+            redirectRegClub: false,
+            redirectLogClub: false
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.tryAuthenticate = this.tryAuthenticate.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleClickRegClub = this.handleClickRegClub.bind(this);
+        this.handleClickLogClub = this.handleClickLogClub.bind(this);
 
     }
 
@@ -60,10 +64,21 @@ export default class LoginPage extends Component {
         this.setState({redirect: true});
     }
 
+    handleClickRegClub() {
+        this.setState({redirectRegClub: true});
+    }
+
+    handleClickLogClub() {
+        this.setState({redirectLogClub: true});
+    }
+
     render() {
-        console.log(this.state.redirect);
         if(this.state.redirect) {
             return <Redirect to='/register/user'/>
+        } else if (this.state.redirectRegClub){
+            return <Redirect to='/register/club' />
+        } else if (this.state.redirectLogClub){
+            return <Redirect to='/club/login' />
         } else{
         return (
             <div className="login-page">
@@ -91,6 +106,14 @@ export default class LoginPage extends Component {
                     <Col md={{ offset: 3 }}>
                     <Button variant="outline-info" onClick={this.handleClick}>
                         RegisterUser
+                    </Button>
+                    </Col>
+                    <Col>
+                    <Button variant="outline-info" onClick={this.handleClickRegClub}>
+                        RegisterClub
+                    </Button>
+                    <Button variant="outline-info" onClick={this.handleClickLogClub}>
+                        LoginClub
                     </Button>
                     </Col>
                     </Row>
