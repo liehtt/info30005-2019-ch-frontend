@@ -41,7 +41,7 @@ export default class Header extends Component {
               <Navbar.Collapse id="basic-navbar-nav">
                 <NavLink to='/' activeClassName='link'>DashBoard</NavLink>
                 <NavLink to='/' activeClassName='link'>Notifications</NavLink>
-                <NavLink to='/' activeClassName='link'>BrowseClubs</NavLink>
+                <NavLink to='/clubs' activeClassName='link'>BrowseClubs</NavLink>
                 <NavLink to='/' activeClassName='link'>BrowseEvents</NavLink>
                 <NavLink to='/' activeClassName='link'>{this.state.user.username}</NavLink>
                 <Button variant='outline-primary' onClick={this.handleClick}>Log Out</Button>
@@ -52,19 +52,3 @@ export default class Header extends Component {
         )
       }
 }
-//
-// <Nav.Link className="link" href="/api">
-//     Dashboard
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     Notifications
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     Browse Clubs
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     Browse Events
-// </Nav.Link>
-// <Nav.Link className="link" href="/">
-//     {this.state.user.username}
-// </Nav.Link>
