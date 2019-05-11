@@ -107,8 +107,6 @@ export default class LoginPage extends Component {
                     <Button variant="outline-info" onClick={this.handleClick}>
                         RegisterUser
                     </Button>
-                    </Col>
-                    <Col>
                     <Button variant="outline-info" onClick={this.handleClickRegClub}>
                         RegisterClub
                     </Button>
@@ -116,6 +114,7 @@ export default class LoginPage extends Component {
                         LoginClub
                     </Button>
                     </Col>
+                    
                     </Row>
                     </Form>
                 </Card.Body>

@@ -7,12 +7,7 @@ import { string } from "prop-types";
 
 // the parent component of userpage
 export default class UserPage extends Component {
-  state = {
-    // user: {
-    //   _id: ""
-    // },
-    clubs: []
-  };
+ 
   constructor(props) {
     super(props);
     this.state = {

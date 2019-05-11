@@ -26,15 +26,14 @@ export default class ClubPage extends Component {
 
     // renders header and user-content
     render() {
-        const club = this.getProfile();
         return (
             <div className="club-page">
                 <ClubHeader func={this.getProfile} func2={this.props.func} />
                 <h1>THIS IS CLUB PAGE</h1>
                 <h3>Description</h3>
-                <p>{club.description}</p>
+                <p>{this.state.club.description}</p>
                 <h3>Contact</h3>
-                <p>{club.contact}</p>
+                <p>{this.state.club.contact}</p>
             </div>
         );
     }

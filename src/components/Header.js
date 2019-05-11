@@ -25,7 +25,6 @@ export default class Header extends Component {
 
     async handleClick() {
         const log = await this.logOut();
-        console.log(log.data);
         this.props.func2();
     }
 
@@ -52,4 +51,3 @@ export default class Header extends Component {
         )
       }
 }
-
