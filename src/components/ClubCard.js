@@ -11,7 +11,7 @@ class ClubCard extends Component {
         <Col sm={4} class="col">
           <Card bg="light" style={{ width: "18rem" }}>
             <Card.Body>
-              <Card.Title>{club.clubname}</Card.Title>
+              <Card.Title>{club.name}</Card.Title>
               <Card.Body>
                 <div class="toggle-button">
                   <Button variant="info" onClick={this.handleClick}>

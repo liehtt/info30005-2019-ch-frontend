@@ -13,13 +13,13 @@ class ClubList extends Component {
   }
 
   render() {
-    console.log(this.props.userClubs);
+    console.log("CL: ", this.props.userClubs);
     return (
       <div className="event-container">
         <h3 className="container-title">{this.props.title}</h3>
         <Container class="container-fluid">
           <Row>
-            {this.state.list.map(e => {
+            {this.props.userClubs.map(e => {
               return <ClubCard thisClub={e} />;
             })}
           </Row>

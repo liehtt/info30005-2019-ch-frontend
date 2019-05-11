@@ -47,9 +47,6 @@ export default class UserContent extends Component {
           <ClubList title="Your Clubs" userClubs={this.props.clubs} />
           {/* <EventList title="Upcoming Events" func={this.fetchEvents} /> */}
         </div>
-        <div class="user-content">
-          {/* <EventList title="Registered Events" func={this.fetchFiltered}/> */}
-        </div>
       </div>
     );
   }

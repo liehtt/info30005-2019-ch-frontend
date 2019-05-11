@@ -30,13 +30,11 @@ export default class UserPage extends Component {
         this.state.user._id +
         "/clubsub"
     );
-    this.setState({ clubs });
-    console.log("mounting: ", clubs);
+    this.setState({ clubs: clubs.clubsSubscribed });
   }
 
   // renders header and user-content
   render() {
-    console.log("rendering:", this.state.clubs);
     return (
       <div className="user-page">
         <Header func={this.getProfile} func2={this.props.func} />
