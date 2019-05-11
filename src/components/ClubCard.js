@@ -43,3 +43,4 @@ export default class ClubCard extends Component {
     );
   }
 }
+
