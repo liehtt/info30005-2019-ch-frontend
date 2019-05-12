@@ -10,6 +10,11 @@ Start the app by typing "npm start" without the quotes in the terminal.
 
 # Functionalities
 
+### Login details
+
+User login: 
+Club login: 
+
 ## Registration/Login
 
 * [User registration](https://quiet-inlet-43391.herokuapp.com/register/user)
@@ -70,7 +75,9 @@ The Browse Clubs page displays a list of clubs which the user has not subscribed
 | /api/user/addClub    | sessionUser | Club
 |                      | addClubToUser 
 
-* [Display individual club information](/)
+* [Display individual club information](https://quiet-inlet-43391.herokuapp.com/club/profile)
+
+After a club admin has logged in, they can view the information associated with their own club (i.e. description, contact details)
 
 | Routes            | Controllers | Models |
 | ----------------- | ----------- | ------
@@ -90,7 +97,6 @@ This logs the user out after a session. The user is redirected to the login page
 
 1. Clicking header links that are not specifically mentioned under Functionalities will redirect back to the user's home page
 2. At this point, refreshing or using the back button while navigating the application may trigger some weird behaviour
-3.  LoginPage/LandingPage can redirect to RegisterClub, RegisterUser, LogInClub
-4. Register Club is not fully functional -- clicking submit during club registration will redirect you to LogInClub, same with RegisterUser redirecting you to LandingPage
-5. LogInClub only has access to RegisterClub, so if you want to go back to landing page, you have to manually change the URL in the browser.
+3. Register Club is not fully functional -- clicking submit during club registration will redirect you to LogInClub, same with RegisterUser redirecting you to LandingPage
+4. LogInClub only has access to RegisterClub, so if you want to go back to landing page, you have to manually change the URL in the browser.
 
