@@ -15,12 +15,10 @@ User login:
 > email: sakura@gmail.com <br>
 > pw: sakura01
 
-Club
+Club Login
 
 > email: chair@gmail.com <br>
 > pw: chair01
-
-Club login:
 
 # Functionalities
 
