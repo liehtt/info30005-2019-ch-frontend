@@ -8,12 +8,21 @@ Start the app by typing "npm start" without the quotes in the terminal.
 # Access to React App
  https://quiet-inlet-43391.herokuapp.com/
 
+# Test login details
+
+User login:
+
+> user: sakura@gmail.com <br>
+> pw: sakura01
+
+Club
+
+> club: chair@gmail.com <br>
+> pw: chair01
+
+Club login:
+
 # Functionalities
-
-### Login details
-
-User login: 
-Club login: 
 
 ## Registration/Login
 
@@ -55,6 +64,8 @@ This allows a club administrator to log in as a pre-existing club entity using a
 
 ## Post-login
 
+The following functionalities are only accessible after logging in as a user or a club. If the URLs are accessed prior to logging in, you will be redirected to the default login page. 
+
 * [Display subscribed clubs](https://quiet-inlet-43391.herokuapp.com/user/profile)
 
 This is the user's default home-page, which displays clubs that the user has subscribed to. 
@@ -67,7 +78,7 @@ This is the user's default home-page, which displays clubs that the user has sub
 
 * [Browse and subscribe to clubs](https://quiet-inlet-43391.herokuapp.com/clubs)
 
-The Browse Clubs page displays a list of clubs which the user has not subscribed to. The user can click "join club" in order to subscribe to a club (the button will display "joined!" upon successful subscription). When returning to their [home page](https://quiet-inlet-43391.herokuapp.com/user/profile), any clubs that have been subscribed to will be displayed there. Once a club has been joined, 
+The Browse Clubs page displays a list of clubs which the user has not subscribed to. The user can click "join club" in order to subscribe to a club (the button will display "joined!" upon successful subscription). When returning to their [home page](https://quiet-inlet-43391.herokuapp.com/user/profile), any clubs that have been subscribed to will be displayed there. Once a club has been joined, it will no longer be displayed in the Browse Clubs page. 
 
 | Routes               | Controllers | Models |
 | ------------------   | ----------- | ------
@@ -77,7 +88,7 @@ The Browse Clubs page displays a list of clubs which the user has not subscribed
 
 * [Display individual club information](https://quiet-inlet-43391.herokuapp.com/club/profile)
 
-After a club admin has logged in, they can view the information associated with their own club (i.e. description, contact details)
+After a club admin has logged in, they can view the information associated with their own club (i.e. description, contact details).
 
 | Routes            | Controllers | Models |
 | ----------------- | ----------- | ------
@@ -97,6 +108,6 @@ This logs the user out after a session. The user is redirected to the login page
 
 1. Clicking header links that are not specifically mentioned under Functionalities will redirect back to the user's home page
 2. At this point, refreshing or using the back button while navigating the application may trigger some weird behaviour
-3. Register Club is not fully functional -- clicking submit during club registration will redirect you to LogInClub, same with RegisterUser redirecting you to LandingPage
+3. Register Club is not fully functional -- clicking submit during club registration will redirect you to the club login, same with RegisterUser redirecting you to LandingPage
 4. LogInClub only has access to RegisterClub, so if you want to go back to landing page, you have to manually change the URL in the browser.
 
