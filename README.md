@@ -88,9 +88,9 @@ This logs the user out after a session. The user is redirected to the login page
 
 # Notes & known issues
 
-1. Clicking any of the headers that is not specifically mention in Functionalities, would just be redirected to IndividualPage 
+1. Clicking header links that are not specifically mentioned under Functionalities will redirect back to the user's home page
 2. At this point, refreshing or using the back button while navigating the application may trigger some weird behaviour
 3.  LoginPage/LandingPage can redirect to RegisterClub, RegisterUser, LogInClub
-4. Register Club is not fully functional -- clicking Nothing in RegisterClub, accept clicking submit will redirect you to LogInClub, same with RegisterUser redirecting you to LandingPage
+4. Register Club is not fully functional -- clicking submit during club registration will redirect you to LogInClub, same with RegisterUser redirecting you to LandingPage
 5. LogInClub only has access to RegisterClub, so if you want to go back to landing page, you have to manually change the URL in the browser.
 
