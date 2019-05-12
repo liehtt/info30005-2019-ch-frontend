@@ -12,12 +12,12 @@ Start the app by typing "npm start" without the quotes in the terminal.
 
 User login:
 
-> user: sakura@gmail.com <br>
+> email: sakura@gmail.com <br>
 > pw: sakura01
 
 Club
 
-> club: chair@gmail.com <br>
+> email: chair@gmail.com <br>
 > pw: chair01
 
 Club login:
