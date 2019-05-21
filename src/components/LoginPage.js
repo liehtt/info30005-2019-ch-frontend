@@ -90,7 +90,7 @@ export default class LoginPage extends Component {
                 <source src={video} type="video/mp4"/>
             </video>
 
-            <h1 class="login-brand">Clubhub</h1>
+            {/*<h1 class="login-brand">Clubhub</h1>*/}
 
             <Container style={{ width:'25rem'}}>
                 <div className ="logo-container">
@@ -112,13 +112,13 @@ export default class LoginPage extends Component {
                         <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
                     </Form.Group>
                     <Row>
-                    <Col>
-                    <Button variant="info" onClick={this.tryAuthenticate} disabled={!this.validateForm()}>
+                    <Col sm={12} lg={6}>
+                    <Button id="custom-purple-filled-btn" variant="info" onClick={this.tryAuthenticate} disabled={!this.validateForm() } size="lg" block>
                         Submit
                     </Button>
                     </Col>
-                    <Col md={{offset: 3}}>
-                    <Button className="user-register" variant="outline-info" onClick={this.handleClick}>
+                    <Col sm={12} lg={6}>
+                    <Button className="user-register" id="custom-purple-outline-btn" variant="outline-info" onClick={this.handleClick}  size="lg" block>
                         New User?
                     </Button>
                     </Col>
@@ -126,18 +126,21 @@ export default class LoginPage extends Component {
                     </Form>
                 </Card.Body>
                 </Card>
-                <Container className="club-register-button">
-                <Card>
-                <Col md={{ offset: 1 }}>
-                    <Button style={{ margin:'5px'}} variant="outline-info" onClick={this.handleClickRegClub}>
-                        Register Club
-                    </Button>
-                    <Button variant="outline-info" onClick={this.handleClickLogClub}>
-                        Club Login
-                    </Button>
-                </Col>
-                </Card>
-                </Container>
+                <Button id="clubButton" variant="outline-primary" size="lg" block onClick={this.handleClickLogClub}>Club Login</Button>
+                {/*<Container className="club-register-button">*/}
+                {/*<Card>*/}
+                {/*<Col md={{ offset: 1 }}>*/}
+                    {/*<Button style={{ margin:'5px'}} variant="outline-info" onClick={this.handleClickRegClub}>*/}
+                        {/*Register Club*/}
+                    {/*</Button>*/}
+                    {/*<Button variant="outline-info" onClick={this.handleClickLogClub}>*/}
+                        {/*Club Login*/}
+                    {/*</Button>*/}
+                {/*</Col>*/}
+
+                {/*</Card>*/}
+
+                {/*</Container>*/}
             </Container>
             </div>
         );}
