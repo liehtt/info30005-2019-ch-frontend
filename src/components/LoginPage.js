@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import logo from '../images/logo2.svg' // relative path to image
 import {
     Container,
     Card,
@@ -82,7 +83,12 @@ export default class LoginPage extends Component {
         } else{
         return (
             <div className="login-page">
+
             <Container style={{ width:'25rem'}}>
+                <div className ="logo-container">
+                    <img src = {logo} alt="logo" width="200px" />
+                </div>
+
                 <Card>
                 <Card.Body>
                     <Card.Title>Login</Card.Title>

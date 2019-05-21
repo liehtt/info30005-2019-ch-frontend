@@ -81,3 +81,8 @@ body {
     text-align: left;
     padding-right: 16px;
 }
+
+.logo-container{
+    text-align: center;
+    margin: 2rem;
+}
