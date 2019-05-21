@@ -88,6 +88,7 @@ body {
     right: auto;
     text-align: center;
     margin: 2rem;
+    border: 1rem;
 }
 
 #loginPageVideo {

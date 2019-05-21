@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../images/logo2.svg' // relative path to image
+import logo from '../images/border-logo.svg' // relative path to image
 import video from '../clubhub-vid.mp4'
 import {
     Container,
@@ -89,7 +89,7 @@ export default class LoginPage extends Component {
             </video>
             <Container style={{ width:'25rem'}}>
                 <div className ="logo-container">
-                    <img src = {logo} alt="logo" width="200px" />
+                    <img src = {logo} alt="logo" width="150px" />
                 </div>
 
                 <Card id="login-card">
