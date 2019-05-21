@@ -97,6 +97,6 @@ body {
     font-weight: lighter;
 }
 
-.user-club-card .club-card {
-    padding-bottom: 10px;
+.user-club-card, .club-card {
+    padding-bottom: 30px;
 }
