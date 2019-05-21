@@ -51,7 +51,7 @@ export default class BrowseClubPage extends Component {
 
     render() {
       return (
-        <div className="club-page">
+        <div className="user-content">
           <Header func={this.getProfile} func2={this.props.func} />
           <ClubList
             title="Browse Clubs"

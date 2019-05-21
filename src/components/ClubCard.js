@@ -26,7 +26,7 @@ export default class ClubCard extends Component {
     return (
       <div className="club-card">
         <Col sm={4} className="col">
-          <Card bg="light" style={{ width: "18rem" }}>
+          <Card className="club-card" bg="light" style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Title>{club.clubname}</Card.Title>
               <Card.Body>

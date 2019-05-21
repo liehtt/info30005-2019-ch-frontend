@@ -81,3 +81,22 @@ body {
     text-align: left;
     padding-right: 16px;
 }
+
+.outline-info {
+    margin-left: 30px;
+}
+
+.club-register-button {
+    padding-top: 10px;
+}
+
+.login-brand {
+    font-family: 'Montserrat Subrayada', sans-serif !important;
+    font-size: 40px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.user-club-card .club-card {
+    padding-bottom: 10px;
+}

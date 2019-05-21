@@ -5,7 +5,8 @@ import {
     Button,
     Form,
     Row,
-    Col
+    Col,
+    Image
 } from 'react-bootstrap';
 import {
     NavLink,
@@ -55,7 +56,7 @@ export default class LoginPage extends Component {
         if(!auth.data.success) {
             alert("authentication-failed");
         } else {
-            alert("Good to go");
+            alert("Your login was successful!");
             this.props.func();
         }
     }
@@ -82,6 +83,7 @@ export default class LoginPage extends Component {
         } else{
         return (
             <div className="login-page">
+            <h1 class="login-brand">Clubhub</h1>
             <Container style={{ width:'25rem'}}>
                 <Card>
                 <Card.Body>
@@ -103,22 +105,27 @@ export default class LoginPage extends Component {
                         Submit
                     </Button>
                     </Col>
-                    <Col md={{ offset: 3 }}>
-                    <Button variant="outline-info" onClick={this.handleClick}>
-                        RegisterUser
-                    </Button>
-                    <Button variant="outline-info" onClick={this.handleClickRegClub}>
-                        RegisterClub
-                    </Button>
-                    <Button variant="outline-info" onClick={this.handleClickLogClub}>
-                        LoginClub
+                    <Col md={{offset: 3}}>
+                    <Button className="user-register" variant="outline-info" onClick={this.handleClick}>
+                        New User?
                     </Button>
                     </Col>
-                    
                     </Row>
                     </Form>
                 </Card.Body>
                 </Card>
+                <Container className="club-register-button">
+                <Card>
+                <Col md={{ offset: 1 }}>
+                    <Button style={{ margin:'5px'}} variant="outline-info" onClick={this.handleClickRegClub}>
+                        Register Club
+                    </Button>
+                    <Button variant="outline-info" onClick={this.handleClickLogClub}>
+                        Club Login
+                    </Button>
+                </Col>
+                </Card>
+                </Container>
             </Container>
             </div>
         );}

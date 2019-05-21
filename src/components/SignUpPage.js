@@ -47,10 +47,10 @@ export default class SignUpPage extends Component {
     render() {
         return (
             <div className="sign-up">
-                <Container style={{ width:'50rem'}}>
+                <Container style={{ width:'25rem'}}>
                     <Card>
                     <Card.Body>
-                    <Card.Title>Register User</Card.Title>
+                    <Card.Title>Register New User</Card.Title>
                         <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="username">
                         <Form.Label>Username</Form.Label>
