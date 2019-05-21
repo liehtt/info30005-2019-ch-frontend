@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../images/logo2.svg' // relative path to image
+import video from '../clubhub-vid.mp4'
 import {
     Container,
     Card,
@@ -83,13 +84,15 @@ export default class LoginPage extends Component {
         } else{
         return (
             <div className="login-page">
-
+            <video autoPlay muted loop id="loginPageVideo">
+                <source src={video} type="video/mp4"/>
+            </video>
             <Container style={{ width:'25rem'}}>
                 <div className ="logo-container">
                     <img src = {logo} alt="logo" width="200px" />
                 </div>
 
-                <Card>
+                <Card id="login-card">
                 <Card.Body>
                     <Card.Title>Login</Card.Title>
                     <Form onSubmit={this.handleSubmit}>
