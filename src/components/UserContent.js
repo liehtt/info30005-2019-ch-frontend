@@ -16,11 +16,15 @@ export default class UserContent extends Component {
       <div>
         <div class="user-content">
           <ClubList title="Your Clubs" clubs={this.props.clubs} str="user"/>
+          <EventList title="Upcoming Events" 
         </div>
       </div>
     );
   }
 }
+
+
+
 
 // ========= UNUSED ========= //
 // async fetchEvents() {
