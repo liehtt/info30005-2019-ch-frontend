@@ -117,13 +117,13 @@ body {
 #clubButton:hover{
    background-color: white;
     border: 2px solid white;
-    color: #aaaae2;
+    color: #402263;
 }
 
 #custom-purple-filled-btn{
-    background-color: #aaaae2;
-    color: white;
-    border: 2px solid #aaaae2;
+    background-color: #402263;
+    color: #e1cccf ;
+    border: 2px solid #402263;
     margin: 3px 0 3px;
 }
 
@@ -131,12 +131,13 @@ body {
     background-color: #402263;
     color: white;
     border: 2px solid #402263;
+
 }
 
 #custom-purple-outline-btn{
     background-color: white;
-    color: #e1ccff;
-    border: 2px solid #e1ccff;
+    color: #402263;
+    border: 2px solid #402263;
     margin: 3px 0 3px;
 }
 

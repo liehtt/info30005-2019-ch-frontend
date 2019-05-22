@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../images/border-logo.svg' // relative path to image
-import video from '../clubhub-vid.mp4'
+import video from '../lowlightvideo.mp4'
 import {
     Container,
     Card,
