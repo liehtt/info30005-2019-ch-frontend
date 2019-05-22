@@ -38,10 +38,10 @@ export default class Header extends Component {
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-                <NavLink to='/' activeClassName='link'>DashBoard</NavLink>
+                <NavLink to='/' activeClassName='link'>Dashboard</NavLink>
                 <NavLink to='/' activeClassName='link'>Notifications</NavLink>
-                <NavLink to='/clubs' activeClassName='link'>BrowseClubs</NavLink>
-                <NavLink to='/' activeClassName='link'>BrowseEvents</NavLink>
+                <NavLink to='/clubs' activeClassName='link'>Browse Clubs</NavLink>
+                <NavLink to='/' activeClassName='link'>Browse Events</NavLink>
                 <NavLink to='/' activeClassName='link'>{this.state.user.username}</NavLink>
                 <Button variant='outline-primary' onClick={this.handleClick}>Log Out</Button>
 
