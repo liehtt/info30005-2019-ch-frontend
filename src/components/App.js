@@ -6,6 +6,7 @@ import BrowseClubPage from './BrowseClubPage';
 import ClubLoginPage from './ClubLoginPage';
 import ClubSignUpPage from './ClubSignUpPage';
 import ClubPage from './ClubPage';
+import EventForm from './EventForm';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
@@ -89,6 +90,11 @@ export default class App extends Component {
                             !this.state.clubLoggedIn ?
                             (<Redirect to='/club/login'/>) :
                             (<ClubPage {...props} func={this.clubUnauthenticate}/>)
+                        )}/>
+                        <Route exact path='/club/addEvent' render={(props) => (
+                            !this.state.clubLoggedIn ?
+                            (<Redirect to='/club/login'/>) :
+                            (<EventForm {...props} />)
                         )}/>
                         <Route exact path='/clubs' render={(props) => (
                             !this.state.loggedIn ?
