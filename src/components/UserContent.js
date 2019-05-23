@@ -24,12 +24,12 @@ export default class UserContent extends Component {
           <Row>
               <Col sm={12} lg={8} className="user-club-col">
                   <div className="user-content">
-                      <ClubList title="Upcoming Events" clubs={this.props.clubs} str="user"/>
+                      <EventList title="Upcoming Events" events={this.props.events} />
                   </div>
               </Col>
               <Col sm={12} lg={4} className="user-event-col">
                   <div className="user-content">
-                      <EventList title="Upcoming Events" events={this.props.events} />
+                      <ClubList title="Clubs Joined" clubs={this.props.clubs} str="user"/>
                   </div>
               </Col>
           </Row>

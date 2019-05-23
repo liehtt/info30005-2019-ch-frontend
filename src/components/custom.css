@@ -194,5 +194,11 @@ body {
 
 .user-club-card, .club-card {
     padding-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
 
+}
+
+.event-list-card{
+background-color: white;
 }

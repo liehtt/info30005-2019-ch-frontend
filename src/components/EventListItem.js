@@ -6,17 +6,18 @@ class EventListItem extends Component {
   componentDidMount() {}
 
   render() {
+      const event = this.props.thisEvent;
     return (
-      <a href="#" className="list-group-item list-group-item-action active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
+      <a href="#" className="list-group-item list-group-item-action event-list-card">
+        <div className="d-flex w-100 justify-content-between">
+          <h5 className="mb-1">{event.title}</h5>
           <small>3 days</small>
         </div>
-        <p class="mb-1">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
+        <p className="mb-1">
+            Description: {event.description}
         </p>
-        <small>Donec id elit non mi porta.</small>
+        {/*<small>Club: {event.club.clubname}</small>*/}
+        <small>Venue: {event.venue}</small>
       </a>
     );
   }
