@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import "./custom.css";
 import Api from './Api'
 import logo from '../images/border-logo.svg'
+import turtleImg from "../images/turtle_user.png"
 
 // child component of UserPage
 export default class Header extends Component {
@@ -62,6 +63,7 @@ export default class Header extends Component {
                           <NavLink to='/' activeClassName='link'>Browse Events</NavLink>
                       </Nav>
                       <Nav className="ml-auto">
+                          {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}
                           <NavLink to='/' activeClassName='link'> Hi, {this.state.user.username}</NavLink>
                       </Nav>
                       <Nav className="ml-auto">
