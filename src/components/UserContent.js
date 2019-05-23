@@ -1,31 +1,26 @@
 import React, { Component } from "react";
 import ClubList from "./ClubList";
-
+import EventList from "./EventList";
 
 // child component of UserPage
 export default class UserContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        clubs: []
+      clubs: []
     };
   }
 
   render() {
     return (
-      <div>
-        <div class="user-content">
-          <ClubList title="Your Clubs" clubs={this.props.clubs} str="user"/>
-          <EventList title="Upcoming Events" 
-        </div>
+      <div class="user-content">
+        <ClubList title="Your Clubs" clubs={this.props.clubs} str="user" />
+        <EventList title="Upcoming Events" events={this.props.events} />
       </div>
     );
   }
 }
-
-
-
-
+//<EventList title="Upcoming Events" events={this.props.events} />
 // ========= UNUSED ========= //
 // async fetchEvents() {
 //     const events = await axios.get("https://info30005-2019-ch.herokuapp.com/api/events");

@@ -28,8 +28,9 @@ export default class UserPage extends Component {
     );
 
     const { data: events } = await Api.get(
-      "/api/user/" + this.state.user_id + "/eventsub"
+      "/api/user/" + this.state.user_id + "/events"
     );
+
     this.setState({
       clubs: clubs.clubsSubscribed,
       events: events.eventsSubscribed
@@ -44,7 +45,7 @@ export default class UserPage extends Component {
         <UserContent
           user={this.state.user}
           clubs={this.state.clubs}
-          events={this.state.evnts}
+          events={this.state.events}
         />
       </div>
     );
