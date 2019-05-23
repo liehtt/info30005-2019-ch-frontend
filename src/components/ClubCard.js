@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import {
-    Card, Col, Button, ListGroup
-} from "react-bootstrap";
+import { Card, Col, Button, ListGroup } from "react-bootstrap";
 
 export default class ClubCard extends Component {
-
   constructor(props) {
     super(props);
 
@@ -18,15 +15,24 @@ export default class ClubCard extends Component {
     this.props.addClub(clubId);
   }
 
-  async componentDidMount() {}
+  async componentDidMount() {
+    const img =
+      "https://picsum.photos/id/" +
+      Math.floor(Math.random() * 200).toString() +
+      "/200/200";
+
+    this.setState({ imgSource: img });
+  }
 
   render() {
     const club = this.props.thisClub;
     const user = this.props.user;
+
     return (
       <div className="club-card">
         <Col sm={4} className="col">
           <Card className="club-card" bg="light" style={{ width: "18rem" }}>
+            <img src={this.state.imgSource} className="card-image-top" />
             <Card.Body>
               <Card.Title>{club.clubname}</Card.Title>
               <Card.Body>

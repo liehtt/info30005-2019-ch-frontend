@@ -68,9 +68,6 @@ export default class ClubList extends Component {
                 </div>
             );
         }
-
     }
+  }
 }
-
-
-
