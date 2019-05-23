@@ -1,5 +1,18 @@
 import React, { Component } from "react";
 import ClubHeader from "./ClubHeader";
+import {
+    Container,
+    Card,
+    Button,
+    Form,
+    Row,
+    Col,
+    Image
+} from 'react-bootstrap';
+import {
+    NavLink,
+    Redirect
+} from 'react-router-dom';
 import Api from "./Api";
 
 export default class ClubPage extends Component {
@@ -8,14 +21,22 @@ export default class ClubPage extends Component {
         super(props);
         this.state = {
             club: {},
-            members: []
+            event: [],
+            members: [],
+            redirect: false
         };
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     async componentDidMount() {
         const { data: club } = await Api.get("/api/club/profile");
         this.setState({ club });
-
+        const events = await Api.post('api/club/getEventsAdded', {
+            clubId: this.state.club._id
+        });
+        console.log(events.data.eventList);
+        this.setState({event: events.data.eventList});
     }
 
     async getProfile() {
@@ -23,9 +44,21 @@ export default class ClubPage extends Component {
         return club;
     }
 
+    handleClick() {
+        this.setState({redirect: true});
+    }
+
 
     // renders header and user-content
     render() {
+        if(this.state.redirect) {
+            const club = this.state.club;
+            return <Redirect to={{
+            pathname: '/club/addEvent',
+            state: { club: this.state.club }
+        }}
+/>
+        } else {
         return (
             <div className="club-page">
                 <ClubHeader func={this.getProfile} func2={this.props.func} />
@@ -34,7 +67,11 @@ export default class ClubPage extends Component {
                 <p>{this.state.club.description}</p>
                 <h3>Contact</h3>
                 <p>{this.state.club.contact}</p>
+                <h3>Events</h3>
+                {this.state.event.map((e) => (<p>{e.title}</p>))}
+                <Button variant="outline-primary" onClick={this.handleClick}>Create an Event</Button>
             </div>
         );
+        }
     }
 }
