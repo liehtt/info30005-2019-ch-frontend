@@ -5,7 +5,6 @@ body {
 
 .navbar {
      background-color: black;
-     opacity: 0.9;
      font-family: 'Raleway', sans-serif;
      position: fixed;
  }
@@ -33,15 +32,24 @@ body {
 
 .user-content {
     overflow-x: auto;
-    margin: 3em;
-    border-width: 5px;
-    border-style: double;
-    border-color: #aaaae2;
-    border-radius: 15px;
+    margin: 3rem 1rem 3rem;
+    /*border-width: 5px;*/
+    /*border-style: double;*/
+    /*border-color: #aaaae2;*/
+    /*border-radius: 15px;*/
+}
+
+.user-club-col{
+    background-color: #aaaae2;
+    max-height: 100%;
+}
+
+.user-event-col{
+    background-color: #f2f2f2;
 }
 
 .event-container {
-    margin: 1em;
+    /*margin: 1em;*/
 }
 
 .event-card {
@@ -71,12 +79,12 @@ body {
 .container-title {
     /*margin-top: -33px;*/
     margin-left: 5px;
-    padding-bottom: 10px;
-    background: white;
+    padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: light;
+    font-weight: bold;
     z-index: 1000;
 }
 

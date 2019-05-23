@@ -50,7 +50,7 @@ export default class Header extends Component {
               {/*</Navbar.Collapse>*/}
             {/*</Navbar>*/}
 
-              <Navbar className="navbar" fixed="top" collapseOnSelect expand="lg" >
+              <Navbar className="navbar" variant="light" fixed="top" collapseOnSelect expand="lg" >
                   <Navbar.Brand href="#home">
                       <img className="navbar-brand" src={logo} alt="Clubhub Brand Logo"/>
                   </Navbar.Brand>
@@ -70,7 +70,7 @@ export default class Header extends Component {
                           <Button className="custom-white-outline-btn" onClick={this.handleClick}>Log Out</Button>
                       </Nav>
                   </Navbar.Collapse>
-              </Navbar>;
+              </Navbar>
           </div>
         )
       }

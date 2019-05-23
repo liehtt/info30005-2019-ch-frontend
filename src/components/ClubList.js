@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import ClubCard from "./ClubCard";
 import UserClubCard from "./UserClubCard"
 import {
-    Container,
+    Container, Nav, Navbar,
     Row
 } from "react-bootstrap";
+import {NavLink} from "react-router-dom";
 
 export default class ClubList extends Component {
 
@@ -43,8 +44,18 @@ export default class ClubList extends Component {
             return (
                 <div className="club-container">
                 <h3 className="container-title">{this.props.title}</h3>
+
+
                 <Container className="container-fluid">
+
                 <Row>
+                    {/*<Container>*/}
+                        {/*<Navbar className="list-container-heading" fixed="top" collapseOnSelect expand="lg" >*/}
+                            {/*<Nav className="mx-auto">*/}
+                                {/*{this.props.title}*/}
+                            {/*</Nav>*/}
+                        {/*</Navbar>*/}
+                    {/*</Container>*/}
                   {this.props.clubs.map(e => {
                     return (
                       <UserClubCard

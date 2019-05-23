@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ClubList from "./ClubList";
+import {Col} from "react-bootstrap";
+import Row from "react-bootstrap/Row";
 
 
 // child component of UserPage
@@ -14,9 +16,19 @@ export default class UserContent extends Component {
   render() {
     return (
       <div>
-        <div class="user-content">
-          <ClubList title="Your Clubs" clubs={this.props.clubs} str="user"/>
-        </div>
+          <Row>
+              <Col sm={12} lg={8} className="user-club-col">
+                  <div className="user-content">
+                      <ClubList title="Upcoming Events" clubs={this.props.clubs} str="user"/>
+                  </div>
+              </Col>
+              <Col sm={12} lg={4} className="user-event-col">
+                  <div className="user-content">
+                      <ClubList title="Your Clubs" clubs={this.props.clubs} str="user"/>
+                  </div>
+              </Col>
+          </Row>
+
       </div>
     );
   }
