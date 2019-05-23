@@ -9,6 +9,8 @@ import {
     NavLink
 } from 'react-router-dom';
 import Api from "./Api";
+import video from "../lowlightvideo.mp4";
+import logo from "../images/border-logo.svg";
 
 export default class SignUpPage extends Component {
     constructor(props) {
@@ -47,7 +49,14 @@ export default class SignUpPage extends Component {
     render() {
         return (
             <div className="sign-up">
+                <video autoPlay muted loop id="loginPageVideo">
+                    <source src={video} type="video/mp4"/>
+                </video>
+
                 <Container style={{ width:'25rem'}}>
+                    <div className ="logo-container">
+                        <img src = {logo} alt="logo" width="150px" />
+                    </div>
                     <Card>
                     <Card.Body>
                     <Card.Title>Register New User</Card.Title>
@@ -72,7 +81,7 @@ export default class SignUpPage extends Component {
                         <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
                         </Form.Group>
 
-                        <Button variant="outline-dark" type="submit">
+                        <Button className="custom-purple-filled-btn"  variant="outline-dark" type="submit" size="lg" block>
                             Submit Form
                         </Button>
                         </Form>

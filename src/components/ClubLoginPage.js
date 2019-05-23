@@ -12,6 +12,8 @@ import {
     Redirect
 } from 'react-router-dom';
 import Api from './Api';
+import video from "../lowlightvideo.mp4";
+import logo from "../images/border-logo.svg";
 
 export default class ClubLoginPage extends Component {
     constructor(props) {
@@ -68,7 +70,15 @@ export default class ClubLoginPage extends Component {
         } else {
             return (
                 <div className="club-login-page">
+                    <video autoPlay muted loop id="loginPageVideo">
+                        <source src={video} type="video/mp4"/>
+                    </video>
                     <Container style={{width: '25rem'}}>
+
+                        <div className ="logo-container">
+                            <img src = {logo} alt="logo" width="150px" />
+                        </div>
+
                         <Card>
                             <Card.Body>
                                 <Card.Title>Club Login</Card.Title>
@@ -86,15 +96,15 @@ export default class ClubLoginPage extends Component {
                                                       onChange={this.handleChange}/>
                                     </Form.Group>
                                     <Row>
-                                        <Col>
-                                            <Button variant="info" onClick={this.tryAuthenticateClub}
-                                                    disabled={!this.validateForm()}>
+                                        <Col sm={12} lg={6}>
+                                            <Button className="custom-purple-filled-btn" variant="info" onClick={this.tryAuthenticateClub}
+                                                    disabled={!this.validateForm()} size="lg" block>
                                                 Submit
                                             </Button>
                                         </Col>
-                                        <Col md={{offset: 3}}>
-                                            <Button variant="outline-info" onClick={this.handleClick}>
-                                                Register Club
+                                        <Col sm={12} lg={6}>
+                                            <Button className="custom-purple-outline-btn" variant="outline-info" onClick={this.handleClick} size="lg" block>
+                                                New Club?
                                             </Button>
                                         </Col>
                                     </Row>
