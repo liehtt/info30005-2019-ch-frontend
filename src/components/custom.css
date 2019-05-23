@@ -196,7 +196,15 @@ body {
     padding-bottom: 30px;
     text-align: center;
     text-transform: capitalize;
+    transition: 200ms;
 
+}
+
+.club-card:hover{
+    transform: scale(1.05);
+}
+.user-club-card:hover{
+    transform: scale(1.1);
 }
 
 .event-list-card{
