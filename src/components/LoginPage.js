@@ -113,12 +113,12 @@ export default class LoginPage extends Component {
                     </Form.Group>
                     <Row>
                     <Col sm={12} lg={6}>
-                    <Button id="custom-purple-filled-btn" variant="info" onClick={this.tryAuthenticate} disabled={!this.validateForm() } size="lg" block>
+                    <Button className="custom-purple-filled-btn" variant="info" onClick={this.tryAuthenticate} disabled={!this.validateForm() } size="lg" block>
                         Submit
                     </Button>
                     </Col>
                     <Col sm={12} lg={6}>
-                    <Button className="user-register" id="custom-purple-outline-btn" variant="outline-info" onClick={this.handleClick}  size="lg" block>
+                    <Button className="custom-purple-outline-btn" variant="outline-info" onClick={this.handleClick}  size="lg" block>
                         New User?
                     </Button>
                     </Col>

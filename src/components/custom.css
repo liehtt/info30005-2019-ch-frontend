@@ -123,46 +123,47 @@ body {
     color: #402263;
 }
 
-#custom-purple-filled-btn{
-    background-color: #402263;
-    color: #e1cccf ;
-    border: 2px solid #402263;
-    margin: 3px 0 3px;
+.custom-purple-filled-btn{
+    background-color: #402263 !important;
+    color: #e1cccf !important;
+    border: 2px solid #402263 !important;
+    margin: 3px 0 3px !important;
 }
 
-#custom-purple-filled-btn:hover{
-    background-color: #402263;
-    color: white;
-    border: 2px solid #402263;
+.custom-purple-filled-btn:hover{
+    background-color: #402263 !important;
+    color: white !important;
+    border: 2px solid #402263 !important;
 
-}
-
-#custom-purple-outline-btn{
-    background-color: white;
-    color: #402263;
-    border: 2px solid #402263;
-    margin: 3px 0 3px;
 }
 
 .custom-purple-outline-btn{
+    background-color: white !important;
+    color: #402263 !important;
+    border: 2px solid #402263 !important;
+    margin: 3px 0 3px !important;
+}
+.custom-purple-outline-btn:hover {
+    background-color: #402263 !important;
+    color: white !important;
+    border: 2px solid #402263 !important;
+}
+.custom-white-outline-btn{
     background-color:transparent !important;
     color: white !important;
     border: 2px solid white !important;
-    margin: 3px 0 3px;
+    margin: 3px 0 3px !important;
 }
 
-.custom-purple-outline-btn:hover{
+.custom-white-outline-btn:hover{
     background-color:white !important;
     color: #402263 !important;
     border: 2px solid white !important;
-    margin: 3px 0 3px;
+    margin: 3px 0 3px !important;
 }
 
-#custom-purple-outline-btn:hover{
-    background-color: #402263;
-    color: white;
-    border: 2px solid #402263;
-}
+
+
 
 .outline-info {
     margin-left: 30px;

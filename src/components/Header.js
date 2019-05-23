@@ -65,7 +65,7 @@ export default class Header extends Component {
                           <NavLink to='/' activeClassName='link'> Hi, {this.state.user.username}</NavLink>
                       </Nav>
                       <Nav className="ml-auto">
-                          <Button className="custom-purple-outline-btn" onClick={this.handleClick}>Log Out</Button>
+                          <Button className="custom-white-outline-btn" onClick={this.handleClick}>Log Out</Button>
                       </Nav>
                   </Navbar.Collapse>
               </Navbar>;
