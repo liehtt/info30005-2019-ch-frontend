@@ -11,6 +11,7 @@ export default class UserPage extends Component {
     super(props);
     this.state = {
       clubs: [],
+      events: [],
       user: {}
     };
   }
@@ -28,17 +29,20 @@ export default class UserPage extends Component {
     );
 
     const { data: events } = await Api.get(
-      "/api/user/" + this.state.user_id + "/events"
+      "/api/user/" + this.state.user._id + "/events"
     );
 
     this.setState({
       clubs: clubs.clubsSubscribed,
-      events: events.eventsSubscribed
+      events: events
     });
   }
 
   // renders header and user-content
   render() {
+    console.log("ARRAY TEST");
+    console.log(this.state.clubs);
+    console.log(this.state.events);
     return (
       <div className="user-page">
         <Header func={this.getProfile} func2={this.props.func} />

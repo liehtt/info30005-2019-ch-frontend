@@ -18,10 +18,15 @@ class EventList extends Component {
   render() {
     console.log(this.state.list);
     return (
-      <div className="list-group">
-        {this.state.list.map(e => {
-          return <EventListItem event={e} />;
-        })}
+      <div className="club-container">
+        <h3 className="container-title">{this.props.title}</h3>
+        <Container className="container-fluid">
+          <Row>
+            {this.props.events.map(e => {
+              return <EventListItem thisEvent={e} />;
+            })}
+          </Row>
+        </Container>
       </div>
     );
   }
