@@ -37,7 +37,7 @@ export default class ClubCard extends Component {
               <Card.Title>{club.clubname}</Card.Title>
               <Card.Body>
                 <div className="toggle-button">
-                  <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick}>
+                  <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                     {this.state.toggleClick ? "Joined!" : "Join Club"}
                   </Button>
                 </div>
