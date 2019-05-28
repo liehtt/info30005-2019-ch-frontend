@@ -21,12 +21,14 @@ export default class ClubLoginPage extends Component {
         this.state = {
             email: "",
             password: "",
-            redirect: false
+            redirect: false,
+            redirectLogUser: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.tryAuthenticateClub = this.tryAuthenticateClub.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleClickLogUser = this.handleClickLogUser.bind(this);
 
     }
 
@@ -63,10 +65,16 @@ export default class ClubLoginPage extends Component {
         this.setState({redirect: true});
     }
 
+    handleClickLogUser() {
+      this.setState({redirectLogUser: true});
+    }
+
 
     render() {
         if(this.state.redirect) {
                 return <Redirect to='/register/club'/>
+        } else if(this.state.redirectLogUser) {
+            return <Redirect to='/' />
         } else {
             return (
                 <div className="club-login-page">
@@ -111,6 +119,9 @@ export default class ClubLoginPage extends Component {
                                 </Form>
                             </Card.Body>
                         </Card>
+                        <Button id="userButton" variant="outline-primary" size="lg" block onClick={this.handleClickLogUser}>
+                          User Login
+                        </Button>
                     </Container>
                 </div>
             );

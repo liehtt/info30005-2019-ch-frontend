@@ -6,7 +6,8 @@ import {
     Form
 } from 'react-bootstrap';
 import {
-    NavLink
+    NavLink,
+    Redirect
 } from 'react-router-dom';
 import Api from "./Api";
 import video from "../lowlightvideo.mp4";
@@ -20,11 +21,13 @@ export default class ClubSignUpPage extends Component {
             description: "",
             clubemail: "",
             password: "",
-            contact: ""
+            contact: "",
+            redirectLogClub: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     async registerClub() {
@@ -42,6 +45,10 @@ export default class ClubSignUpPage extends Component {
         this.setState({[e.target.id]: e.target.value});
     }
 
+    handleClick() {
+      this.setState({redirectLogClub: true});
+    }
+
     async handleSubmit(e) {
         e.preventDefault();
         await this.registerClub();
@@ -49,6 +56,9 @@ export default class ClubSignUpPage extends Component {
     }
 
     render() {
+        if(this.state.redirectLogClub) {
+          return <Redirect to='/club/login' />
+        } else {
         return (
             <div className="sign-up">
                 <video autoPlay muted loop id="loginPageVideo">
@@ -91,11 +101,15 @@ export default class ClubSignUpPage extends Component {
                                 <Button className="custom-purple-filled-btn"  variant="outline-dark" type="submit" size="lg" block>
                                     Submit Form
                                 </Button>
+                                <Button className="custom-purple-filled-btn"  variant="outline-dark" onClick={this.handleClick} size="lg" block>
+                                    Back
+                                </Button>
                             </Form>
                         </Card.Body>
                     </Card>
                 </Container>
             </div>
         )
+      }
     }
 }

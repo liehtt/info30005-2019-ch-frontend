@@ -130,6 +130,22 @@ body {
     border: 2px solid white;
     color: #402263;
 }
+
+#userButton{
+    position: relative;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 20px 0 20px;
+
+}
+
+#userButton:hover{
+  background-color: white;
+  border: 2px solid white;
+  color: #402263;
+}
 .user-turtle-img{
     width: 50px;
     height: 50px;
