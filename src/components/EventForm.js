@@ -3,7 +3,9 @@ import {
     Container,
     Card,
     Button,
-    Form
+    Form,
+    Col,
+    Row
 } from 'react-bootstrap';
 import {
     NavLink,
@@ -19,11 +21,13 @@ export default class EventForm extends Component {
             description: "",
             startTime: "",
             venue: "",
-            redirect: false
+            redirect: false,
+            redirectClubPage: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     async registerEvent() {
@@ -42,6 +46,10 @@ export default class EventForm extends Component {
         this.setState({[e.target.id]: e.target.value});
     }
 
+    handleClick() {
+      this.setState({redirectClubPage: true});
+    }
+
     async handleSubmit(e) {
         e.preventDefault();
         await this.registerEvent();
@@ -51,13 +59,15 @@ export default class EventForm extends Component {
     render() {
         if(this.state.redirect) {
             return <Redirect to='/club/profile' />
-        } else {
+        } else if(this.state.redirectClubPage) {
+          return <Redirect to='/club/profile' / >
+        }else {
         return (
             <div className="sign-up">
                 <Container style={{ width:'50rem'}}>
                     <Card>
                         <Card.Body>
-                            <Card.Title>Register Event</Card.Title>
+                            <Card.Title>Create Event</Card.Title>
                             <Form onSubmit={this.handleSubmit}>
                                 <Form.Group controlId="title">
                                     <Form.Label>Event Title</Form.Label>
@@ -78,10 +88,18 @@ export default class EventForm extends Component {
                                     <Form.Control placeholder="e.g. Union House" value={this.state.venue} onChange={this.handleChange} />
                                 </Form.Group>
 
-
+                                <Row>
+                                <Col>
                                 <Button variant="outline-dark" type="submit">
                                     Submit Form
                                 </Button>
+                                </Col>
+                                <Col  md={{offset: 7 }}>        
+                                <Button variant="outline-dark" onClick={this.handleClick}>
+                                    Back
+                                </Button>
+                                </Col>
+                                </Row>
                             </Form>
                         </Card.Body>
                     </Card>

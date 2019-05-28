@@ -99,7 +99,7 @@ export default class LoginPage extends Component {
 
                 <Card id="login-card">
                 <Card.Body>
-                    <Card.Title>Login</Card.Title>
+                    <Card.Title>User Login</Card.Title>
                     <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="email">
                         <Form.Label>Email address</Form.Label>
@@ -126,7 +126,9 @@ export default class LoginPage extends Component {
                     </Form>
                 </Card.Body>
                 </Card>
-                <Button id="clubButton" variant="outline-primary" size="lg" block onClick={this.handleClickLogClub}>Club Login</Button>
+                <Button id="clubButton" variant="outline-primary" size="lg" block onClick={this.handleClickLogClub}>
+                  Club Login
+                </Button>
                 {/*<Container className="club-register-button">*/}
                 {/*<Card>*/}
                 {/*<Col md={{ offset: 1 }}>*/}

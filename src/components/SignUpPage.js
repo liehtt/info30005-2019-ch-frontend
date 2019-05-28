@@ -6,6 +6,7 @@ import {
     Form
 } from 'react-bootstrap';
 import {
+    Redirect,
     NavLink
 } from 'react-router-dom';
 import Api from "./Api";
@@ -19,11 +20,13 @@ export default class SignUpPage extends Component {
             username: "",
             studentid: "",
             studentemail: "",
-            password: ""
+            password: "",
+            toLogin: false
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     async registerUser() {
@@ -40,6 +43,10 @@ export default class SignUpPage extends Component {
         this.setState({[e.target.id]: e.target.value});
     }
 
+    handleClick() {
+      this.setState({toLogin: true});
+    }
+
     async handleSubmit(e) {
         e.preventDefault();
         await this.registerUser();
@@ -47,6 +54,9 @@ export default class SignUpPage extends Component {
     }
 
     render() {
+      if(this.state.toLogin) {
+        return (<Redirect to='/' />)
+      } else {
         return (
             <div className="sign-up">
                 <video autoPlay muted loop id="loginPageVideo">
@@ -84,11 +94,15 @@ export default class SignUpPage extends Component {
                         <Button className="custom-purple-filled-btn"  variant="outline-dark" type="submit" size="lg" block>
                             Submit Form
                         </Button>
+                        <Button className="custom-purple-filled-btn"  variant="outline-dark" onClick={this.handleClick} size="lg" block>
+                            Back
+                        </Button>
                         </Form>
                     </Card.Body>
                     </Card>
                 </Container>
             </div>
         )
+      }
     }
 }
