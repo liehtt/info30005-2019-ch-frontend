@@ -87,8 +87,8 @@ export default class ClubLoginPage extends Component {
                             <img src = {logo} alt="logo" width="150px" />
                         </div>
 
-                        <Card>
-                            <Card.Body>
+                        <Card className="login-card">
+                            <Card.Body >
                                 <Card.Title>Club Login</Card.Title>
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlId="email">

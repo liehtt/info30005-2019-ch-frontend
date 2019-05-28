@@ -111,8 +111,13 @@ body {
     min-height: 100%;
 }
 
-#login-card {
-    position: relative;
+.login-card{
+    position: relative !important;
+    transition: 200ms !important;
+}
+
+.login-card:hover{
+    transform: scale(1.05) !important;
 }
 
 #clubButton{
@@ -122,6 +127,7 @@ body {
     border-radius: 3px;
     padding: 5px 10px;
     margin: 20px 0 20px;
+    transition: 200ms;
 
 }
 
@@ -129,6 +135,7 @@ body {
    background-color: white;
     border: 2px solid white;
     color: #402263;
+    transform: scale(1.05);
 }
 
 #userButton{
@@ -138,6 +145,7 @@ body {
     border-radius: 3px;
     padding: 5px 10px;
     margin: 20px 0 20px;
+    transition: 200ms;
 
 }
 
@@ -145,6 +153,7 @@ body {
   background-color: white;
   border: 2px solid white;
   color: #402263;
+  transform: scale(1.05);
 }
 .user-turtle-img{
     width: 50px;
@@ -156,13 +165,14 @@ body {
     color: #e1cccf !important;
     border: 2px solid #402263 !important;
     margin: 3px 0 3px !important;
+    transition: 200ms;
 }
 
 .custom-purple-filled-btn:hover{
     background-color: #402263 !important;
     color: white !important;
     border: 2px solid #402263 !important;
-
+    transform: scale(1.05);
 }
 
 .custom-purple-outline-btn{
@@ -170,17 +180,21 @@ body {
     color: #402263 !important;
     border: 2px solid #402263 !important;
     margin: 3px 0 3px !important;
+    transition: 200ms;
 }
 .custom-purple-outline-btn:hover {
     background-color: #402263 !important;
     color: white !important;
     border: 2px solid #402263 !important;
+    transform: scale(1.05);
 }
 .custom-white-outline-btn{
     background-color:transparent !important;
     color: white !important;
     border: 2px solid white !important;
     margin: 3px 0 3px !important;
+    transition: 200ms;
+
 }
 
 .custom-white-outline-btn:hover{
@@ -188,6 +202,8 @@ body {
     color: #402263 !important;
     border: 2px solid white !important;
     margin: 3px 0 3px !important;
+    transform: scale(1.05);
+
 }
 
 

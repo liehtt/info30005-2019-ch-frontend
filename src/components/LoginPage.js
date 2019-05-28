@@ -97,7 +97,7 @@ export default class LoginPage extends Component {
                     <img src = {logo} alt="logo" width="150px" />
                 </div>
 
-                <Card id="login-card">
+                <Card className="login-card">
                 <Card.Body>
                     <Card.Title>User Login</Card.Title>
                     <Form onSubmit={this.handleSubmit}>
