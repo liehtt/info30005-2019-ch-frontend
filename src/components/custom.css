@@ -256,11 +256,12 @@ background-color: white;
 .club-page .header-text{
     font-size: 6vw;
     position: absolute;
-    font-family: 'Raleway-bold', sans-serif;
+    font-family: 'Raleway', sans-serif;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: capitalize;
+    font-weight: 900;
 }
 
 .club-page .welcome-text{
