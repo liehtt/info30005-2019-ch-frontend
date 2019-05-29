@@ -14,6 +14,8 @@ import {
     Redirect
 } from 'react-router-dom';
 import Api from "./Api";
+import headingImg from '../images/img-bg.jpg';// relative path to image
+
 
 export default class ClubPage extends Component {
 
@@ -37,6 +39,13 @@ export default class ClubPage extends Component {
         });
         console.log(events.data.eventList);
         this.setState({event: events.data.eventList});
+
+        const img =
+            "https://picsum.photos/id/" +
+            Math.floor(Math.random() * 200).toString() +
+            "/200/200";
+
+        this.setState({ imgSource: img });
     }
 
     async getProfile() {
@@ -62,6 +71,13 @@ export default class ClubPage extends Component {
         return (
             <div className="club-page">
                 <ClubHeader func={this.getProfile} func2={this.props.func} />
+                <div className="header-div">
+                    <img src = {headingImg} className="header-image"/>
+                    <h1 className="welcome-text">Hello</h1>
+                    <h1 className="header-text">{this.state.club.clubname}</h1>
+
+                </div>
+
                 <h1>THIS IS CLUB PAGE</h1>
                 <h3>Description</h3>
                 <p>{this.state.club.description}</p>

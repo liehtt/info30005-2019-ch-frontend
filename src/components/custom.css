@@ -243,3 +243,37 @@ body {
 background-color: white;
     text-transform: capitalize;
 }
+
+
+/*CLUB PAGE*/
+.club-page .header-div{
+
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.club-page .header-text{
+    font-size: 6vw;
+    position: absolute;
+    font-family: 'Raleway-bold', sans-serif;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+}
+
+.club-page .welcome-text{
+    font-size: 4vw;
+    position: absolute;
+    font-family: 'Pacifico', sans-serif;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.club-page .header-image{
+   width: 100%;
+}
+
+
