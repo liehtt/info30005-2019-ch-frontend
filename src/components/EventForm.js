@@ -97,13 +97,13 @@ export default class EventForm extends Component {
                                 </Form.Group>
 
                                 <Row>
-                                <Col>
-                                <Button variant="outline-dark" type="submit">
+                                <Col  sm={12} lg={6}>
+                                <Button className="custom-purple-filled-btn" variant="info" block type="submit">
                                     Submit Form
                                 </Button>
                                 </Col>
-                                <Col  md={{offset: 7 }}>        
-                                <Button variant="outline-dark" onClick={this.handleClick}>
+                                <Col  sm={12} lg={6}>
+                                <Button className="custom-purple-outline-btn" variant="outline-info" block onClick={this.handleClick}>
                                     Back
                                 </Button>
                                 </Col>
