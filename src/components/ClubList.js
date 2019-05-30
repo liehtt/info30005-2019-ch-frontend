@@ -48,7 +48,7 @@ export default class ClubList extends Component {
 
                 <Container className="container-fluid">
 
-                <Row>
+                <Row className="club-list-row">
                     {/*<Container>*/}
                         {/*<Navbar className="list-container-heading" fixed="top" collapseOnSelect expand="lg" >*/}
                             {/*<Nav className="mx-auto">*/}

@@ -13,9 +13,9 @@ export default class UserClubCard extends Component {
   render() {
     const club = this.props.thisClub;
     return (
-      <div className="user-club-card">
+      <div>
         <Col sm={4} className="col">
-          <Card bg="light" style={{ width: "18rem" }}>
+          <Card bg="light" className="user-club-card">
             <Card.Body>
               <Card.Title>{club.clubname}</Card.Title>
             </Card.Body>
