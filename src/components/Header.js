@@ -34,23 +34,7 @@ export default class Header extends Component {
      render() {
         return (
           <div>
-            {/*<Navbar fixed="top" className="navbar" variant="dark" expand="lg">*/}
-              {/*<Navbar.Brand  href="/">*/}
-                {/*<img className="navbar-brand" src={logo} alt="Clubhub Brand Logo"/>*/}
-              {/*</Navbar.Brand>*/}
-              {/*<Navbar.Toggle aria-controls="basic-navbar-nav" />*/}
-              {/*<Navbar.Collapse id="basic-navbar-nav">*/}
-               {/*<NavLink to='/' activeClassName='link'>Dashboard</NavLink>*/}
-                {/*<NavLink to='/' activeClassName='link'>Notifications</NavLink>*/}
-                {/*<NavLink to='/clubs' activeClassName='link'>Browse Clubs</NavLink>*/}
-                {/*<NavLink to='/' activeClassName='link'>Browse Events</NavLink>*/}
-                {/*<NavLink to='/' activeClassName='link'>{this.state.user.username}</NavLink>*/}
-                {/*<Button variant='outline-primary' onClick={this.handleClick}>Log Out</Button>*/}
-
-              {/*</Navbar.Collapse>*/}
-            {/*</Navbar>*/}
-
-              <Navbar className="navbar" variant="light" fixed="top" collapseOnSelect expand="lg" >
+              <Navbar className="navbar" variant="dark" fixed="top" collapseOnSelect expand="lg" >
                   <Navbar.Brand href="#home">
                       <img className="navbar-brand" src={logo} alt="Clubhub Brand Logo"/>
                   </Navbar.Brand>
@@ -64,9 +48,7 @@ export default class Header extends Component {
                       </Nav>
                       <Nav className="ml-auto">
                           {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}
-                          <NavLink to='/' activeClassName='link'> Hi, {this.state.user.username}</NavLink>
-                      </Nav>
-                      <Nav className="ml-auto">
+                          <Navbar.Text to='/' activeClassName='link'> <a> Hi, {this.state.user.username}</a></Navbar.Text>
                           <Button className="custom-white-outline-btn" onClick={this.handleClick}>Log Out</Button>
                       </Nav>
                   </Navbar.Collapse>

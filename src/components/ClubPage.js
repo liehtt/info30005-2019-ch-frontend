@@ -75,17 +75,17 @@ export default class ClubPage extends Component {
                     <img src = {headingImg} className="header-image"/>
                     <h1 className="welcome-text">Hello</h1>
                     <h1 className="header-text">{this.state.club.clubname}</h1>
+                    <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Create an Event</Button>
 
                 </div>
 
-                <h1>THIS IS CLUB PAGE</h1>
                 <h3>Description</h3>
                 <p>{this.state.club.description}</p>
                 <h3>Contact</h3>
                 <p>{this.state.club.contact}</p>
                 <h3>Events</h3>
-                {this.state.event.map((e) => (<p>{e.title}</p>))}
-                <Button variant="outline-primary" onClick={this.handleClick}>Create an Event</Button>
+                {this.state.event.map((e) => (<Card>{e.title}</Card>))}
+
             </div>
         );
         }

@@ -3,6 +3,7 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 import "./custom.css";
 import Api from './Api'
+import logo from '../images/border-logo.svg'
 
 export default class ClubHeader extends Component {
 
@@ -31,23 +32,27 @@ export default class ClubHeader extends Component {
 
      render() {
         return (
-          <div>
-            <Navbar fixed="top" className="navbar" variant="dark" expand="lg">
-              <Navbar.Brand className="navbar-brand" href="/">
-                Clubhub
-              </Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <NavLink to='/club/login' activeClassName='link'>DashBoard</NavLink>
-                <NavLink to='/club/login' activeClassName='link'>Members</NavLink>
-                <NavLink to='/club/login' activeClassName='link'>CreateEvent</NavLink>
-                <NavLink to='/club/login' activeClassName='link'>EventsCreated</NavLink>
-                <NavLink to='/club/login' activeClassName='link'>{this.state.club.clubname}</NavLink>
-                <Button variant='outline-primary' onClick={this.handleClick}>Log Out</Button>
+            <div>
+                <Navbar className="navbar" variant="dark" fixed="top" collapseOnSelect expand="lg" >
+                    <Navbar.Brand href="#home">
+                        <img className="navbar-brand" src={logo} alt="Clubhub Brand Logo"/>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav>
+                            <NavLink to='/club/profile' activeClassName='link'>Dashboard</NavLink>
+                            <NavLink to='/' activeClassName='link'>Events</NavLink>
+                            <NavLink to='/clubs' activeClassName='link'>Members</NavLink>
 
-              </Navbar.Collapse>
-            </Navbar>
-          </div>
+                        </Nav>
+                        <Nav className="ml-auto">
+                            {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}
+                            <Navbar.Text to='/' activeClassName='link'> <a> Hi, {this.state.club.clubname}</a></Navbar.Text>
+                            <Button className="custom-white-outline-btn" onClick={this.handleClick}>Log Out</Button>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
         )
       }
 }

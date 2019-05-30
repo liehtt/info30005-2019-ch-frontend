@@ -12,6 +12,9 @@ import {
     Redirect
 } from 'react-router-dom';
 import Api from "./Api";
+import bgImg from '../images/bg-bluetint.jpg';
+import ClubHeader from "./ClubPage";
+// relative path to image
 
 export default class EventForm extends Component {
     constructor(props) {
@@ -60,10 +63,15 @@ export default class EventForm extends Component {
         if(this.state.redirect) {
             return <Redirect to='/club/profile' />
         } else if(this.state.redirectClubPage) {
-          return <Redirect to='/club/profile' / >
+            return <Redirect to='/club/profile' />
         }else {
         return (
-            <div className="sign-up">
+            <div className="create-event-page">
+                {/*<ClubHeader func={this.getProfile} func2={this.props.func} />*/}
+                <img src = {bgImg} className="bg-full-img" alt="background image"/>
+                <div>
+                    <h1 className="title">Lets create an Event!</h1>
+                </div>
                 <Container style={{ width:'50rem'}}>
                     <Card>
                         <Card.Body>
