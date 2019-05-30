@@ -34,7 +34,7 @@ body {
 
 .user-content {
     overflow-x: auto;
-    margin: 3rem 1rem 3rem;
+    margin: 4rem 1rem 3rem;
     /*border-width: 5px;*/
     /*border-style: double;*/
     /*border-color: #aaaae2;*/
@@ -66,6 +66,9 @@ body {
 }
 
 .club-list-row{
+    justify-content: center;
+}
+.event-list-row{
     justify-content: center;
 }
 
@@ -103,6 +106,48 @@ body {
 }
 
 
+.user-club-card, .club-card {
+    margin: 10px 0 10px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: 200ms;
+    width: 300px;
+    box-shadow: 0 2px #aaaae2;
+}
+
+.club-card:hover{
+    transform: scale(1.05);
+}
+.user-club-card:hover{
+    transform: scale(1.1);
+}
+
+.no-clubs-to-join .msg{
+    padding: 20px 0 0 ;
+    font-family: Pacifico, sans-serif;
+    font-size: 2vw;
+    color: gray;
+}
+
+.no-clubs-yet .msg{
+    padding: 50px 0 0;
+    font-family: Pacifico, sans-serif;
+    font-size: 2vw;
+    color: #aaaae2;
+}
+
+.no-events-yet .msg{
+    padding: 50px 0 0;
+    font-family: Pacifico, sans-serif;
+    font-size: 2vw;
+    color: #f2f2f2;
+}
+
+
+
+
+/************** Login **********/
+
 .logo-container{
     position:relative;
     top: 0;
@@ -128,6 +173,8 @@ body {
 .login-card:hover{
     transform: scale(1.05) !important;
 }
+
+/************** Buttons ****************/
 
 #clubButton{
     position: relative;
@@ -224,32 +271,6 @@ body {
 
 .club-register-button {
     padding-top: 10px;
-}
-
-.login-brand {
-    font-family: 'Montserrat Subrayada', sans-serif !important;
-    font-size: 40px;
-    text-align: center;
-    font-weight: lighter;
-}
-
-.user-club-card, .club-card {
-    margin: 10px 0 10px;
-    text-align: center;
-    text-transform: capitalize;
-    transition: 200ms;
-    width: 300px;
-    box-shadow: 0 2px #aaaae2;
-
-
-
-}
-
-.club-card:hover{
-    transform: scale(1.05);
-}
-.user-club-card:hover{
-    transform: scale(1.1);
 }
 
 .event-list-card{

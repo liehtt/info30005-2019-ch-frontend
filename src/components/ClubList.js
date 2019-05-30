@@ -12,11 +12,56 @@ export default class ClubList extends Component {
     constructor(props) {
         super(props);
         this.state = {list: []};
+
+        this.getClubCards = this.getClubCards.bind(this);
+        this.getUserClubCards = this.getUserClubCards.bind(this);
     }
 
     componentDidMount() {
         const list = this.props.userClubs;
         this.setState({ list });
+    }
+
+    getClubCards(){
+        const clubs = this.props.clubs;
+        if(clubs.length !== 0 ){
+            this.props.clubs.map(e => {
+                return (
+                    <ClubCard
+                        thisClub={e}
+                        addClub={this.props.addClub}
+                        user={this.props.user}
+                    />
+                );
+            })
+        }
+        else
+            return(
+                <div className="no-clubs-to-join">
+                    <h1  className="msg">Looks like you've joined all clubs already! You social bumble bee!</h1>
+                </div>
+
+            );
+    }
+
+    getUserClubCards(){
+
+        const clubs = this.props.clubs;
+        if(clubs.length !== 0 ){
+            return (clubs.map(e => {
+                return (
+                    <UserClubCard
+                        thisClub={e}
+                    />
+                );
+            }))
+        }
+        else
+            return(
+                <div className="no-clubs-yet">
+                    <p  className="msg">Looks like you haven't joined any clubs yet!</p>
+                </div>
+            );
     }
 
     render() {
@@ -25,17 +70,9 @@ export default class ClubList extends Component {
             return (
                 <div className="club-container">
                 <h3 className="container-title">{this.props.title}</h3>
-                <Container className="container-fluid">
-                <Row>
-                  {this.props.clubs.map(e => {
-                    return (
-                      <ClubCard
-                        thisClub={e}
-                        addClub={this.props.addClub}
-                        user={this.props.user}
-                      />
-                    );
-                  })}
+                <Container className="browse-container-fluid">
+                <Row className="club-list-row">
+                  {this.getClubCards()}
                 </Row>
                 </Container>
                 </div>
@@ -49,20 +86,7 @@ export default class ClubList extends Component {
                 <Container className="container-fluid">
 
                 <Row className="club-list-row">
-                    {/*<Container>*/}
-                        {/*<Navbar className="list-container-heading" fixed="top" collapseOnSelect expand="lg" >*/}
-                            {/*<Nav className="mx-auto">*/}
-                                {/*{this.props.title}*/}
-                            {/*</Nav>*/}
-                        {/*</Navbar>*/}
-                    {/*</Container>*/}
-                  {this.props.clubs.map(e => {
-                    return (
-                      <UserClubCard
-                        thisClub={e}
-                      />
-                    );
-                  })}
+                    {this.getUserClubCards()}
                 </Row>
                 </Container>
                 </div>

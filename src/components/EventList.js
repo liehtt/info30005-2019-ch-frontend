@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EventListItem from "./EventListItem";
 import { Container, Row } from "react-bootstrap";
+import UserClubCard from "./ClubList";
 
 class EventList extends Component {
   state = {};
@@ -8,6 +9,8 @@ class EventList extends Component {
   constructor(props) {
     super(props);
     this.state = { list: [] };
+
+    this.getEventCards = this.getEventCards.bind(this);
   }
 
   componentDidMount() {
@@ -15,16 +18,30 @@ class EventList extends Component {
     this.setState({ list });
   }
 
+  getEventCards(){
+
+    const events = this.props.events;
+    if(events.length !== 0 ){
+      return (this.props.events.map(e => {
+        return <EventListItem thisEvent={e} />;
+      }))
+    }
+    else
+      return(
+          <div className="no-events-yet">
+            <p  className="msg">Looks like you haven't signed up for any events yet!</p>
+          </div>
+      );
+  }
+
   render() {
     console.log(this.state.list);
     return (
       <div className="club-container">
         <h3 className="container-title">{this.props.title}</h3>
-        <Container className="container-fluid">
-          <Row>
-            {this.props.events.map(e => {
-              return <EventListItem thisEvent={e} />;
-            })}
+        <Container className="event-container-fluid">
+          <Row className="event-list-row">
+            {this.getEventCards()}
           </Row>
         </Container>
       </div>
