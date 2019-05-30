@@ -12,7 +12,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import Api from "./Api";
-import bgImg from '../images/bg-bluetint.jpg';
+import bgImg from '../images/img-bg.jpg';
 import ClubHeader from "./ClubPage";
 // relative path to image
 
@@ -72,7 +72,7 @@ export default class EventForm extends Component {
                 <div>
                     <h1 className="title">Lets create an Event!</h1>
                 </div>
-                <Container style={{ width:'50rem'}}>
+                <Container style={{ 'width':'70%'}}>
                     <Card>
                         <Card.Body>
                             <Card.Title>Create Event</Card.Title>
