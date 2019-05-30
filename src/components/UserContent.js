@@ -3,8 +3,10 @@ import ClubList from "./ClubList";
 
 import EventList from "./EventList";
 
-import {Col} from "react-bootstrap";
+import {Button, Col} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
+import headingImg from "../images/img-bg.jpg";
+import Redirect from "react-router-dom/es/Redirect";
 
 
 
@@ -15,13 +17,19 @@ export default class UserContent extends Component {
     this.state = {
       clubs: []
     };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+   handleClick(){
+      return (<Redirect to='/clubs'/>);
   }
 
   render() {
     return (
 
       <div>
-          <Row>
+          <Row className="user-content-row">
               <Col sm={12} lg={8} className="user-club-col">
                   <div className="user-content">
                       <EventList title="Upcoming Events" events={this.props.events} />
@@ -33,6 +41,12 @@ export default class UserContent extends Component {
                   </div>
               </Col>
           </Row>
+          <div className="new-user-row">
+              <img src = {headingImg} className="header-image"/>
+              <h1 className="text">Lets get you some clubs</h1>
+              <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Browse Clubs</Button>
+
+          </div>
 
       </div>
     );

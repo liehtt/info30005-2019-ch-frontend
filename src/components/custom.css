@@ -122,10 +122,11 @@ body {
 }
 
 .no-clubs-to-join .msg{
-    padding: 20px 0 0 ;
+    padding: 20px 20px 0 ;
     font-family: Pacifico, sans-serif;
-    font-size: 2vw;
-    color: gray;
+    font-size: 1.8rem;
+    color:  #aaaae2;
+    text-align: center;
 }
 
 .no-clubs-yet .msg{
@@ -342,4 +343,51 @@ background-color: white;
 
 .club-page .create-event-btn:hover{
     transform: translate(-50%, 0) scale(1.1) ;
+}
+
+
+
+/*User Page Default button*/
+
+.new-user-row .text{
+    font-size: 4vw;
+    position: absolute;
+    font-family: 'Pacifico', sans-serif;
+    left: 50%;
+    transform: translate(-50%, -500%);
+    color: white;
+}
+
+.new-user-row .header-image{
+    width: 100%;
+}
+.new-user-row .create-event-btn{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 550%);
+    font-family: Raleway, sans-serif;
+    font-size: 2vw;
+    font-weight: 500;
+    transition: 200ms;
+}
+
+.new-user-row .create-event-btn:hover{
+    transform: translate(-50%, 550%) scale(1.1) ;
+}
+
+@media (max-width: 800px) {
+
+    .new-user-row .create-event-btn{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,400%);
+        font-family: Raleway, sans-serif;
+        font-size: 2vw;
+        font-weight: 500;
+        transition: 200ms;
+    }
+
+    .new-user-row .create-event-btn:hover{
+        transform: translate(-50%, 400%) scale(1.1) ;
+    }
 }
