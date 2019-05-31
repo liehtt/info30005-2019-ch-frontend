@@ -25,7 +25,7 @@ export default class ClubList extends Component {
     getClubCards(){
         const clubs = this.props.clubs;
         if(clubs.length !== 0 ){
-            this.props.clubs.map(e => {
+            return(this.props.clubs.map(e => {
                 return (
                     <ClubCard
                         thisClub={e}
@@ -33,7 +33,7 @@ export default class ClubList extends Component {
                         user={this.props.user}
                     />
                 );
-            })
+            }))
         }
         else
             return(
