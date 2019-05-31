@@ -15,41 +15,45 @@ export default class UserContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clubs: []
+      clubs: [],
+      redirectToBrowseClub: false
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
    handleClick(){
-      return (<Redirect to='/clubs'/>);
+      this.setState({redirectToBrowseClub: true});
   }
 
   render() {
-    return (
+    if(this.state.redirectToBrowseClub) {
+      return (<Redirect to='/clubs' />);
+    } else {
+      return (
 
-      <div>
-          <Row className="user-content-row">
-              <Col sm={12} lg={8} className="user-club-col">
-                  <div className="user-content">
-                      <EventList title="Upcoming Events" events={this.props.events} />
-                  </div>
-              </Col>
-              <Col sm={12} lg={4} className="user-event-col">
-                  <div className="user-content">
-                      <ClubList title="Clubs Joined" clubs={this.props.clubs} str="user"/>
-                  </div>
-              </Col>
-          </Row>
-          <div className="new-user-row">
-              <img src = {headingImg} className="header-image"/>
-              <h1 className="text">Lets get you some clubs</h1>
-              <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Browse Clubs</Button>
+        <div>
+            <Row className="user-content-row">
+                <Col sm={12} lg={8} className="user-club-col">
+                    <div className="user-content">
+                        <EventList title="Upcoming Events" events={this.props.events} />
+                    </div>
+                </Col>
+                <Col sm={12} lg={4} className="user-event-col">
+                    <div className="user-content">
+                        <ClubList title="Clubs Joined" clubs={this.props.clubs} str="user"/>
+                    </div>
+                </Col>
+            </Row>
+            <div className="new-user-row">
+                <img src = {headingImg} className="header-image"/>
+                <h1 className="text">Lets get you some clubs</h1>
+                <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Browse Clubs</Button>
+            </div>
 
-          </div>
-
-      </div>
-    );
+        </div>
+      );
+    }
   }
 }
 //<EventList title="Upcoming Events" events={this.props.events} />
