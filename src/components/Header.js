@@ -44,7 +44,7 @@ export default class Header extends Component {
                           <NavLink to='/' activeClassName='link'>Dashboard</NavLink>
                           <NavLink to='/' activeClassName='link'>Notifications</NavLink>
                           <NavLink to='/clubs' activeClassName='link'>Browse Clubs</NavLink>
-                          <NavLink to='/' activeClassName='link'>Browse Events</NavLink>
+                          <NavLink to='/events' activeClassName='link'>Browse Events</NavLink>
                       </Nav>
                       <Nav className="ml-auto">
                           {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}

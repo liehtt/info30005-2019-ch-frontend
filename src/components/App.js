@@ -3,6 +3,7 @@ import UserPage from './UserPage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import BrowseClubPage from './BrowseClubPage';
+import BrowseEventPage from './BrowseEventPage';
 import ClubLoginPage from './ClubLoginPage';
 import ClubSignUpPage from './ClubSignUpPage';
 import ClubPage from './ClubPage';
@@ -100,6 +101,11 @@ export default class App extends Component {
                             !this.state.loggedIn ?
                             (<Redirect to='/'/>) :
                             (<BrowseClubPage {...props} func={this.unauthenticate}/>)
+                        )}/>
+                        <Route exact path='/events' render={(props) => (
+                            !this.state.loggedIn ?
+                            (<Redirect to='/'/>) :
+                            (<BrowseEventPage {...props} func={this.unauthenticate}/>)
                         )}/>
                     </Switch>
                 </div>
