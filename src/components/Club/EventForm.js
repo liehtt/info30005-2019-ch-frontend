@@ -11,8 +11,8 @@ import {
     NavLink,
     Redirect
 } from 'react-router-dom';
-import Api from "./Api";
-import bgImg from '../images/img-bg.jpg';
+import Api from "../Api";
+import bgImg from '../../images/img-bg.jpg';
 import ClubHeader from "./ClubPage";
 // relative path to image
 

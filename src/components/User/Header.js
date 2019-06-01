@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
-import "./custom.css";
-import Api from './Api'
-import logo from '../images/border-logo.svg'
-import turtleImg from "../images/turtle_user.png"
+import "../custom.css";
+import Api from '../Api'
+import logo from '../../images/border-logo.svg'
+import turtleImg from "../../images/turtle_user.png"
 
 // child component of UserPage
 export default class Header extends Component {

@@ -13,7 +13,7 @@ import {
     NavLink,
     Redirect
 } from 'react-router-dom';
-import Api from "./Api";
+import Api from "../Api";
 
 
 export default class ClubMembersPage extends Component {

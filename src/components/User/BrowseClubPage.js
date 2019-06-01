@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Api from "./Api";
+import Api from "../Api";
 import ClubList from "./ClubList";
 
 export default class BrowseClubPage extends Component {

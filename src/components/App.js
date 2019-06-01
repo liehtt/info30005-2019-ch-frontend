@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import UserPage from './UserPage';
-import LoginPage from './LoginPage';
-import SignUpPage from './SignUpPage';
-import BrowseClubPage from './BrowseClubPage';
-import BrowseEventPage from './BrowseEventPage';
-import ClubLoginPage from './ClubLoginPage';
-import ClubSignUpPage from './ClubSignUpPage';
-import ClubMembersPage from './ClubMembersPage';
-import ClubPage from './ClubPage';
-import EventForm from './EventForm';
+import UserPage from './User/UserPage';
+import LoginPage from './User/LoginPage';
+import SignUpPage from './User/SignUpPage';
+import BrowseClubPage from './User/BrowseClubPage';
+import BrowseEventPage from './User/BrowseEventPage';
+import ClubLoginPage from './Club/ClubLoginPage';
+import ClubSignUpPage from './Club/ClubSignUpPage';
+import ClubMembersPage from './Club/ClubMembersPage';
+import ClubPage from './Club/ClubPage';
+import EventForm from './Club/EventForm';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {

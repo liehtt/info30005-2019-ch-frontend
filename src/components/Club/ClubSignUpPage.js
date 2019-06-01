@@ -9,9 +9,9 @@ import {
     NavLink,
     Redirect
 } from 'react-router-dom';
-import Api from "./Api";
-import video from "../lowlightvideo.mp4";
-import logo from "../images/border-logo.svg";
+import Api from "../Api";
+import video from "../../lowlightvideo.mp4";
+import logo from "../../images/border-logo.svg";
 
 export default class ClubSignUpPage extends Component {
     constructor(props) {

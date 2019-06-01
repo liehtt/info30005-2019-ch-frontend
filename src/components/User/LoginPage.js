@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import logo from '../images/border-logo.svg' // relative path to image
-import video from '../lowlightvideo.mp4'
+import logo from '../../images/border-logo.svg' // relative path to image
+import video from '../../lowlightvideo.mp4'
 import {
     Container,
     Card,
@@ -14,7 +14,7 @@ import {
     NavLink,
     Redirect
 } from 'react-router-dom';
-import Api from './Api';
+import Api from '../Api';
 
 export default class LoginPage extends Component {
     constructor(props) {

@@ -13,10 +13,10 @@ import {
     NavLink,
     Redirect
 } from 'react-router-dom';
-import Api from "./Api";
-import headingImg from '../images/img-bg.jpg';// relative path to image
+import Api from "../Api";
+import headingImg from '../../images/img-bg.jpg';// relative path to image
 import ClubEventCard from "./ClubEventCard";
-import ClubCard from "./ClubList";
+import ClubCard from "../User/ClubList";
 
 export default class ClubPage extends Component {
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Api from "./Api";
+import Api from "../Api";
 
 export default class BrowseEventPage extends Component {
 

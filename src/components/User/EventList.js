@@ -10,7 +10,7 @@ class EventList extends Component {
     super(props);
     this.state = { list: [] };
 
-    this.getEventCards = this.getEventCards.bind(this);
+    this.getEventListItems = this.getEventListItems.bind(this);
   }
 
   componentDidMount() {
@@ -18,7 +18,7 @@ class EventList extends Component {
     this.setState({ list });
   }
 
-  getEventCards(){
+  getEventListItems(){
 
     const events = this.props.events;
     if(events.length !== 0 ){
@@ -41,7 +41,7 @@ class EventList extends Component {
         <h3 className="container-title">{this.props.title}</h3>
         <Container className="event-container-fluid">
           <Row className="event-list-row">
-            {this.getEventCards()}
+            {this.getEventListItems()}
           </Row>
         </Container>
       </div>

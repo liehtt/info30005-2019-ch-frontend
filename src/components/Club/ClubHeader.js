@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
-import "./custom.css";
-import Api from './Api'
-import logo from '../images/border-logo.svg'
+import "../custom.css";
+import Api from '../Api'
+import logo from '../../images/border-logo.svg'
 
 export default class ClubHeader extends Component {
 
