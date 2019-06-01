@@ -246,7 +246,6 @@ body {
     transition: 200ms;
 
 }
-
 #userButton:hover{
   background-color: white;
   border: 2px solid white;
