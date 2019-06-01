@@ -118,8 +118,8 @@ body {
     transform: scale(1.05);
 }
 .user-club-card:hover{
-    transform: scale(1.1);
-}
+     transform: scale(1.1);
+ }
 
 .no-clubs-to-join .msg{
     padding: 20px 20px 0 ;
@@ -390,6 +390,20 @@ background-color: white;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
 }
+
+.club-event-card{
+    margin: 10px 0 10px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: 200ms;
+    width: 400px;
+    box-shadow: 0 2px #aaaae2;
+}
+
+.club-event-card:hover{
+    transform: scale(1.1);
+}
+
 
 
 
