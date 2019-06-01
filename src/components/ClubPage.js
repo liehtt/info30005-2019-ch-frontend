@@ -79,12 +79,19 @@ export default class ClubPage extends Component {
 
                 </div>
 
-                <h3>Description</h3>
-                <p>{this.state.club.description}</p>
-                <h3>Contact</h3>
-                <p>{this.state.club.contact}</p>
-                <h3>Events</h3>
-                {this.state.event.map((e) => (<Card>{e.title}</Card>))}
+                <Row className="club-pg-row">
+                    <Col sm={12} lg={4} className="club-info-col">
+                        <h3 className="heading">Description</h3>
+                        <p className="content">{this.state.club.description}</p>
+                        <h3 className="heading">Contact</h3>
+                        <p className="content">{this.state.club.contact}</p>
+                    </Col>
+                    <Col sm={12} lg={4} className="club-event-list-col">
+                        <h3 className="heading">Events</h3>
+                        {this.state.event.map((e) => (<Card>{e.title}</Card>))}
+                    </Col>
+                </Row>
+
 
             </div>
         );
