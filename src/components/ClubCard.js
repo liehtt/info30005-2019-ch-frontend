@@ -29,7 +29,7 @@ export default class ClubCard extends Component {
     const user = this.props.user;
 
     return (
-      <div className="club-card">
+      <div className="club-card-div">
         <Col sm={4} className="col">
           <Card className="club-card" bg="light" style={{ width: "18rem" }}>
             <img src={this.state.imgSource} className="card-image-top" />
