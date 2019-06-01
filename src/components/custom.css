@@ -137,14 +137,18 @@ body {
     text-align: center;
 }
 
-.no-events-yet .msg{
-    padding: 50px 0 0;
+.club-event-list-col .no-events-created .msg{
+    padding: 70px 0 0;
     font-family: Pacifico, sans-serif;
     font-size: 1.5rem;
-    color: #f2f2f2;
+    color: #aaaae2;
     text-align: center;
+
 }
 
+.club-event-list-col .event-list-row{
+    justify-content: center;
+}
 
 
 
@@ -312,6 +316,7 @@ background-color: white;
 
 .club-page .header-image{
    min-width: 100%;
+
 }
 
 .bg-full-img{
@@ -362,10 +367,27 @@ background-color: white;
 
 }
 
+.no-events-created .msg{
+    padding: 20px 20px 0 ;
+    font-family: Pacifico, sans-serif;
+    font-size: 1.8rem;
+    color:  #aaaae2;
+    text-align: center;
+}
+
 .club-pg-row .club-info-col .content{
    color: white;
 }
 
+.club-pg-row .club-event-list-col{
+    text-align: center;
+    justify-content: center;
+    padding: 3% 3%;
+    margin-top: 10px;
+    color: #402263;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+}
 
 
 
@@ -397,7 +419,8 @@ background-color: white;
     transform: translate(-50%, 550%) scale(1.1) ;
 }
 
-@media (max-width: 800px) {
+/*was 800px before*/
+@media (max-width: 1000px) {
 
     .new-user-row .create-event-btn{
         position: absolute;

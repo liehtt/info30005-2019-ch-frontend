@@ -15,7 +15,8 @@ import {
 } from 'react-router-dom';
 import Api from "./Api";
 import headingImg from '../images/img-bg.jpg';// relative path to image
-
+import ClubEventCard from "./ClubEventCard";
+import ClubCard from "./ClubList";
 
 export default class ClubPage extends Component {
 
@@ -29,6 +30,25 @@ export default class ClubPage extends Component {
         };
 
         this.handleClick = this.handleClick.bind(this);
+        this.getEventCards = this.getEventCards.bind(this);
+    }
+
+    getEventCards(){
+        const events = this.state.event;
+        if(events.length !== 0 ){
+            return(events.map((e) => {
+                return (
+                    <ClubEventCard thisEvent={e}/>
+                );
+            }))
+        }
+        else
+            return(
+                <div className="no-events-created">
+                    <h1 className="msg">Looks like you've not created any event yet!</h1>
+                </div>
+
+            );
     }
 
     async componentDidMount() {
@@ -86,9 +106,11 @@ export default class ClubPage extends Component {
                         <h3 className="heading">Contact</h3>
                         <p className="content">{this.state.club.contact}</p>
                     </Col>
-                    <Col sm={12} lg={4} className="club-event-list-col">
+                    <Col sm={12} lg={8} className="club-event-list-col">
                         <h3 className="heading">Events</h3>
-                        {this.state.event.map((e) => (<Card>{e.title}</Card>))}
+                        <Row className="event-list-row">
+                            {this.getEventCards()}
+                        </Row>
                     </Col>
                 </Row>
 
