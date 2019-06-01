@@ -26,6 +26,8 @@ export default class UserContent extends Component {
       this.setState({redirectToBrowseClub: true});
   }
 
+
+
   render() {
     if(this.state.redirectToBrowseClub) {
       return (<Redirect to='/clubs' />);
@@ -33,6 +35,9 @@ export default class UserContent extends Component {
       return (
 
         <div>
+
+
+
             <Row className="user-content-row">
                 <Col sm={12} lg={8} className="user-club-col">
                     <div className="user-content">
@@ -45,11 +50,12 @@ export default class UserContent extends Component {
                     </div>
                 </Col>
             </Row>
-            <div className="new-user-row">
-                <img src = {headingImg} className="header-image"/>
-                <h1 className="text">Lets get you some clubs</h1>
+
+            <div className="more-clubs-row" >
+                <h1 className="text">Lets get you some more clubs</h1>
                 <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Browse Clubs</Button>
             </div>
+
 
         </div>
       );

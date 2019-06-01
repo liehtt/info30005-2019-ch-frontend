@@ -137,6 +137,15 @@ body {
     text-align: center;
 }
 
+
+.no-events-yet .msg{
+    padding: 50px 0 0;
+    font-family: Pacifico, sans-serif;
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    text-align: center;
+}
+
 .club-event-list-col .no-events-created .msg{
     padding: 70px 0 0;
     font-family: Pacifico, sans-serif;
@@ -342,7 +351,7 @@ background-color: white;
     top: 75%;
     left: 50%;
     transform: translate(-50%, 0);
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
     font-size: 2vw;
     font-weight: 500;
     transition: 200ms;
@@ -409,6 +418,35 @@ background-color: white;
 
 /*User Page Default button*/
 
+.more-clubs-row{
+    background-color: #402263;
+    text-align: center;
+    padding: 5%;
+    background: url('../images/img-bg.jpg');
+    background-size: cover;
+}
+.more-clubs-row .text{
+    font-size: 4vw;
+    font-family: 'Pacifico', sans-serif;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.more-clubs-row .create-event-btn{
+
+     font-family: Raleway, sans-serif;
+     font-size: 2vw;
+     font-weight: 500;
+     transition: 200ms;
+
+ }
+
+.more-clubs-row .create-event-btn:hover{
+    transform: scale(1.1) ;
+}
+
 .new-user-row .text{
     font-size: 4vw;
     position: absolute;
@@ -416,6 +454,8 @@ background-color: white;
     left: 50%;
     transform: translate(-50%, -500%);
     color: white;
+    height: 200px;
+    background-color: #402263;
 }
 
 .new-user-row .header-image{
