@@ -8,7 +8,7 @@ import { O_RDWR } from "constants";
 // renders UserPage and the only ReactDOM.render, connects to ./public/index.html
 ReactDOM.render(
   <BrowserRouter>
-    <App />,
+    <App />
   </BrowserRouter>,
   document.getElementById("root")
 );

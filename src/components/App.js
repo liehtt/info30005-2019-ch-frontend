@@ -6,6 +6,7 @@ import BrowseClubPage from './BrowseClubPage';
 import BrowseEventPage from './BrowseEventPage';
 import ClubLoginPage from './ClubLoginPage';
 import ClubSignUpPage from './ClubSignUpPage';
+import ClubMembersPage from './ClubMembersPage';
 import ClubPage from './ClubPage';
 import EventForm from './EventForm';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
@@ -92,6 +93,11 @@ export default class App extends Component {
                             (<Redirect to='/club/login'/>) :
                             (<ClubPage {...props} func={this.clubUnauthenticate}/>)
                         )}/>
+                        <Route exact path='/club/members' render={(props) => (
+                            !this.state.clubLoggedIn ?
+                            (<Redirect to='/club/login'/>) :
+                            (<ClubMembersPage {...props} func={this.clubUnauthenticate}/>)
+                        )}/>
                         <Route exact path='/club/addEvent' render={(props) => (
                             !this.state.clubLoggedIn ?
                             (<Redirect to='/club/login'/>) :
@@ -107,6 +113,7 @@ export default class App extends Component {
                             (<Redirect to='/'/>) :
                             (<BrowseEventPage {...props} func={this.unauthenticate}/>)
                         )}/>
+
                     </Switch>
                 </div>
             </BrowserRouter>

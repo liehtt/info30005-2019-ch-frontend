@@ -27,6 +27,10 @@ export default class BrowseClubPage extends Component {
           club: clubId,
           userId: user._id
       });
+      const retr2 = await Api.post("/api/club/addMember", {
+        clubId: clubId,
+        userId: user._id
+      }); 
     }
 
     async componentDidMount() {
