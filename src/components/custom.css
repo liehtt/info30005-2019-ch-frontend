@@ -311,7 +311,7 @@ background-color: white;
 }
 
 .club-page .header-image{
-   width: 100%;
+   min-width: 100%;
 }
 
 .bg-full-img{
@@ -344,6 +344,28 @@ background-color: white;
 .club-page .create-event-btn:hover{
     transform: translate(-50%, 0) scale(1.1) ;
 }
+
+.club-pg-row {
+    height: 100%;
+}
+
+.club-pg-row .club-info-col{
+    background-color: #aaaae2;
+    padding: 5% 5%;
+    font-family: "Raleway", sans-serif;
+    font-size: large;
+}
+
+.club-pg-row .club-info-col .heading{
+    color: #402263;
+   padding-top: 20px;
+
+}
+
+.club-pg-row .club-info-col .content{
+   color: white;
+}
+
 
 
 
@@ -390,4 +412,17 @@ background-color: white;
     .new-user-row .create-event-btn:hover{
         transform: translate(-50%, 400%) scale(1.1) ;
     }
+
+    .club-pg-row .club-info-col{
+        text-align: center;
+    }
+
+    .club-page .header-text{
+        font-size: 8vw;
+    }
+
+    .club-page .create-event-btn{
+        font-size: 3vw;
+    }
 }
+
