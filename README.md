@@ -71,8 +71,8 @@ This is the user's default home-page, which displays clubs and events that the u
 | -----------------------| ----------- | ------
 | /api/user/profile      | isLoggedIn  | User
 | /api/user/:id/clubsub  | sessionUser | 
-| /api/user/:id/eventsReg| getUserClubsSubscribed
-|                        | getUserEventsRegistered
+| /api/user/:id/eventsReg| getUserClubsSubscribed |
+|                        | getUserEventsRegistered |
 
 
 
@@ -84,7 +84,7 @@ The Browse Clubs page displays a list of clubs which the user has not join. The 
 | ------------------   | ----------- | ------
 | /api/user/profile    | isLoggedIn  | User
 | /api/user/addClub    | sessionUser | Club
-                       | addClubToUser                     
+|                      | addClubToUser  |                   
 
 * [Browse and join events](https://quiet-inlet-43391.herokuapp.com/events)
 
