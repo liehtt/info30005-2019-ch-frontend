@@ -14,6 +14,8 @@ import {
     Redirect
 } from 'react-router-dom';
 import Api from "../Api";
+import ClubList from "../User/ClubList";
+import MembersList from "./MembersList";
 
 
 export default class ClubMembersPage extends Component {
@@ -41,42 +43,11 @@ export default class ClubMembersPage extends Component {
 
 
     render() {
-      if(this.state.members.length === 0) {
-        return (
-          <div>
-            <ClubHeader func={this.getProfile} func2={this.props.func} />
-            <p> 1</p>
-            <p> 1</p>
-            <p>1 </p>
-            <p> 1</p>
-
-            <p>No one is joining the club :(</p>
-
-          </div>
-
+        return(
+            <div>
+                <ClubHeader func={this.getProfile} func2={this.props.func} />
+                <MembersList members={this.state.members}/>
+            </div>
         )
-      } else {
-      return (
-        <div>
-          <ClubHeader func={this.getProfile} func2={this.props.func} />
-          <p>1</p>
-          <p>1 </p>
-
-          <div className="member-list">
-          {this.state.members.map((e) =>
-                      (<Col sm={4} className="col">
-                        <Card bg="light" className="club-event-card">
-                          <Card.Body>
-                            <Card.Title>{e.username}</Card.Title>
-                          </Card.Body>
-                        </Card>
-                      </Col>))}
-          </div>
-
-
-        </div>
-
-      )
-    }
     }
 }
