@@ -113,7 +113,7 @@ body {
     text-align: center;
     text-transform: capitalize;
     transition: 200ms;
-    width: 300px;
+    width: 250px;
     box-shadow: 0 2px #aaaae2;
     justify-content: center;
 }
@@ -124,6 +124,11 @@ body {
 
 .user-club-card:hover{
     transform: scale(1.1);
+}
+
+.user-club-card .club-card-body{
+    padding: 0 5px !important;
+
 }
 
 .event-card {
@@ -439,6 +444,10 @@ background-color: white;
     transform: scale(1.1);
 }
 
+.member-container{
+    color: #402263;
+    margin-top: 100px;
+}
 
 /***************************************************User Page Default button*******************************/
 
