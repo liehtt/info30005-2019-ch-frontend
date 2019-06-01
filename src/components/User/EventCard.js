@@ -14,7 +14,7 @@ export default class EventCard extends Component {
   handleClick() {
     this.setState({ toggleClick: true });
     const eventId = this.props.thisEvent._id;
-    // this.props.addClub(clubId);
+    this.props.addEvent(eventId);
   }
 
 
