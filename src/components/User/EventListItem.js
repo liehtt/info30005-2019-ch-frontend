@@ -8,7 +8,7 @@ class EventListItem extends Component {
   render() {
       const event = this.props.thisEvent;
     return (
-      <a href="#" className="list-group-item list-group-item-action event-list-card">
+      <a href="#" className="list-group-item list-group-item-action event-list-item">
         <div className="d-flex w-100 justify-content-between">
           <h5 className="mb-1">{event.title}</h5>
           <small>3 days</small>

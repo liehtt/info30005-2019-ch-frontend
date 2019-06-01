@@ -32,6 +32,8 @@ body {
     height: 50px;
 }
 
+/*************************************************** USER PAGE ***************************************************/
+
 .user-content {
     overflow-x: auto;
     margin: 4rem 1rem 3rem;
@@ -57,7 +59,7 @@ body {
     /*margin: 1em;*/
 }
 
-.event-card {
+.event-item {
     max-width: 100%;
     min-width: 33%;
     width: auto;
@@ -101,8 +103,9 @@ body {
 }
 
 .toggle-button {
-    text-align: left;
-    padding-right: 16px;
+    text-align: center;
+    margin-top: 20px;
+
 }
 
 .user-club-card, .club-card {
@@ -112,14 +115,38 @@ body {
     transition: 200ms;
     width: 300px;
     box-shadow: 0 2px #aaaae2;
+    justify-content: center;
 }
 
 .club-card:hover{
     transform: scale(1.05);
 }
+
 .user-club-card:hover{
-     transform: scale(1.1);
- }
+    transform: scale(1.1);
+}
+
+.event-card {
+    margin: 10px 0 10px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: 200ms;
+    width: 300px;
+    box-shadow: 0 2px #aaaae2;
+    justify-content: center;
+}
+
+.event-card:hover{
+    transform: scale(1.05);
+}
+
+.no-events-to-register .msg{
+    padding: 20px 20px 0 ;
+    font-family: Pacifico, sans-serif;
+    font-size: 1.8rem;
+    color:  #aaaae2;
+    text-align: center;
+}
 
 .no-clubs-to-join .msg{
     padding: 20px 20px 0 ;
@@ -161,7 +188,7 @@ body {
 
 
 
-/************** Login **********/
+/****************************************************** Login **************************************************/
 
 .logo-container{
     position:relative;
@@ -189,7 +216,7 @@ body {
     transform: scale(1.05) !important;
 }
 
-/************** Buttons ****************/
+/****************************************************** Buttons ********************************************************/
 
 #clubButton{
     position: relative;
@@ -294,7 +321,7 @@ background-color: white;
 }
 
 
-/*CLUB PAGE*/
+/***************************************************CLUB PAGE***************************************************/
 .club-page .header-div{
     min-height: 400px;
     position: relative;
@@ -416,7 +443,7 @@ background-color: white;
 
 
 
-/*User Page Default button*/
+/***************************************************User Page Default button*******************************/
 
 .more-clubs-row{
     background-color: #402263;
