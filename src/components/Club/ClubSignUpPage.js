@@ -82,6 +82,22 @@ export default class ClubSignUpPage extends Component {
                                     <Form.Label>Description</Form.Label>
                                     <Form.Control placeholder="e.g. Dance, Music and Films" value={this.state.description} onChange={this.handleChange} />
                                 </Form.Group>
+
+                                <Form.Group controlId="category">
+                                    <Form.Label>Category</Form.Label>
+                                    <Form.Control as="select" >
+                                        <option>Community Service</option>
+                                        <option>Course Related</option>
+                                        <option>Culture & Language</option>
+                                        <option>Food & Beverage</option>
+                                        <option>Music & Dance</option>
+                                        <option>Political & Activist</option>
+                                        <option>Special Interest</option>
+                                        <option>Spiritual</option>
+                                        <option>Sports & Games</option>
+                                    </Form.Control>
+                                </Form.Group>
+                                
                                 <Form.Group controlId="clubemail">
                                     <Form.Label>Club Email</Form.Label>
                                     <Form.Control type="email" placeholder="Enter email" value={this.state.clubemail} onChange={this.handleChange} />
