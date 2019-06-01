@@ -3,6 +3,7 @@ import {
     Card, Col, Button, ListGroup
 } from "react-bootstrap";
 import Api from '../Api';
+import { Redirect } from 'react-router-dom';
 
 export default class UserClubCard extends Component {
 
@@ -10,11 +11,13 @@ export default class UserClubCard extends Component {
     super(props);
 
     this.state = {
-      toggleClick: false
+      toggleClick: false,
+      redirectClick: false
     }
 
     this.handleClick = this.handleClick.bind(this);
     this.removeClub = this.removeClub.bind(this);
+    this.redirectClick = this.redirectClick.bind(this);
   }
 
   async removeClub() {
@@ -36,8 +39,18 @@ export default class UserClubCard extends Component {
     this.removeClub();
   }
 
+  redirectClick() {
+    this.setState({redirectClick: true});
+  }
+
   render() {
     const club = this.props.thisClub;
+    if(this.state.redirectClick) {
+      return (<Redirect to={{
+        pathname: '/user/checkClub',
+        state: {club: club, str: "user"}
+      }}  />)
+    }
     return (
       <div>
         <Col sm={4} className="col">
@@ -48,6 +61,9 @@ export default class UserClubCard extends Component {
                 <div className="toggle-button">
                   <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                     {this.state.toggleClick ? "How dare you!" : "Leave Club"}
+                  </Button>
+                  <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
+                    Check Info
                   </Button>
                 </div>
               </Card.Body>

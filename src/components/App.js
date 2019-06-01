@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import UserPage from './User/UserPage';
 import LoginPage from './User/LoginPage';
 import SignUpPage from './User/SignUpPage';
+import UserClubPage from './User/UserClubPage';
+import UserEventPage from './User/UserEventPage';
 import BrowseClubPage from './User/BrowseClubPage';
 import BrowseEventPage from './User/BrowseEventPage';
 import ClubLoginPage from './Club/ClubLoginPage';
@@ -77,6 +79,16 @@ export default class App extends Component {
                             !this.state.loggedIn ?
                             (<Redirect to='/'/>) :
                             (<UserPage {...props} func={this.unauthenticate}/>)
+                        )}/>
+                        <Route exact path='/user/checkClub' render={(props) => (
+                            !this.state.loggedIn ?
+                            (<Redirect to='/'/>) :
+                            (<UserClubPage {...props} func={this.unauthenticate}/>)
+                        )}/>
+                        <Route exact path='/user/checkEvent' render={(props) => (
+                            !this.state.loggedIn ?
+                            (<Redirect to='/'/>) :
+                            (<UserEventPage {...props} func={this.unauthenticate}/>)
                         )}/>
                         <Route exact path='/club/login' render={(props) => (
                             this.state.clubLoggedIn ?
