@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Api from "../Api";
+import ClubList from "./BrowseClubPage";
+import EventCardList from "./EventCardList";
 
 export default class BrowseEventPage extends Component {
 
@@ -25,11 +27,12 @@ export default class BrowseEventPage extends Component {
       return (
         <div className="user-content">
           <Header func={this.getProfile} func2={this.props.func} />
-          { this.state.events.map(e => {
-            return (
-              <p>{e.title}</p>
-            )
-          })}
+            <EventCardList
+                title="Browse Events"
+                events={this.state.events}
+                // addClub={this.registerUserToClub}
+
+            />
         </div>
       );
     }
