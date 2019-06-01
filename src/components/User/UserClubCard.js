@@ -56,17 +56,21 @@ export default class UserClubCard extends Component {
         <Col sm={4} className="col">
           <Card bg="light" className="user-club-card">
             <Card.Body>
-              <Card.Title>{club.clubname}</Card.Title>
+              <Card.Title>
+                <Button className="leave-btn" variant="info" onClick={this.redirectClick} block>
+                  {club.clubname}
+                </Button>
+              </Card.Title>
               <Card.Body className="club-card-body">
                 <div className="toggle-button">
                   <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                     {this.state.toggleClick ? "How dare you!" : "Leave Club"}
                   </Button>
-                  <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
-                    Check Info
-                  </Button>
+
+
                 </div>
               </Card.Body>
+              {/*<a href="" onClick={this.redirectClick} className="stretched-link">Click this </a>*/}
             </Card.Body>
           </Card>
         </Col>
