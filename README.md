@@ -132,6 +132,15 @@ Redirects user to a info page of a club or event.
 | /api/events           | getEvents   | Event
 | /api/clubs            | getClubs    | Club
 
+* Leave a Club (Click Leave Button in ClubCard in User Dashboard)
+
+Removes the clubs from the list in User Dashboard and also removes the user from the member list of the club. User will not appear in the member list when club admin accessed its account.
+
+| Routes                | Controllers | Models |
+| --------------------- | ----------- | ------
+| /api/club/removeMember| removeMember | User
+| /api/user/removeClub  | removeClubFromUser | Club
+
 * User/club logout (click logout button after having logged in)
 
 This logs the user/club out after a session. The user is redirected to the login page, and must re-enter/authenticate their credentials if they wish to log in again. 
