@@ -92,7 +92,7 @@ export default class ClubPage extends Component {
             <div className="club-page">
                 <ClubHeader func={this.getProfile} func2={this.props.func} />
                 <div className="header-div">
-                    <img src = {headingImg} className="header-image"/>
+                    {/*<img src = {headingImg} className="header-image"/>*/}
                     <h1 className="welcome-text">Hello</h1>
                     <h1 className="header-text">{this.state.club.clubname}</h1>
                     <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Create an Event</Button>

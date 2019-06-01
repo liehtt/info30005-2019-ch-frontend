@@ -287,10 +287,12 @@ background-color: white;
 
 /*CLUB PAGE*/
 .club-page .header-div{
-
+    min-height: 400px;
     position: relative;
     text-align: center;
     color: white;
+    background: url('../images/img-bg.jpg');
+    background-size: cover;
 }
 
 .club-page .header-text{
