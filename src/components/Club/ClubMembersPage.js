@@ -60,12 +60,19 @@ export default class ClubMembersPage extends Component {
         <div>
           <ClubHeader func={this.getProfile} func2={this.props.func} />
           <p>1</p>
-          <p>1</p>
-          <p>1</p>
-          <p>1</p>
+          <p>1 </p>
 
+          <div className="member-list">
           {this.state.members.map((e) =>
-                      (<Card>{e.username}</Card>))}
+                      (<Col sm={4} className="col">
+                        <Card bg="light" className="club-event-card">
+                          <Card.Body>
+                            <Card.Title>{e.username}</Card.Title>
+                          </Card.Body>
+                        </Card>
+                      </Col>))}
+          </div>
+
 
         </div>
 
