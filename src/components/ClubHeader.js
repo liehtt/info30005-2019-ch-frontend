@@ -41,9 +41,8 @@ export default class ClubHeader extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>
                             <NavLink to='/club/profile' activeClassName='link'>Dashboard</NavLink>
-                            <NavLink to='/' activeClassName='link'>Events</NavLink>
-                            <NavLink to='/clubs' activeClassName='link'>Members</NavLink>
-
+                            <NavLink to='/club/profile' activeClassName='link'>Events</NavLink>
+                            <NavLink to='/club/members' activeClassName='link'>Members</NavLink>
                         </Nav>
                         <Nav className="ml-auto">
                             {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}
