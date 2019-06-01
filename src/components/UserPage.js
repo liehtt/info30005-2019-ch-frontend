@@ -40,7 +40,6 @@ export default class UserPage extends Component {
 
   // renders header and user-content
   render() {
-    console.log("ARRAY TEST");
     console.log(this.state.clubs);
     console.log(this.state.events);
     return (
