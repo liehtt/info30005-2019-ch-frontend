@@ -17,8 +17,8 @@ User login:
 
 Club Login
 
-> email: chair@gmail.com <br>
-> pw: chair01
+> email: chess@gmail.com <br>
+> pw: chess01
 
 # Functionalities
 
@@ -64,25 +64,38 @@ This allows a club administrator to log in as a pre-existing club entity using a
 
 The following functionalities are only accessible after logging in as a user or a club. If the URLs are accessed prior to logging in, you will be redirected to the default login page. 
 
-* [Display joined clubs](https://quiet-inlet-43391.herokuapp.com/user/profile)
+* [Display joined clubs and events](https://quiet-inlet-43391.herokuapp.com/user/profile)
+This is the user's default home-page, which displays clubs and events that the user joined. 
 
-This is the user's default home-page, which displays clubs that the user has subscribed to. 
+| Routes                 | Controllers | Models |
+| -----------------------| ----------- | ------
+| /api/user/profile      | isLoggedIn  | User
+| /api/user/:id/clubsub  | sessionUser | 
+| /api/user/:id/eventsReg| getUserClubsSubscribed
+|                        | getUserEventsRegistered
 
-| Routes                | Controllers | Models |
-| --------------------- | ----------- | ------
-| /api/user/profile     | isLoggedIn  | User
-| /api/user/:id/clubsub | sessionUser | 
-|                       | getUserClubsSubscribed
 
-* [Browse and subscribe to clubs](https://quiet-inlet-43391.herokuapp.com/clubs)
 
-The Browse Clubs page displays a list of clubs which the user has not subscribed to. The user can click "join club" in order to subscribe to a club (the button will display "joined!" upon successful subscription). When returning to their [home page](https://quiet-inlet-43391.herokuapp.com/user/profile), any clubs that have been subscribed to will be displayed there. Once a club has been joined, it will no longer be displayed in the Browse Clubs page. 
+* [Browse and join clubs](https://quiet-inlet-43391.herokuapp.com/clubs)
+
+The Browse Clubs page displays a list of clubs which the user has not join. The user can click "join club" in order to join a  club (the button will display "joined!" upon successful joining). When returning to their [home page](https://quiet-inlet-43391.herokuapp.com/user/profile), joined clubs to will be displayed there. Once a club has been joined, it will no longer be displayed in the Browse Clubs page. 
 
 | Routes               | Controllers | Models |
 | ------------------   | ----------- | ------
 | /api/user/profile    | isLoggedIn  | User
 | /api/user/addClub    | sessionUser | Club
-|                      | addClubToUser 
+                       | addClubToUser                     
+
+* [Browse and join events](https://quiet-inlet-43391.herokuapp.com/events)
+
+Similar to Browse Club, but it displays events that clubs have created
+
+| Routes               | Controllers | Models |
+| ------------------   | ----------- | ------
+| /api/user/profile    | isLoggedIn  | User
+| /api/user/addEvent   | sessionUser | Event
+|                      | addEventToUser 
+                        
 
 * [Display individual club information](https://quiet-inlet-43391.herokuapp.com/club/profile)
 
@@ -92,10 +105,36 @@ After a club admin has logged in, they can view the information associated with 
 | ----------------- | ----------- | ------
 | /api/club/profile |             | Club
 
+* [Display members of the club](https://quiet-inlet-43391.herokuapp.com/club/members)
+
+Displays users that has joined the club. 
+
+| Routes                | Controllers | Models |
+| --------------------- | ----------- | ------
+| /api/club/members/:id | getMembers  | Club
+| /api/club/addMember   | addMember   
+
+* [Create event for the club](https://quiet-inlet-43391.herokuapp.com/club/addEvent)
+
+Redirects club admin to an Event Create Form for club admin to create events. Event created will show up in BrowseEvents tab for User to check and join. It will also show up in Eventlist in Club DashBoard.
+
+| Routes                | Controllers | Models |
+| --------------------- | ----------- | ------
+| /api/club/addEvent    | addEvent    | Club
+|                       |             | Event
+
+* Checking information of Club/Event (Click Check Info button of a club/event card when you are in BrowseClub or BrowseEvent tab)
+
+Redirects user to a info page of a club or event.
+
+| Routes                | Controllers | Models |
+| --------------------- | ----------- | ------
+| /api/events           | getEvents   | Event
+| /api/clubs            | getClubs    | Club
 
 * User/club logout (click logout button after having logged in)
 
-This logs the user out after a session. The user is redirected to the login page, and must re-enter/authenticate their credentials if they wish to log in again. 
+This logs the user/club out after a session. The user is redirected to the login page, and must re-enter/authenticate their credentials if they wish to log in again. 
 
 | Routes           | Controllers | Models |
 | ---------------- | ----------- | ------
