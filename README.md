@@ -12,8 +12,8 @@ Start the app by typing "npm start" without the quotes in the terminal.
 
 User login:
 
-> email: sakura@gmail.com <br>
-> pw: sakura01
+> email: corn@gmail.com <br>
+> pw: corn01
 
 Club Login
 
@@ -64,7 +64,7 @@ This allows a club administrator to log in as a pre-existing club entity using a
 
 The following functionalities are only accessible after logging in as a user or a club. If the URLs are accessed prior to logging in, you will be redirected to the default login page. 
 
-* [Display subscribed clubs](https://quiet-inlet-43391.herokuapp.com/user/profile)
+* [Display joined clubs](https://quiet-inlet-43391.herokuapp.com/user/profile)
 
 This is the user's default home-page, which displays clubs that the user has subscribed to. 
 
@@ -103,9 +103,5 @@ This logs the user out after a session. The user is redirected to the login page
 |                  | logOut
 
 # Notes & known issues
-
-1. Clicking header links that are not specifically mentioned under Functionalities will redirect back to the user's home page
-2. At this point, refreshing or using the back button while navigating the application may trigger some weird behaviour
-3. Register Club is not fully functional -- clicking submit during club registration will redirect you to the club login, same with RegisterUser redirecting you to LandingPage
-4. LogInClub only has access to RegisterClub, so if you want to go back to landing page, you have to manually change the URL in the browser.
+Refreshing or using the back button while navigating the application may trigger some weird behaviour. Insufficient time to implement JSON Web Tokens
 
