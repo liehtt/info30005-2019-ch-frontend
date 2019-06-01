@@ -18,9 +18,23 @@ export default class BrowseEventPage extends Component {
       return user;
     }
 
+    async registerUserToEvent(eventId) {
+      const {data: user} = await Api.get('/api/user/profile');
+      const retr = await Api.post("/api/user/addEvent", {
+          eventId: eventId,
+          userId: user._id
+      });
+    }
+
     async componentDidMount() {
+      const {data: user} = await Api.get('/api/user/profile');
+
       const { data: allEvents } = await Api.get('/api/events');
-      this.setState({events: allEvents});
+      console.log(allEvents);
+      const displayEvents = allEvents.filter(function(c) {
+        return user.eventsRegistered.indexOf(c._id) === -1;
+      })
+      this.setState({events: displayEvents});
     }
 
     render() {
@@ -30,8 +44,7 @@ export default class BrowseEventPage extends Component {
             <EventCardList
                 title="Browse Events"
                 events={this.state.events}
-                // addClub={this.registerUserToClub}
-
+                addEvent={this.registerUserToEvent}
             />
         </div>
       );

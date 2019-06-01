@@ -29,7 +29,7 @@ export default class UserPage extends Component {
     );
 
     const { data: events } = await Api.get(
-      "/api/user/" + this.state.user._id + "/events"
+      "/api/user/" + this.state.user._id + "/eventsReg"
     );
 
     this.setState({

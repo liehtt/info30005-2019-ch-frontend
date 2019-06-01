@@ -30,7 +30,7 @@ export default class EventCardList extends Component {
                 return (
                     <EventCard
                         thisEvent={e}
-                        // addEvent={this.props.addEvent}
+                        addEvent={this.props.addEvent}
                         user={this.props.user}
                     />
                 );
