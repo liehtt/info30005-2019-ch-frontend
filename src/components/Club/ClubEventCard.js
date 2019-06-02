@@ -5,11 +5,6 @@ import {
 
 export default class ClubEventCard extends Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
     const event = this.props.thisEvent;
     return (

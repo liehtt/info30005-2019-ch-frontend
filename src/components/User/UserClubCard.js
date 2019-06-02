@@ -3,7 +3,6 @@ import {
     Card, Col, Button
 } from "react-bootstrap";
 import Api from '../Api';
-import { Redirect } from 'react-router-dom';
 import ClubModal from '../User/ClubModal'
 
 export default class UserClubCard extends Component {
@@ -47,9 +46,6 @@ export default class UserClubCard extends Component {
   }
 
   render() {
-    const club = this.props.thisClub;
-
-
     return (
       <div>
         <Col sm={4} className="col">
