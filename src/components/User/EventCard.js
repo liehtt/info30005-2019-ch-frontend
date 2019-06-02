@@ -53,7 +53,7 @@ export default class EventCard extends Component {
         <div className="event-card-div">
           <Col sm={4} className="col">
             <Card className="event-card" bg="light" style={{ width: "18rem" }}>
-              <img src={this.state.imgSource} className="card-image-top" alt="event-image"/>
+              <img src={this.state.imgSource} className="card-image-top" alt="event"/>
               <Card.Body>
                 <Card.Title>{event.title}</Card.Title>
                 <Card.Body>
