@@ -66,9 +66,9 @@ export default class EventCard extends Component {
                     <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                       {this.state.toggleClick ? "Registered!" : "Register"}
                     </Button>
-                    <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
-                      Check Info
-                    </Button>
+                    {/*<Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>*/}
+                      {/*Check Info*/}
+                    {/*</Button>*/}
                   </div>
                 </Card.Body>
               </Card.Body>

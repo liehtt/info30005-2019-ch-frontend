@@ -32,7 +32,8 @@ export default class ClubModal extends Component {
     }
 
     getClubEventCards(){
-        const clubEvents = this.props.club.eventList;
+
+        const clubEvents = this.props.club !== undefined ? this.props.club.eventList: [];
         if(clubEvents.length !== 0 ){
             return(clubEvents.map((e) => {
                 return (
@@ -54,7 +55,7 @@ export default class ClubModal extends Component {
         return (
             <>
                 <Button className="club-link-btn" onClick={this.handleShow}>
-                    {club.clubname}
+                    {club !== undefined ? club.clubname: "Some Club"}
                 </Button>
 
                 <Modal show={this.state.show} onHide={this.handleClose}
@@ -63,18 +64,18 @@ export default class ClubModal extends Component {
                        centered
                 >
                     <Modal.Header closeButton>
-                        <Modal.Title className="modal-title">{club.clubname}</Modal.Title>
+                        <Modal.Title className="modal-title">{club !== undefined ? club.clubname: "Some Club"}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
 
                         <Row className="club-pg-row">
                             <Col sm={12} lg={4} className="club-info-col">
                                 <h3 className="heading">Description</h3>
-                                <p className="content">{club.description}</p>
+                                <p className="content">{club !== undefined ? club.description: "We do random fun things!"}</p>
                                 <h3 className="heading">Contact</h3>
-                                <p className="content">{club.contact}</p>
+                                <p className="content">{club !== undefined ? club.contact: "+1455234423"}</p>
                                 <h3 className="heading">Total Members</h3>
-                                <p className="content">{club.members.length}</p>
+                                <p className="content">{club !== undefined ? club.members.length: "11"}</p>
                             </Col>
                             <Col sm={12} lg={8} className="club-event-list-col">
                                 <h3 className="heading">Events</h3>

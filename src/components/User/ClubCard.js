@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Col, Button, ListGroup } from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
+import ClubModal from "./UserClubCard";
 
 export default class ClubCard extends Component {
   constructor(props) {
@@ -49,15 +50,19 @@ export default class ClubCard extends Component {
             <Card className="club-card" bg="light" style={{ width: "18rem" }}>
               <img src={this.state.imgSource} className="card-image-top" />
               <Card.Body>
-                <Card.Title>{club.clubname}</Card.Title>
+                <Card.Title>
+                  <ClubModal
+                      club={club}
+                  />
+                </Card.Title>
                 <Card.Body>
                   <div className="toggle-button">
                     <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                       {this.state.toggleClick ? "Joined!" : "Join Club"}
                     </Button>
-                    <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
-                      Check Info
-                    </Button>
+                    {/*<Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>*/}
+                      {/*Check Info*/}
+                    {/*</Button>*/}
                   </div>
                 </Card.Body>
               </Card.Body>
