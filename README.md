@@ -123,14 +123,16 @@ Redirects club admin to an Event Create Form for club admin to create events. Ev
 | /api/club/addEvent    | addEvent    | Club
 |                       |             | Event
 
-* Checking information of Club/Event (Click Check Info button of a club/event card when you are in BrowseClub or BrowseEvent tab)
+* Checking information of Club/Event (Click the name or title of a club/event card when you are in BrowseClub or BrowseEvent tab)
 
-Redirects user to a info page of a club or event.
+Pops up a modal that shows club or event information
 
 | Routes                | Controllers | Models |
 | --------------------- | ----------- | ------
 | /api/events           | getEvents   | Event
-| /api/clubs            | getClubs    | Club
+| /api/clubs            | getClubs    | Club 
+| /api/club/getEventsadded | getEventsAdded |
+| /api/event/clubFrom/:id | getEventClub | 
 
 * Leave a Club (Click Leave Button in ClubCard in User Dashboard)
 
