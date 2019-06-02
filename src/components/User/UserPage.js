@@ -14,6 +14,7 @@ export default class UserPage extends Component {
       events: [],
       user: {}
     };
+
   }
 
   async getProfile() {
@@ -42,6 +43,7 @@ export default class UserPage extends Component {
   render() {
     console.log(this.state.clubs);
     console.log(this.state.events);
+
     return (
       <div className="user-page">
         <Header func={this.getProfile} func2={this.props.func} />

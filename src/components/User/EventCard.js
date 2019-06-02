@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card, Col, Button, ListGroup } from "react-bootstrap";
 import {Description} from "@material-ui/icons";
 import { Redirect } from 'react-router-dom';
+import EventModal from "./EventModal";
 
 export default class EventCard extends Component {
   constructor(props) {
@@ -57,7 +58,7 @@ export default class EventCard extends Component {
             <Card className="event-card" bg="light" style={{ width: "18rem" }}>
               <img src={this.state.imgSource} className="card-image-top" alt="event-image"/>
               <Card.Body>
-                <Card.Title>{event.title}</Card.Title>
+                <Card.Title><EventModal thisEvent = {event}/></Card.Title>
                 <Card.Body>
                   <div> <small className="desc"> Description: {desc} </small></div>
                   <div> <small className="venue"> Venue: {event.venue} </small> </div>
