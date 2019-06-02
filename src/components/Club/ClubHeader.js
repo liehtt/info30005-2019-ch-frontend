@@ -25,7 +25,6 @@ export default class ClubHeader extends Component {
 
     async handleClick() {
         const log = await this.logOut();
-        console.log(log.data);
         this.props.func2();
     }
 

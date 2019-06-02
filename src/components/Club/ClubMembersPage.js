@@ -19,7 +19,6 @@ export default class ClubMembersPage extends Component {
       this.setState({club: club});
       const {data: members} = await Api.get("/api/club/members/" + this.state.club._id);
       this.setState({members: members});
-      console.log(this.state.members);
     }
 
     async getProfile() {

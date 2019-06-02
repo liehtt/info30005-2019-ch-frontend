@@ -38,8 +38,6 @@ export default class UserPage extends Component {
 
   // renders header and user-content
   render() {
-    console.log(this.state.clubs);
-    console.log(this.state.events);
     return (
       <div className="user-page">
         <Header func={this.getProfile} func2={this.props.func} />

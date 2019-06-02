@@ -50,7 +50,6 @@ export default class ClubPage extends Component {
         const events = await Api.post('api/club/getEventsAdded', {
             clubId: this.state.club._id
         });
-        console.log(events.data.eventList);
         this.setState({event: events.data.eventList});
 
         const img =

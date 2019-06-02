@@ -34,7 +34,6 @@ class EventList extends Component {
   }
 
   render() {
-    console.log(this.state.list);
     return (
       <div className="club-container">
         <h3 className="container-title">{this.props.title}</h3>

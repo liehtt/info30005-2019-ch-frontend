@@ -5,7 +5,9 @@ import EventList from "./EventList";
 
 import {Button, Col} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
-import Redirect from "react-router-dom/es/Redirect";
+import {
+    Redirect
+} from 'react-router-dom';
 
 
 

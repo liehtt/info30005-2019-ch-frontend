@@ -29,7 +29,6 @@ export default class BrowseEventPage extends Component {
       const {data: user} = await Api.get('/api/user/profile');
 
       const { data: allEvents } = await Api.get('/api/events');
-      console.log(allEvents);
       const displayEvents = allEvents.filter(function(c) {
         return user.eventsRegistered.indexOf(c._id) === -1;
       })

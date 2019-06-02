@@ -33,7 +33,6 @@ export default class EventForm extends Component {
 
     async registerEvent() {
 
-        console.log(this.props.location.state.club);
         await Api.post('/api/club/addEvent', {
             title: this.state.title,
             description: this.state.description,
