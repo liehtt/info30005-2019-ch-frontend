@@ -70,9 +70,6 @@ export default class UserClubCard extends Component {
               </Card.Body>
             </Card.Body>
           </Card>
-
-
-
         </Col>
       </div>
     );

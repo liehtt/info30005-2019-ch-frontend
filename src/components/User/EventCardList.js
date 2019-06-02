@@ -42,11 +42,7 @@ export default class EventCardList extends Component {
 
             );
     }
-
-
     render() {
-
-
             return (
                 <div className="event-container">
                 <h3 className="container-title">{this.props.title}</h3>

@@ -5,6 +5,7 @@ import {
     Button, Card, Row, Col
 } from "react-bootstrap";
 import ClubEventCard from "../Club/ClubPage";
+import Api from '../Api';
 
 
 
@@ -15,11 +16,11 @@ export default class ClubModal extends Component {
 
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.getClubEventCards = this.getClubEventCards.bind(this);
 
         this.state = {
             show: false,
             toggleClick: false,
+            events: []
         };
     }
 
@@ -31,24 +32,30 @@ export default class ClubModal extends Component {
         this.setState({ show: true });
     }
 
-    getClubEventCards(){
+    async componentDidMount() {
+      const {data: clubEvents} = await Api.post('/api/club/getEventsAdded', {
+        clubId: this.props.club._id
+      })
+      const events = clubEvents.eventList;
+      this.setState({events: events});
+    }
 
-        const clubEvents = this.props.club !== undefined ? this.props.club.eventList: [];
-        if(clubEvents.length !== 0 ){
-            return(clubEvents.map((e) => {
-                return (
-                    <h2>{e.title}</h2>
-                );
-            }))
+    getClubEventCards(){
+        if(this.state.events.length !== 0 ){
+            return(
+              this.state.events.map((e) => {
+                  return (
+                      <p key={e._id}>{e.title}</p>
+                  );
+              })
+            );
         }
         else
             return(
-                <div className="no-events-created">
-                    <h1 className="msg">Looks like the club doesn't have any event yet!</h1>
-                </div>
-
+              <p className="msg">Looks like the club doesn't have any event yet!</p>
             );
     }
+
     render() {
 
         const club= this.props.club;
@@ -76,12 +83,8 @@ export default class ClubModal extends Component {
                                 <p className="content">{club !== undefined ? club.contact: "+1455234423"}</p>
                                 <h3 className="heading">Total Members</h3>
                                 <p className="content">{club !== undefined ? club.members.length: "11"}</p>
-                            </Col>
-                            <Col sm={12} lg={8} className="club-event-list-col">
                                 <h3 className="heading">Events</h3>
-                                <Row className="event-list-row">
-                                    {this.getClubEventCards()}
-                                </Row>
+                                {this.getClubEventCards()}
                             </Col>
                         </Row>
 

@@ -51,8 +51,9 @@ export default class ClubCard extends Component {
               <img src={this.state.imgSource} className="card-image-top" alt="clubcard" />
               <Card.Body>
                 <Card.Title>
-                  {/*<ClubModal club={this.props.thisClub} />*/}
-                  <p>{club.clubname}</p>
+                 {/*<ClubModal club={this.props.thisClub} />*/}
+                   <p>{club.clubname}</p>
+
                 </Card.Title>
                 <Card.Body>
                   <div className="toggle-button">
@@ -70,5 +71,4 @@ export default class ClubCard extends Component {
         </div>
       );
     }
-  // }
 }

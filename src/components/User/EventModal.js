@@ -5,6 +5,7 @@ import {
     Button, Card, Row, Col
 } from "react-bootstrap";
 import ClubEventCard from "../Club/ClubPage";
+import Api from '../Api';
 
 
 
@@ -20,7 +21,13 @@ export default class EventModal extends Component {
         this.state = {
             show: false,
             toggleClick: false,
+            club: {}
         };
+    }
+
+    async componentDidMount() {
+      const {data: club} = await Api.get('/api/event/clubFrom/' + this.props.thisEvent._id);
+      this.setState({club: club.club});
     }
 
     handleClose() {
@@ -36,7 +43,7 @@ export default class EventModal extends Component {
 
         const event= this.props.thisEvent;
         return (
-            <>
+            <div>
                 <Button className="club-link-btn" onClick={this.handleShow}>
                     {event.title}
                 </Button>
@@ -54,7 +61,7 @@ export default class EventModal extends Component {
                         <Row className="club-pg-row">
                             <Col lg={12} className="modal-event-info-col">
                                 <h3 className="heading">Club</h3>
-                                <p className="content">{event.club.clubname}</p>
+                                <p className="content">{this.state.club.clubname}</p>
                                 <h3 className="heading">Description</h3>
                                 <p className="content">{event.description}</p>
                                 <h3 className="heading">Venue</h3>
@@ -72,7 +79,7 @@ export default class EventModal extends Component {
 
                     </Modal.Footer>
                 </Modal>
-            </>
+            </div>
         );
     }
 }
