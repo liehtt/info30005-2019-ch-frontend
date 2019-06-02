@@ -16,7 +16,6 @@ class EventListItem extends Component {
         <p className="mb-1">
             Description: {event.description}
         </p>
-        {/*<small>Club: {event.club.clubname}</small>*/}
         <small>Venue: {event.venue}</small>
       </a>
     );

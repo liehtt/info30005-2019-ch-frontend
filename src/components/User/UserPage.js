@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Header from "./Header";
 import UserContent from "./UserContent";
 import Api from "../Api";
-import { string } from "prop-types";
 
 // the parent component of userpage
 export default class UserPage extends Component {

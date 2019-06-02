@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import ClubCard from "./ClubCard";
 import UserClubCard from "./UserClubCard"
 import {
-    Container, Nav, Navbar,
+    Container,
     Row
 } from "react-bootstrap";
-import {NavLink} from "react-router-dom";
 
 export default class ClubList extends Component {
 

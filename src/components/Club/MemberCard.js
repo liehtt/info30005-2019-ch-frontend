@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import {
-    Card, Col, Button, ListGroup
+    Card, Col
 } from "react-bootstrap";
-import Api from '../Api';
 
 export default class MemberCard extends Component {
 

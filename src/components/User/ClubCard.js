@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col, Button, ListGroup } from "react-bootstrap";
+import { Card, Col, Button } from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
 
 export default class ClubCard extends Component {
@@ -35,7 +35,6 @@ export default class ClubCard extends Component {
 
   render() {
     const club = this.props.thisClub;
-    const user = this.props.user;
 
     if(this.state.redirectClubPage) {
       return (<Redirect to={{
@@ -47,7 +46,7 @@ export default class ClubCard extends Component {
         <div className="club-card-div">
           <Col sm={4} className="col">
             <Card className="club-card" bg="light" style={{ width: "18rem" }}>
-              <img src={this.state.imgSource} className="card-image-top" />
+              <img src={this.state.imgSource} className="card-image-top" alt="clubcard" />
               <Card.Body>
                 <Card.Title>{club.clubname}</Card.Title>
                 <Card.Body>

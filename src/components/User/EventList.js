@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import EventListItem from "./EventListItem";
 import { Container, Row } from "react-bootstrap";
-import UserClubCard from "./ClubList";
 
 class EventList extends Component {
   state = {};

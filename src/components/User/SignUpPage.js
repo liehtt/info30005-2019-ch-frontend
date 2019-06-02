@@ -6,8 +6,7 @@ import {
     Form
 } from 'react-bootstrap';
 import {
-    Redirect,
-    NavLink
+    Redirect
 } from 'react-router-dom';
 import Api from "../Api";
 import video from "../../lowlightvideo.mp4";

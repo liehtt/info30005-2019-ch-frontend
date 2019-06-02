@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-    Card, Col, Button, ListGroup
+    Card, Col, Button
 } from "react-bootstrap";
 import Api from '../Api';
 import { Redirect } from 'react-router-dom';
@@ -24,11 +24,11 @@ export default class UserClubCard extends Component {
     const {data: user} = await Api.get('/api/user/profile');
     const userId = user._id;
     const clubId = this.props.thisClub._id;
-    const rtr = await Api.post('/api/user/removeClub', {
+    await Api.post('/api/user/removeClub', {
       clubId: clubId,
       userId: userId
     });
-    const rtn2 = await Api.post('/api/club/removeMember', {
+    await Api.post('/api/club/removeMember', {
       clubId: clubId,
       userId: userId
     });

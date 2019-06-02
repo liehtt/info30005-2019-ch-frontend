@@ -5,7 +5,6 @@ import EventList from "./EventList";
 
 import {Button, Col} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
-import headingImg from "../../images/img-bg.jpg";
 import Redirect from "react-router-dom/es/Redirect";
 
 

@@ -6,7 +6,6 @@ import {
     Form
 } from 'react-bootstrap';
 import {
-    NavLink,
     Redirect
 } from 'react-router-dom';
 import Api from "../Api";
@@ -97,7 +96,7 @@ export default class ClubSignUpPage extends Component {
                                         <option>Sports & Games</option>
                                     </Form.Control>
                                 </Form.Group>
-                                
+
                                 <Form.Group controlId="clubemail">
                                     <Form.Label>Club Email</Form.Label>
                                     <Form.Control type="email" placeholder="Enter email" value={this.state.clubemail} onChange={this.handleChange} />

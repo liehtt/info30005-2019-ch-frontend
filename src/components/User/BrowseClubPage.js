@@ -23,14 +23,14 @@ export default class BrowseClubPage extends Component {
     async registerUserToClub(clubId) {
       const { data: user } = await Api.get("/api/user/profile");
       this.setState({ user });
-      const retr = await Api.post("/api/user/addClub", {
+      await Api.post("/api/user/addClub", {
           club: clubId,
           userId: user._id
       });
-      const retr2 = await Api.post("/api/club/addMember", {
+      await Api.post("/api/club/addMember", {
         clubId: clubId,
         userId: user._id
-      }); 
+      });
     }
 
     async componentDidMount() {
