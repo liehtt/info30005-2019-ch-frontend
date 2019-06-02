@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-    Card, Col, Button, ListGroup
+    Card, Col
 } from "react-bootstrap";
 
 export default class ClubEventCard extends Component {

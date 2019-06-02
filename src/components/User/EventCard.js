@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col, Button, ListGroup } from "react-bootstrap";
-import {Description} from "@material-ui/icons";
+import { Card, Col, Button } from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
 import EventModal from "./EventModal";
 
@@ -40,7 +39,6 @@ export default class EventCard extends Component {
 
   render() {
     const event = this.props.thisEvent;
-    const user = this.props.user;
     let desc = event.description;
     if(desc.length > 15){
       desc = desc.substring(0,15) + "...";
@@ -56,7 +54,7 @@ export default class EventCard extends Component {
         <div className="event-card-div">
           <Col sm={4} className="col">
             <Card className="event-card" bg="light" style={{ width: "18rem" }}>
-              <img src={this.state.imgSource} className="card-image-top" alt="event-image"/>
+              <img src={this.state.imgSource} className="card-image-top" alt="event"/>
               <Card.Body>
                 <Card.Title><EventModal thisEvent = {event}/></Card.Title>
                 <Card.Body>

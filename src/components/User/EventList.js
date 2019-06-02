@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import EventListItem from "./EventListItem";
 import { Container, Row } from "react-bootstrap";
-import UserClubCard from "./ClubList";
 
 class EventList extends Component {
   state = {};
@@ -23,7 +22,7 @@ class EventList extends Component {
     const events = this.props.events;
     if(events.length !== 0 ){
       return (this.props.events.map(e => {
-        return <EventListItem thisEvent={e} />;
+        return <EventListItem thisEvent={e} key={e._id} />;
       }))
     }
     else
@@ -35,7 +34,6 @@ class EventList extends Component {
   }
 
   render() {
-    console.log(this.state.list);
     return (
       <div className="club-container">
         <h3 className="container-title">{this.props.title}</h3>

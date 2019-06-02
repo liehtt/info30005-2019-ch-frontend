@@ -8,7 +8,6 @@ import {
     Col
 } from 'react-bootstrap';
 import {
-    NavLink,
     Redirect
 } from 'react-router-dom';
 import Api from '../Api';

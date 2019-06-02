@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 import "../custom.css";
 import Api from '../Api'
 import logo from '../../images/border-logo.svg'
-import turtleImg from "../../images/turtle_user.png"
 
 // child component of UserPage
 export default class Header extends Component {
@@ -26,7 +25,7 @@ export default class Header extends Component {
     }
 
     async handleClick() {
-        const log = await this.logOut();
+        await this.logOut();
         this.props.func2();
     }
 
@@ -42,13 +41,11 @@ export default class Header extends Component {
                   <Navbar.Collapse id="responsive-navbar-nav">
                       <Nav>
                           <NavLink to='/' activeClassName='link'>Dashboard</NavLink>
-                          {/*<NavLink to='/' activeClassName='link'>Notifications</NavLink>*/}
                           <NavLink to='/clubs' activeClassName='link'>Browse Clubs</NavLink>
                           <NavLink to='/events' activeClassName='link'>Browse Events</NavLink>
                       </Nav>
                       <Nav className="ml-auto">
-                          {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}
-                          <Navbar.Text to='/' activeClassName='link'> <a> Hi, {this.state.user.username}</a></Navbar.Text>
+                          <Navbar.Text to='/' activeclassname='link'> <a> Hi, {this.state.user.username}</a></Navbar.Text>
                           <Button className="custom-white-outline-btn" onClick={this.handleClick}>Log Out</Button>
                       </Nav>
                   </Navbar.Collapse>

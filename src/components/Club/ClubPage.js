@@ -1,22 +1,15 @@
 import React, { Component } from "react";
 import ClubHeader from "./ClubHeader";
 import {
-    Container,
-    Card,
     Button,
-    Form,
     Row,
-    Col,
-    Image
+    Col
 } from 'react-bootstrap';
 import {
-    NavLink,
     Redirect
 } from 'react-router-dom';
 import Api from "../Api";
-import headingImg from '../../images/img-bg.jpg';// relative path to image
 import ClubEventCard from "./ClubEventCard";
-import ClubCard from "../User/ClubList";
 
 export default class ClubPage extends Component {
 
@@ -38,7 +31,7 @@ export default class ClubPage extends Component {
         if(events.length !== 0 ){
             return(events.map((e) => {
                 return (
-                    <ClubEventCard thisEvent={e}/>
+                    <ClubEventCard thisEvent={e} key={e._id} />
                 );
             }))
         }
@@ -57,7 +50,6 @@ export default class ClubPage extends Component {
         const events = await Api.post('api/club/getEventsAdded', {
             clubId: this.state.club._id
         });
-        console.log(events.data.eventList);
         this.setState({event: events.data.eventList});
 
         const img =
@@ -84,7 +76,7 @@ export default class ClubPage extends Component {
             const club = this.state.club;
             return <Redirect to={{
             pathname: '/club/addEvent',
-            state: { club: this.state.club }
+            state: { club: club }
         }}
 />
         } else {
@@ -92,7 +84,6 @@ export default class ClubPage extends Component {
             <div className="club-page">
                 <ClubHeader func={this.getProfile} func2={this.props.func} />
                 <div className="header-div">
-                    {/*<img src = {headingImg} className="header-image"/>*/}
                     <h1 className="welcome-text">Hello</h1>
                     <h1 className="header-text">{this.state.club.clubname}</h1>
                     <Button className="custom-white-outline-btn create-event-btn" onClick={this.handleClick}>Create an Event</Button>

@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import ClubCard from "./ClubCard";
 import UserClubCard from "./UserClubCard"
 import {
-    Container, Nav, Navbar,
+    Container,
     Row
 } from "react-bootstrap";
-import {NavLink} from "react-router-dom";
 
 export default class ClubList extends Component {
 
@@ -31,6 +30,7 @@ export default class ClubList extends Component {
                         thisClub={e}
                         addClub={this.props.addClub}
                         user={this.props.user}
+                        key={e._id}
                     />
                 );
             }))
@@ -52,6 +52,7 @@ export default class ClubList extends Component {
                 return (
                     <UserClubCard
                         thisClub={e}
+                        key={e._id}
                     />
                 );
             }))

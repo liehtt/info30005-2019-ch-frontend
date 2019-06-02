@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Header from "./Header";
 import UserContent from "./UserContent";
 import Api from "../Api";
-import { string } from "prop-types";
 
 // the parent component of userpage
 export default class UserPage extends Component {
@@ -41,9 +39,6 @@ export default class UserPage extends Component {
 
   // renders header and user-content
   render() {
-    console.log(this.state.clubs);
-    console.log(this.state.events);
-
     return (
       <div className="user-page">
         <Header func={this.getProfile} func2={this.props.func} />

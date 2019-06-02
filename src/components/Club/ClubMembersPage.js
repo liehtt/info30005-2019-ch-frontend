@@ -1,20 +1,6 @@
 import React, { Component } from "react";
 import ClubHeader from "./ClubHeader";
-import {
-    Container,
-    Card,
-    Button,
-    Form,
-    Row,
-    Col,
-    Image
-} from 'react-bootstrap';
-import {
-    NavLink,
-    Redirect
-} from 'react-router-dom';
 import Api from "../Api";
-import ClubList from "../User/ClubList";
 import MembersList from "./MembersList";
 
 
@@ -33,7 +19,6 @@ export default class ClubMembersPage extends Component {
       this.setState({club: club});
       const {data: members} = await Api.get("/api/club/members/" + this.state.club._id);
       this.setState({members: members});
-      console.log(this.state.members);
     }
 
     async getProfile() {

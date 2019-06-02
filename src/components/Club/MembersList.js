@@ -2,11 +2,9 @@ import React, { Component } from "react";
 
 import MemberCard from "./MemberCard"
 import {
-    Container, Nav, Navbar,
+    Container,
     Row
 } from "react-bootstrap";
-import {NavLink} from "react-router-dom";
-import ClubHeader from "./ClubMembersPage";
 
 export default class MembersList extends Component {
 
@@ -30,6 +28,7 @@ export default class MembersList extends Component {
                 return (
                     <MemberCard
                         thisMember={e.username}
+                        key={e._id}
                     />
                 );
             }))

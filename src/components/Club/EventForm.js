@@ -8,14 +8,12 @@ import {
     Row
 } from 'react-bootstrap';
 import {
-    NavLink,
     Redirect
 } from 'react-router-dom';
 import Api from "../Api";
 import bgImg from '../../images/img-bg.jpg';
-import ClubHeader from "./ClubPage";
-// relative path to image
 
+// relative path to image
 export default class EventForm extends Component {
     constructor(props) {
         super(props);
@@ -35,7 +33,6 @@ export default class EventForm extends Component {
 
     async registerEvent() {
 
-        console.log(this.props.location.state.club);
         await Api.post('/api/club/addEvent', {
             title: this.state.title,
             description: this.state.description,
@@ -68,7 +65,7 @@ export default class EventForm extends Component {
         return (
             <div className="create-event-page">
                 {/*<ClubHeader func={this.getProfile} func2={this.props.func} />*/}
-                <img src = {bgImg} className="bg-full-img" alt="background image"/>
+                <img src = {bgImg} className="bg-full-img" alt="background"/>
                 <div>
                     <h1 className="title">Lets create an Event!</h1>
                 </div>

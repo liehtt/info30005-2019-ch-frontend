@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Api from "../Api";
-import ClubList from "./BrowseClubPage";
 import EventCardList from "./EventCardList";
 
 export default class BrowseEventPage extends Component {
@@ -20,7 +19,7 @@ export default class BrowseEventPage extends Component {
 
     async registerUserToEvent(eventId) {
       const {data: user} = await Api.get('/api/user/profile');
-      const retr = await Api.post("/api/user/addEvent", {
+      await Api.post("/api/user/addEvent", {
           eventId: eventId,
           userId: user._id
       });
@@ -30,7 +29,6 @@ export default class BrowseEventPage extends Component {
       const {data: user} = await Api.get('/api/user/profile');
 
       const { data: allEvents } = await Api.get('/api/events');
-      console.log(allEvents);
       const displayEvents = allEvents.filter(function(c) {
         return user.eventsRegistered.indexOf(c._id) === -1;
       })

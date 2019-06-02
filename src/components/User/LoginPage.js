@@ -7,11 +7,9 @@ import {
     Button,
     Form,
     Row,
-    Col,
-    Image
+    Col
 } from 'react-bootstrap';
 import {
-    NavLink,
     Redirect
 } from 'react-router-dom';
 import Api from '../Api';
@@ -89,9 +87,7 @@ export default class LoginPage extends Component {
             <video autoPlay muted loop id="loginPageVideo">
                 <source src={video} type="video/mp4"/>
             </video>
-
-            {/*<h1 class="login-brand">Clubhub</h1>*/}
-
+            
             <Container style={{ width:'25rem'}}>
                 <div className ="logo-container">
                     <img src = {logo} alt="logo" width="150px" />
@@ -129,20 +125,6 @@ export default class LoginPage extends Component {
                 <Button id="clubButton" variant="outline-primary" size="lg" block onClick={this.handleClickLogClub}>
                   Club Login
                 </Button>
-                {/*<Container className="club-register-button">*/}
-                {/*<Card>*/}
-                {/*<Col md={{ offset: 1 }}>*/}
-                    {/*<Button style={{ margin:'5px'}} variant="outline-info" onClick={this.handleClickRegClub}>*/}
-                        {/*Register Club*/}
-                    {/*</Button>*/}
-                    {/*<Button variant="outline-info" onClick={this.handleClickLogClub}>*/}
-                        {/*Club Login*/}
-                    {/*</Button>*/}
-                {/*</Col>*/}
-
-                {/*</Card>*/}
-
-                {/*</Container>*/}
             </Container>
             </div>
         );}
