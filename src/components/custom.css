@@ -324,6 +324,10 @@ background-color: white;
     text-transform: capitalize;
 }
 
+.warning {
+  color: red;
+}
+
 
 /***************************************************CLUB PAGE***************************************************/
 .club-page .header-div{

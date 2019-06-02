@@ -20,6 +20,7 @@ export default class LoginPage extends Component {
         this.state = {
             email: "",
             password: "",
+            auth: "none",
             redirect: false,
             redirectRegClub: false,
             redirectLogClub: false
@@ -54,11 +55,17 @@ export default class LoginPage extends Component {
         const auth = await this.authenticateUser();
 
         if(!auth.data.success) {
-            alert("authentication-failed");
+            this.setState({auth: "failed"});
         } else {
-            alert("Your login was successful!");
+            this.setState({auth: "success"});
             this.props.func();
         }
+    }
+
+    getFeedback() {
+      if(this.state.auth.localeCompare("failed") === 0) {
+        return (<p className="warning">Wrong password or email!</p>)
+      }
     }
 
     handleClick() {
@@ -87,7 +94,7 @@ export default class LoginPage extends Component {
             <video autoPlay muted loop id="loginPageVideo">
                 <source src={video} type="video/mp4"/>
             </video>
-            
+
             <Container style={{ width:'25rem'}}>
                 <div className ="logo-container">
                     <img src = {logo} alt="logo" width="150px" />
@@ -100,13 +107,15 @@ export default class LoginPage extends Component {
                     <Form.Group controlId="email">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="e.g. username@student.edu" value={this.state.email} onChange={this.handleChange}/>
-                        <Form.Text className="text-muted">Made-up email is good to go</Form.Text>
+                        <Form.Text className="text-muted">We will never share your email with anyone else</Form.Text>
                         </Form.Group>
 
                     <Form.Group controlId="password">
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
                     </Form.Group>
+                    {this.getFeedback()}
+                    
                     <Row>
                     <Col sm={12} lg={6}>
                     <Button className="custom-purple-filled-btn" variant="info" onClick={this.tryAuthenticate} disabled={!this.validateForm() } size="lg" block>

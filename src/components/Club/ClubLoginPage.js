@@ -20,6 +20,7 @@ export default class ClubLoginPage extends Component {
         this.state = {
             email: "",
             password: "",
+            auth: "none",
             redirect: false,
             redirectLogUser: false
         };
@@ -53,11 +54,17 @@ export default class ClubLoginPage extends Component {
         const auth = await this.authenticateClub();
 
         if(!auth.data.success) {
-            alert("authentication-failed");
+            this.setState({auth: "failed"})
         } else {
-            alert("Hey Club! Good to go");
+            this.setState({auth: "success"})
             this.props.func();
         }
+    }
+
+    getFeedback() {
+      if(this.state.auth.localeCompare("failed") === 0) {
+        return (<p className="warning">Wrong password or email!</p>)
+      }
     }
 
     handleClick() {
@@ -94,7 +101,7 @@ export default class ClubLoginPage extends Component {
                                         <Form.Label>Club Email address</Form.Label>
                                         <Form.Control type="email" placeholder="e.g. clubname@gmail.com"
                                                       value={this.state.email} onChange={this.handleChange}/>
-                                        <Form.Text className="text-muted">Made-up email is good to go</Form.Text>
+                                        <Form.Text className="text-muted">We will never share your email with anyone else</Form.Text>
                                     </Form.Group>
 
                                     <Form.Group controlId="password">
@@ -102,6 +109,7 @@ export default class ClubLoginPage extends Component {
                                         <Form.Control type="password" placeholder="Password" value={this.state.password}
                                                       onChange={this.handleChange}/>
                                     </Form.Group>
+                                    {this.getFeedback()}
                                     <Row>
                                         <Col sm={12} lg={6}>
                                             <Button className="custom-purple-filled-btn" variant="info" onClick={this.tryAuthenticateClub}
