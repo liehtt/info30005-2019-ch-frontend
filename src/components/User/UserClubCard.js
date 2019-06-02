@@ -4,6 +4,7 @@ import {
 } from "react-bootstrap";
 import Api from '../Api';
 import { Redirect } from 'react-router-dom';
+import ClubModal from '../User/ClubModal'
 
 export default class UserClubCard extends Component {
 
@@ -12,12 +13,14 @@ export default class UserClubCard extends Component {
 
     this.state = {
       toggleClick: false,
-      redirectClick: false
-    }
+      redirectClick: false,
+      modalShow: false,
+    };
 
     this.handleClick = this.handleClick.bind(this);
     this.removeClub = this.removeClub.bind(this);
     this.redirectClick = this.redirectClick.bind(this);
+
   }
 
   async removeClub() {
@@ -45,30 +48,31 @@ export default class UserClubCard extends Component {
 
   render() {
     const club = this.props.thisClub;
-    if(this.state.redirectClick) {
-      return (<Redirect to={{
-        pathname: '/user/checkClub',
-        state: {club: club, str: "user"}
-      }}  />)
-    }
+
+
     return (
       <div>
         <Col sm={4} className="col">
           <Card bg="light" className="user-club-card">
             <Card.Body>
-              <Card.Title>{club.clubname}</Card.Title>
+              <Card.Title>
+                <ClubModal
+                    club={this.props.thisClub}
+                />
+              </Card.Title>
               <Card.Body className="club-card-body">
                 <div className="toggle-button">
                   <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                     {this.state.toggleClick ? "How dare you!" : "Leave Club"}
                   </Button>
-                  <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
-                    Check Info
-                  </Button>
+
                 </div>
               </Card.Body>
             </Card.Body>
           </Card>
+
+
+
         </Col>
       </div>
     );

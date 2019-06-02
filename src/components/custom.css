@@ -130,6 +130,25 @@ body {
     padding: 0 5px !important;
 
 }
+.modal-title{
+    color: #402263 !important;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem !important;
+    text-transform: capitalize;
+    font-weight: 600 !important;
+}
+
+.club-link-btn{
+    color: #402263 !important;
+    background-color: transparent !important;
+    border: transparent !important;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem !important;
+    text-transform: capitalize;
+    font-weight: 600 !important;
+
+}
 
 .event-card {
     margin: 10px 0 10px;
@@ -190,6 +209,34 @@ body {
 .club-event-list-col .event-list-row{
     justify-content: center;
 }
+
+
+.modal-body{
+    padding: 0 15px !important;
+}
+
+.modal-event-info-col{
+    background-color: #aaaae2;
+    padding:  2% 2%;
+    font-family: "Raleway", sans-serif;
+    font-size: large;
+    text-align: center;
+}
+
+
+.modal-event-info-col .heading{
+    color: #402263;
+    padding-top: 20px;
+
+}
+
+
+.modal-event-info-col .content{
+    color: white;
+}
+
+
+
 
 
 

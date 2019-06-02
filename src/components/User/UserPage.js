@@ -12,6 +12,7 @@ export default class UserPage extends Component {
       events: [],
       user: {}
     };
+
   }
 
   async getProfile() {

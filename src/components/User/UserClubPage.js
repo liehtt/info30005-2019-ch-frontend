@@ -33,8 +33,8 @@ export default class UserClubPage extends Component {
       <div>
         <p>{this.state.club.clubname}</p>
         <Button onClick={this.handleClick}>
-          Back
-        </Button>
+        Back
+      </Button>
       </div>
     )
   }

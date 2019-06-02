@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Col, Button } from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
+import ClubModal from "./UserClubCard";
 
 export default class ClubCard extends Component {
   constructor(props) {
@@ -36,27 +37,31 @@ export default class ClubCard extends Component {
   render() {
     const club = this.props.thisClub;
 
-    if(this.state.redirectClubPage) {
-      return (<Redirect to={{
-        pathname: '/user/checkClub',
-        state: {club: club, str: "browse"}
-      }}  />)
-    } else {
+    // if(this.state.redirectClubPage) {
+    //   return (<Redirect to={{
+    //     pathname: '/user/checkClub',
+    //     state: {club: club, str: "browse"}
+    //   }}  />)
+    // } else
+    // {
       return (
         <div className="club-card-div">
           <Col sm={4} className="col">
             <Card className="club-card" bg="light" style={{ width: "18rem" }}>
               <img src={this.state.imgSource} className="card-image-top" alt="clubcard" />
               <Card.Body>
-                <Card.Title>{club.clubname}</Card.Title>
+                <Card.Title>
+                  {/*<ClubModal club={this.props.thisClub} />*/}
+                  <p>{club.clubname}</p>
+                </Card.Title>
                 <Card.Body>
                   <div className="toggle-button">
                     <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                       {this.state.toggleClick ? "Joined!" : "Join Club"}
                     </Button>
-                    <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
-                      Check Info
-                    </Button>
+                    {/*<Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>*/}
+                      {/*Check Info*/}
+                    {/*</Button>*/}
                   </div>
                 </Card.Body>
               </Card.Body>
@@ -65,5 +70,5 @@ export default class ClubCard extends Component {
         </div>
       );
     }
-  }
+  // }
 }

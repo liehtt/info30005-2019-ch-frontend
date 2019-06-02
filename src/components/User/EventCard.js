@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Col, Button } from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
+import EventModal from "./EventModal";
 
 export default class EventCard extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ export default class EventCard extends Component {
             <Card className="event-card" bg="light" style={{ width: "18rem" }}>
               <img src={this.state.imgSource} className="card-image-top" alt="event"/>
               <Card.Body>
-                <Card.Title>{event.title}</Card.Title>
+                <Card.Title><EventModal thisEvent = {event}/></Card.Title>
                 <Card.Body>
                   <div> <small className="desc"> Description: {desc} </small></div>
                   <div> <small className="venue"> Venue: {event.venue} </small> </div>
@@ -63,9 +64,9 @@ export default class EventCard extends Component {
                     <Button className="custom-purple-filled-btn" variant="info" onClick={this.handleClick} block>
                       {this.state.toggleClick ? "Registered!" : "Register"}
                     </Button>
-                    <Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>
-                      Check Info
-                    </Button>
+                    {/*<Button className="custom-purple-filled-btn" variant="info" onClick={this.redirectClick} block>*/}
+                      {/*Check Info*/}
+                    {/*</Button>*/}
                   </div>
                 </Card.Body>
               </Card.Body>
