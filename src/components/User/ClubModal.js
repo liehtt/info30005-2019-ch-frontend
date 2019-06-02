@@ -53,7 +53,7 @@ export default class ClubModal extends Component {
 
         const club= this.props.club;
         return (
-            <>
+            <div>
                 <Button className="club-link-btn" onClick={this.handleShow}>
                     {club !== undefined ? club.clubname: "Some Club"}
                 </Button>
@@ -93,7 +93,7 @@ export default class ClubModal extends Component {
 
                     </Modal.Footer>
                 </Modal>
-            </>
+            </div>
         );
     }
 }

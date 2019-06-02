@@ -38,12 +38,13 @@ export default class ClubCard extends Component {
     const club = this.props.thisClub;
     const user = this.props.user;
 
-    if(this.state.redirectClubPage) {
-      return (<Redirect to={{
-        pathname: '/user/checkClub',
-        state: {club: club, str: "browse"}
-      }}  />)
-    } else {
+    // if(this.state.redirectClubPage) {
+    //   return (<Redirect to={{
+    //     pathname: '/user/checkClub',
+    //     state: {club: club, str: "browse"}
+    //   }}  />)
+    // } else
+    // {
       return (
         <div className="club-card-div">
           <Col sm={4} className="col">
@@ -51,9 +52,7 @@ export default class ClubCard extends Component {
               <img src={this.state.imgSource} className="card-image-top" />
               <Card.Body>
                 <Card.Title>
-                  <ClubModal
-                      club={club}
-                  />
+                  {/*<ClubModal club={this.props.thisClub} />*/}
                 </Card.Title>
                 <Card.Body>
                   <div className="toggle-button">
@@ -71,5 +70,5 @@ export default class ClubCard extends Component {
         </div>
       );
     }
-  }
+  // }
 }
