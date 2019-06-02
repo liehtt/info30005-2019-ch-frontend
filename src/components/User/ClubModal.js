@@ -2,9 +2,8 @@ import React, { Component } from "react";
 
 import {
     Modal,
-    Button, Card, Row, Col
+    Button, Row, Col
 } from "react-bootstrap";
-import ClubEventCard from "../Club/ClubPage";
 import Api from '../Api';
 
 
@@ -73,10 +72,10 @@ export default class ClubModal extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title className="modal-title">{club !== undefined ? club.clubname: "Some Club"}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body className="modal-body">
 
                         <Row className="club-pg-row">
-                            <Col sm={12} lg={4} className="club-info-col">
+                            <Col lg={12} className="modal-event-info-col">
                                 <h3 className="heading">Description</h3>
                                 <p className="content">{club !== undefined ? club.description: "We do random fun things!"}</p>
                                 <h3 className="heading">Contact</h3>

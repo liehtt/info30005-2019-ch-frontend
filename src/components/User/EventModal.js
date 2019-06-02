@@ -2,9 +2,8 @@ import React, { Component } from "react";
 
 import {
     Modal,
-    Button, Card, Row, Col
+    Button, Row, Col
 } from "react-bootstrap";
-import ClubEventCard from "../Club/ClubPage";
 import Api from '../Api';
 
 

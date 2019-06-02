@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col, Button, ListGroup } from "react-bootstrap";
+import {  Button } from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
 
 export default class UserEventPage extends Component {
