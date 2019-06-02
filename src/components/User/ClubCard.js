@@ -53,6 +53,7 @@ export default class ClubCard extends Component {
               <Card.Body>
                 <Card.Title>
                   {/*<ClubModal club={this.props.thisClub} />*/}
+                  <p>{club.clubname}</p>
                 </Card.Title>
                 <Card.Body>
                   <div className="toggle-button">
