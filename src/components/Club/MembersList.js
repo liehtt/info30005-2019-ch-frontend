@@ -28,6 +28,7 @@ export default class MembersList extends Component {
                 return (
                     <MemberCard
                         thisMember={e.username}
+                        key={e._id}
                     />
                 );
             }))

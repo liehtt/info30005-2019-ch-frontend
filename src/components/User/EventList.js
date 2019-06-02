@@ -22,7 +22,7 @@ class EventList extends Component {
     const events = this.props.events;
     if(events.length !== 0 ){
       return (this.props.events.map(e => {
-        return <EventListItem thisEvent={e} />;
+        return <EventListItem thisEvent={e} key={e._id} />;
       }))
     }
     else

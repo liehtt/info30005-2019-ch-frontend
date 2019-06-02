@@ -31,7 +31,7 @@ export default class ClubPage extends Component {
         if(events.length !== 0 ){
             return(events.map((e) => {
                 return (
-                    <ClubEventCard thisEvent={e}/>
+                    <ClubEventCard thisEvent={e} key={e._id} />
                 );
             }))
         }

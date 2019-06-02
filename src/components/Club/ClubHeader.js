@@ -43,8 +43,7 @@ export default class ClubHeader extends Component {
                             <NavLink to='/club/members' activeClassName='link'>Members</NavLink>
                         </Nav>
                         <Nav className="ml-auto">
-                            {/*<img className="user-turtle-img" src={turtleImg} alt="User Image"/>*/}
-                            <Navbar.Text to='/' activeClassName='link'> <a> Hi, {this.state.club.clubname}</a></Navbar.Text>
+                            <Navbar.Text to='/' activeclassname='link'> <a> Hi, {this.state.club.clubname}</a></Navbar.Text>
                             <Button className="custom-white-outline-btn" onClick={this.handleClick}>Log Out</Button>
                         </Nav>
                     </Navbar.Collapse>

@@ -29,6 +29,7 @@ export default class EventCardList extends Component {
                         thisEvent={e}
                         addEvent={this.props.addEvent}
                         user={this.props.user}
+                        key={e._id}
                     />
                 );
             }))
